@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+  <html lang="en" ng-app="G1Project">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scrappy - Web Crawler</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+
+    <!--SELF DEFINED CSS-->
+    <link rel="stylesheet" href="app.css">
+
+    <!--TEMPLATE CSS-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link href="css/application.css" rel="stylesheet">
+    <link href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body  ng-controller="MainCtrl">
+   <header class="cd-header" style="position: fixed">
+        <a class="cd-primary-nav-trigger" href="">
+            <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+        </a>
+    </header>
+
+    <nav>
+        <ul class="cd-primary-nav">
+            <li class="cd-label">Sub header</li>
+
+            <li><a href="/">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+
+            <li class="cd-label">Sub header</li>
+
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+        </ul>
+    </nav>
+
+    <section class="cd-intro">
+        <img src="Images/background.jpg">
+        <div class="introContainer">
+            <table class="introTable">
+                <thead>
+                    <tr>
+                        <th>
+                            <h1>Student Management System</h1>
+                        </th>
+                        <th>
+                            <h1>Something</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">
+                            <!--<div id="counter"><span class="count">{{recordSize}}</span></div>-->
+                            <h1><strong>---</strong></h1>
+
+                        </td>
+                        <td align="center">
+                                <h1><strong>----</strong></h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+   <!--<button ng-click="toggleLoading()" >Test loading mask</button>-->
+
+
+    <main class="cd-main-content">
+        <div class="cd-container">
+            <div class="content-wrap">
+                <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
+                <main id="content" class="content" role="main">
+                    <h1 class="page-title">{{pageHeader}}</h1>
+                    <div class="row">
+                        <div id="viewContent" ng-view></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </main>
+
+    <!--TEMPLATE JS-->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/jquery-pjax/jquery.pjax.js"></script>
+    <script src="vendor/tether/dist/js/tether.js"></script>
+    <script src="vendor/bootstrap/js/dist/util.js"></script>
+    <script src="vendor/bootstrap/js/dist/collapse.js"></script>
+    <script src="vendor/bootstrap/js/dist/dropdown.js"></script>
+    <script src="vendor/bootstrap/js/dist/button.js"></script>
+    <script src="vendor/bootstrap/js/dist/tooltip.js"></script>
+    <script src="vendor/bootstrap/js/dist/alert.js"></script>
+    <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="vendor/widgster/widgster.js"></script>
+
+    <script src="vendor/underscore/underscore.js"></script>
+    <script src="vendor/jquery.sparkline/index.js"></script>
+    <script src="vendor/jquery.sparkline/index.js"></script>
+    <script src="vendor/d3/d3.min.js"></script>
+    <script src="vendor/rickshaw/rickshaw.min.js"></script>
+    <script src="vendor/raphael/raphael-min.js"></script>
+    <script src="vendor/jQuery-Mapael/js/jquery.mapael.js"></script>
+    <script src="vendor/jQuery-Mapael/js/maps/usa_states.js"></script>
+    <script src="vendor/jQuery-Mapael/js/maps/world_countries.js"></script>
+    <script src="vendor/bootstrap/js/dist/popover.js"></script>
+    <script src="vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="vendor/jquery-animateNumber/jquery.animateNumber.min.js"></script>
+    <script src="vendor/jquery/indexMenu.js"></script>
+
+    <!--BOWER JS-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="bower_components/Chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+
+
+
+   <!--COMMON JS-->
+    <script src="app.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+   <script src="js/charts.js"></script>
+
+
+   <!--CONTROLLER JS-->
+    <script src="controllers/Homepage.js"></script>
+    <script src="controllers/Settings.js"></script>
+    <script src="controllers/AgencyAnalytics.js"></script>
+    <script src="controllers/RespondentAnalytics.js"></script>
+    <script src="controllers/Dashboard.js"></script>
+    <script src="controllers/ViewRecord.js"></script>
+
+    <script src="js/fsm-sticky-header.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+
+
+<!--<div ng-hide="showLoading"  class="ngAnimate">-->
+    <!--<div class="loadingMask">-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<br>-->
+            <!--<i class="fa fa-spinner fa-spin" style="font-size:60px;"></i>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+</body>
+</html>

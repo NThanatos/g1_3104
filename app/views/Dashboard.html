@@ -1,0 +1,17 @@
+<div id="blk" class="blkscreen"  style="z-index: 99994;" data-target="#compareList, #blk" data-toggle="toggle"></div>
+
+<div>
+    <section id="listOfDataWidget" class="widget">
+      <h1>Content</h1>
+    </section>
+
+
+</div>
+<script>
+    $("[data-toggle='toggle']").click(function() {
+        var selector = $(this).data("target");
+        $(selector).toggleClass('in');
+    });
+
+</script>
+
