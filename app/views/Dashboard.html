@@ -1,16 +1,62 @@
-<div>
-    <section id="listOfDataWidget" class="widget">
-      <h1>Content</h1>
-        <a href="#Create">Link to create page</a>
-    </section>
+<div id="dashboardContent">
+    <div id="dashboardMain">
+        <section id="NewsSection" class="widget">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#NewsContent">
+                <h5>News <span class="caret"></span></h5>
+            </button>
+            <div class="contentSection" id="NewsContent">
+               <h1>hide</h1>
+            </div>
+
+        </section>
+
+        <section id="MyCourseSection" class="widget">
+
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#MyCourseContent">
+                <h5>My Course <span class="caret"></span></h5>
+            </button>
+            <div class="contentSection" id="MyCourseContent">
+                <h1>hide</h1>
+            </div>
+        </section>
+
+        <section id="UpcomingEventsSection" class="widget">
+
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#UpComingEventsContent">
+                <h5>Upcoming Events <span class="caret"></span></h5>
+            </button>
+            <div class="contentSection" id="UpComingEventsContent">
+                <h1>hide</h1>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="dashboardRight">
+        <section class="widget">
+            <h2>Right Panel</h2>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
 
 
+        </section>
+    </div>
 </div>
+
 <script>
     $("[data-toggle='toggle']").click(function() {
         var selector = $(this).data("target");
         $(selector).toggleClass('in');
     });
-
 </script>
 
