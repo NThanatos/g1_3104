@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('G1.Dashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
+angular.module('G1.Create', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('DashboardCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', function ($route,$rootScope, $scope,$location,$http,$window,$filter) {
+    .controller('CreateCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', function ($route,$rootScope, $scope,$location,$http,$window,$filter) {
 
         (function initController() {
 

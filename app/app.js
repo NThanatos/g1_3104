@@ -5,7 +5,8 @@ angular.module('G1Project', [
     'ngRoute',
     'angularUtils.directives.dirPagination',
     '720kb.datepicker',
-    'Scrappy.Dashboard'
+    'G1.Dashboard',
+    'G1.Create'
 ])
    .controller('MainCtrl', function($scope, $http) {
 
@@ -23,11 +24,15 @@ angular.module('G1Project', [
 
         $routeProvider
 
+            .when('/Create', {
+                templateUrl: 'views/Create.html',
+                controller: 'CreateCtrl'
+            })
+
             .when('/Dashboard', {
                 templateUrl: 'views/Dashboard.html',
                 controller: 'DashboardCtrl'
             })
-
             .otherwise({redirectTo: '/Dashboard'});
 
     }]);
