@@ -471,3 +471,21 @@ html, body {
   overflow: hidden;
 }
 
+[rotate-flip] {
+  -webkit-transition:transform ease 250ms;
+  -moz-transition:transform ease 250ms;
+  -o-transition:transform ease 250ms;
+  -ms-transition:transform ease 250ms;
+  transition:transform ease 250ms;
+}
+
+[rotate-flip].rotated {
+.transform(rotate(180deg));
+
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+

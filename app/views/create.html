@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create accounts</title>
 </head>
 <body>
-<h1>Create page</h1>
+    <div class="widget-body">
+        <ul class="nav nav-tabs">
+            <li class="" ng-class="{active:isActiveTab(tab.content)}"  ng-repeat="tab in tabs">
+                <a ng-click="onClickTab(tab)">{{tab.title}}</a></li>
+        </ul>
+        <div ng-include="currentTab"></div>
+        <div ng-init="retrieveDB()"></div>
+    </div>
 </body>
 </html>
