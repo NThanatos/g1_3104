@@ -13,7 +13,15 @@
     <!--SELF DEFINED CSS-->
     <link rel="stylesheet" href="app.css">
 
+    <!-- START PLUGINS -->
+
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
+
     <!--TEMPLATE CSS-->
+    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-black.css"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
     <link href="css/application.css" rel="stylesheet">
     <link href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
@@ -22,72 +30,171 @@
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body  ng-controller="MainCtrl">
-   <header class="cd-header" style="position: fixed">
-        <a class="cd-primary-nav-trigger" href="">
-            <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-        </a>
-    </header>
 
-    <nav>
-        <ul class="cd-primary-nav">
-            <li class="cd-label">Sub header</li>
+<header class="cd-header" style="position: fixed">
+<a class="cd-primary-nav-trigger" href="">
+<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+</a>
+</header>
 
-            <li><a href="#Dashboard">Dashboard</a></li>
-            <li><a href="#Create">Create</a></li>
-            <li><a href="#">Link 3</a></li>
+<nav>
+<ul class="cd-primary-nav">
+<li class="cd-label">Sub header</li>
 
-            <li class="cd-label">Sub header</li>
+<li><a href="#Dashboard">Dashboard</a></li>
+<li><a href="#Create">Create</a></li>
+<li><a href="#">Link 3</a></li>
 
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
+<li class="cd-label">Sub header</li>
+
+<li><a href="#">Link 4</a></li>
+<li><a href="#">Link 5</a></li>
+</ul>
+</nav>
+
+<section class="cd-intro">
+<img src="Images/background.jpg">
+<div class="introContainer">
+<table class="introTable">
+<thead>
+<tr>
+<th>
+<h1>Student Management System</h1>
+</th>
+<th>
+<h1>Something</h1>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+<!--<div id="counter"><span class="count">{{recordSize}}</span></div>-->
+<h1><strong>---</strong></h1>
+
+</td>
+<td align="center">
+<h1><strong>----</strong></h1>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+        <!-- START X-NAVIGATION -->
+        <ul class="x-navigation">
+            <li class="xn-logo">
+                <a href="index.html">Joli Admin</a>
+                <a href="#" class="x-navigation-control"></a>
+            </li>
+            <li class="xn-title">Navigation</li>
+            <li>
+                <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+            </li>
         </ul>
-    </nav>
+        <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
 
-    <section class="cd-intro">
-        <img src="Images/background.jpg">
-        <div class="introContainer">
-            <table class="introTable">
-                <thead>
-                    <tr>
-                        <th>
-                            <h1>Student Management System</h1>
-                        </th>
-                        <th>
-                            <h1>Something</h1>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td align="center">
-                            <!--<div id="counter"><span class="count">{{recordSize}}</span></div>-->
-                            <h1><strong>---</strong></h1>
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel Title</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="content-wrap">
+                        <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
+                        <main id="content" class="content" role="main">
+                        <!--<h1 class="page-title">{{pageHeader}}</h1>-->
+                        <div id="viewContent" ng-view></div>
+                        </main>
+                    </div>
 
-                        </td>
-                        <td align="center">
-                                <h1><strong>----</strong></h1>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                </div>
+            </div>
+
         </div>
-    </section>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+   <!--<header class="cd-header" style="position: fixed">-->
+        <!--<a class="cd-primary-nav-trigger" href="">-->
+            <!--<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>-->
+        <!--</a>-->
+    <!--</header>-->
+
+    <!--<nav>-->
+        <!--<ul class="cd-primary-nav">-->
+            <!--<li class="cd-label">Sub header</li>-->
+
+            <!--<li><a href="#Dashboard">Dashboard</a></li>-->
+            <!--<li><a href="#Create">Create</a></li>-->
+            <!--<li><a href="#">Link 3</a></li>-->
+
+            <!--<li class="cd-label">Sub header</li>-->
+
+            <!--<li><a href="#">Link 4</a></li>-->
+            <!--<li><a href="#">Link 5</a></li>-->
+        <!--</ul>-->
+    <!--</nav>-->
+
+    <!--<section class="cd-intro">-->
+        <!--<img src="Images/background.jpg">-->
+        <!--<div class="introContainer">-->
+            <!--<table class="introTable">-->
+                <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>-->
+                            <!--<h1>Student Management System</h1>-->
+                        <!--</th>-->
+                        <!--<th>-->
+                            <!--<h1>Something</h1>-->
+                        <!--</th>-->
+                    <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td align="center">-->
+                            <!--&lt;!&ndash;<div id="counter"><span class="count">{{recordSize}}</span></div>&ndash;&gt;-->
+                            <!--<h1><strong>-&#45;&#45;</strong></h1>-->
+
+                        <!--</td>-->
+                        <!--<td align="center">-->
+                                <!--<h1><strong>&#45;&#45;&#45;&#45;</strong></h1>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+    <!--</section>-->
    <!--<button ng-click="toggleLoading()" >Test loading mask</button>-->
 
 
-    <main class="cd-main-content">
-        <div class="cd-container">
-            <div class="content-wrap">
-                <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
-                <main id="content" class="content" role="main">
-                    <!--<h1 class="page-title">{{pageHeader}}</h1>-->
-                    <div class="row">
-                        <div id="viewContent" ng-view></div>
-                    </div>
-                </main>
-            </div>
-        </div>
-    </main>
+    <!--<main class="cd-main-content">-->
+        <!--<div class="cd-container">-->
+            <!--<div class="content-wrap">-->
+                <!--&lt;!&ndash; main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  &ndash;&gt;-->
+                <!--<main id="content" class="content" role="main">-->
+                    <!--&lt;!&ndash;<h1 class="page-title">{{pageHeader}}</h1>&ndash;&gt;-->
+                    <!--<div class="row">-->
+                        <!--<div id="viewContent" ng-view></div>-->
+                    <!--</div>-->
+                <!--</main>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</main>-->
 
     <!--TEMPLATE JS-->
     <script src="vendor/jquery/dist/jquery.js"></script>
