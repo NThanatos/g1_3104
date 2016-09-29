@@ -479,10 +479,12 @@ html, body {
 }
 .contentDiv{
   margin-bottom:30px;padding:15px 20px;background:#fff;border-radius:3px
-
-
 }
 
+.courseMenuItem:hover{
+  cursor: pointer;
+  background-color: #e1dcd9;
+ }
 [rotate-flip] {
   -webkit-transition:transform ease 250ms;
   -moz-transition:transform ease 250ms;

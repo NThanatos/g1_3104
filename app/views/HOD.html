@@ -1,0 +1,18 @@
+<section class="contentDiv">
+    <h3><strong>Head of Department : </strong> department name here</h3>
+</section>
+<div class="contentDiv" style="position: absolute; max-width: 17%" >
+    <table class="">
+        <thead>
+        <tr>
+            <th>
+                Courses<hr>
+            </th>
+        </tr>
+        </thead>
+        <tr ng-repeat="t in Courses" class="courseMenuItem" ng-class="{active:isActiveTab(t.content)}" ng-click="onClickTab(t)"><td><span class="xn-text">{{t.title}}</span> </td></tr>
+    </table>
+
+</div>
+
+<div ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>

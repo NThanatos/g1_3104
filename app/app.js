@@ -9,6 +9,7 @@ angular.module('G1Project', [
     'G1.Create',
     'G1.AdminDashboard',
     'G1.NewAccountCreation',
+    'G1.Hod'
 ])
    .controller('MainCtrl', function($scope, $http) {
 
@@ -29,6 +30,11 @@ angular.module('G1Project', [
             .when('/Create', {
                 templateUrl: 'views/Create.html',
                 controller: 'CreateCtrl'
+            })
+
+            .when('/Hod', {
+                templateUrl: 'views/Hod.html',
+                controller: 'HodCtrl'
             })
 
             .when('/Dashboard', {
