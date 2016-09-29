@@ -6,7 +6,9 @@ angular.module('G1Project', [
     'angularUtils.directives.dirPagination',
     '720kb.datepicker',
     'G1.Dashboard',
-    'G1.Create'
+    'G1.Create',
+    'G1.AdminDashboard',
+    'G1.NewAccountCreation',
 ])
    .controller('MainCtrl', function($scope, $http) {
 
@@ -32,6 +34,14 @@ angular.module('G1Project', [
             .when('/Dashboard', {
                 templateUrl: 'views/Dashboard.html',
                 controller: 'DashboardCtrl'
+            })
+            .when('/AdminDashboard', {
+                templateUrl: 'views/Admin/AdminDashboard.html',
+                controller: 'AdminDashboardCtrl'
+            })
+            .when('/NewAccountCreation', {
+                templateUrl: 'views/Admin/NewAccountCreation.html',
+                controller: 'NewAccountCreationCtrl'
             })
             .otherwise({redirectTo: '/Dashboard'});
 

@@ -1,0 +1,21 @@
+<!-- Table to show employee detalis -->
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th>Account ID</th>
+            <th>Name</th>
+            <th>Email Address</th>
+        </tr>
+        <tr ng-repeat="detail in details| filter:search_query">
+            <td><span>{{detail.idstudents}}</span></td>
+            <td>{{detail.name}}</td>
+            <td>{{detail.email}}</td>
+            <td>
+                <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
