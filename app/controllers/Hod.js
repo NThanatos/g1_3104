@@ -11,8 +11,8 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             // $scope.LoadingTrue;
             $scope.Courses = [
                 {title:'course 111111111111111111 444444444', content:'views/courseGrades.html'},
-                {title:'course 2', content:''},
-            ]
+                {title:'course 2', content:'views/courseGrades.html'},
+            ];
 
             $scope.currentTab = '';
 
@@ -24,9 +24,24 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.isActiveTab = function(tabContent) {
                 return tabContent == $scope.currentTab;
             };
+
+            $scope.Grades = [
+                {Name:'Sam',
+                Grade:'A+'},
+                {Name:'Tom',
+                    Grade:'B+'},
+                {Name:'Lee',
+                    Grade:'Fail'}
+            ];
+
+            $scope.editGradeForm = true;
+            $scope.toggleeditGradeForm = function() {
+                $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
+            };
+
+
         })();
 
-//Other Function-------------------------------------------------------------------------------------------------------
-
+//Other Function------------------------------------------------------------------------------------------------------
 
     }]);    //End of Dashboard controller

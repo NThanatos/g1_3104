@@ -418,6 +418,13 @@ html, body {
 .introContainer h1 {
   color: white;
 }
+.ModalForms{
+  z-index: 11;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: #0a0a0a;
+}
 
 .loadingMask{
   text-align: center;
@@ -428,7 +435,7 @@ html, body {
   height: 100%;
   background-color: black;
   opacity: 0.6;
-  z-index: 99997;
+  z-index: 10;
 }
 
 .blkscreen{
@@ -443,6 +450,7 @@ html, body {
 .blkscreen.in {
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 
 /*dashboard css*/
