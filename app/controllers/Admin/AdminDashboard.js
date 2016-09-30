@@ -19,8 +19,6 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             $window.location.href = 'views/Admin//NewAccountCreation.html';
         }
 //Other Function-------------------------------------------------------------------------------------------------------
-        $scope.clickme = function () {
-            alert("hit me");
-        }
+
 
     }]);    //End of Dashboard controller

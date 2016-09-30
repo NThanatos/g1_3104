@@ -809,3 +809,15 @@ body.page-container-boxed .page-container {
     width: 300px;
   }
 }
+
+.ngAnimate {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+  position: fixed;
+
+}
+
+.ngAnimate.ng-hide {
+  opacity: 0;
+}
