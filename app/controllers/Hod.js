@@ -10,8 +10,8 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             // $scope.LoadingFalse();
             // $scope.LoadingTrue;
             $scope.Courses = [
-                {title:'course 111111111111111111 444444444', content:'views/courseGrades.html'},
-                {title:'course 2', content:'views/courseGrades.html'},
+                {title:'Programming Fundamentals', content:'views/courseGrades.html'},
+                {title:'Intro to Software Engineering', content:'views/courseGrades.html'},
             ];
 
             $scope.currentTab = '';
@@ -19,6 +19,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             //Click on tab to change content
             $scope.onClickTab = function (tab) {
                 $scope.currentTab = tab.content;
+                $scope.currentCourse = tab.title;
 
             };
             $scope.isActiveTab = function(tabContent) {
@@ -34,14 +35,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                     Grade:'Fail'}
             ];
             $scope.editGradeForm = true;
-            $scope.toggleeditGradeForm = function(item) {
-                $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
-                $scope.editGradeFormContent =[{
-                    Name : item.Name,
-                    Grade: item.Grade
-                }];
-            };
-
+            $scope.editGradeFormContent=[];
 
 
         })();
@@ -52,4 +46,13 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
         
         $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
     }
+
+        $scope.PublishGrades = function () {
+            alert("Logic not done!")
+        }
+
+        $scope.toggleeditGradeForm = function(item) {
+            $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
+            $scope.editGradeFormContent = item;
+        };
     }]);    //End of Dashboard controller

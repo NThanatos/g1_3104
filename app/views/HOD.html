@@ -2,11 +2,11 @@
     <h3><strong>Head of Department : </strong> department name here</h3>
 </section>
 <div class="contentDiv" style="position: absolute; max-width: 17%;" >
-    <table class="">
+    <table class="table table-hover">
         <thead>
         <tr>
             <th>
-                Courses<hr>
+                Courses
             </th>
         </tr>
         </thead>
@@ -14,22 +14,21 @@
             <td ng-click="onClickTab(t)"><span class="xn-text">{{t.title}}</span> </td>
         </tr>
     </table>
-
 </div>
 
 <div ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>
 
-<div class="ModalForms" ng-hide="editGradeForm" style="position: fixed; left:40%; top: 20%;" ng-repeat="item in editGradeFormContent">
-    <h5><strong>Edit Student {{item.Name}} Grade</strong></h5>
+<div class="ModalForms" ng-hide="editGradeForm" style="position: fixed; left:40%; top: 20%;">
+    <h5><strong>Edit Student {{editGradeFormContent.Name}} Grade</strong></h5>
     <hr>
     <table>
         <tr>
             <td>Name:</td>
-            <td>{{item.Name}}</td>
+            <td>{{editGradeFormContent.Name}}</td>
         </tr>
         <tr>
             <td>Grade:</td>
-            <td><input placeholder="{{item.Grade}}"></td>
+            <td><input placeholder="{{editGradeFormContent.Grade}}"></td>
         </tr>
 
         <tr>
