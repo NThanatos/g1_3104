@@ -3,30 +3,15 @@
     <table class="table table-inverse">
         <thead>
         <tr>
-            <td>Student Name</td>
-            <td>Grade</td>
-            <td>Freeze</td>
+            <th>Student Name</th>
+            <th>Grade</th>
+            <th>Freeze</th>
         </tr>
         </thead>
-        <tr>
-            <td>Sammy</td>
-            <td>B+</td>
-            <td><button class="btn-danger btn-xs">freeze</button></td>
-        </tr>
-        <tr>
-            <td>Joey</td>
-            <td>D+</td>
-            <td><button class="btn-danger btn-xs">freeze</button></td>
-        </tr>
-        <tr>
-            <td>Dhina</td>
-            <td>A+</td>
-            <td><button class="btn-danger btn-xs">freeze</button></td>
-        </tr>
-        <tr>
-            <td>Nicholas</td>
-            <td>A+</td>
-            <td><button class="btn-danger btn-xs">freeze</button></td>
+        <tr ng-repeat="stu in Grades">
+            <td>{{stu.Name}}</td>
+            <td>{{stu.Grade}}</td>
+            <td><button class="btn-group btn-xs" ng-click="toggleeditGradeForm()"><span class="glyphicon glyphicon-edit"></span></button></td>
         </tr>
     </table>
 </section>
