@@ -33,15 +33,23 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                 {Name:'Lee',
                     Grade:'Fail'}
             ];
-
             $scope.editGradeForm = true;
-            $scope.toggleeditGradeForm = function() {
+            $scope.toggleeditGradeForm = function(item) {
                 $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
+                $scope.editGradeFormContent =[{
+                    Name : item.Name,
+                    Grade: item.Grade
+                }];
             };
+
 
 
         })();
 
 //Other Function------------------------------------------------------------------------------------------------------
-
+    $scope.SaveGradeForm = function () {
+        alert("Logic not done!")
+        
+        $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
+    }
     }]);    //End of Dashboard controller

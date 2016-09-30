@@ -5,13 +5,13 @@
         <tr>
             <th>Student Name</th>
             <th>Grade</th>
-            <th>Freeze</th>
+            <th>Edit</th>
         </tr>
         </thead>
         <tr ng-repeat="stu in Grades">
             <td>{{stu.Name}}</td>
             <td>{{stu.Grade}}</td>
-            <td><button class="btn-group btn-xs" ng-click="toggleeditGradeForm()"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td><button class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
         </tr>
     </table>
 </section>
