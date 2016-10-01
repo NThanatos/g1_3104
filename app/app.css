@@ -829,3 +829,27 @@ body.page-container-boxed .page-container {
 .ngAnimate.ng-hide {
   opacity: 0;
 }
+
+
+/*lecturer */
+.grades-button{
+  background-color: #EA80FC;
+  font-size: 1.5em;
+  width: 200px;
+  height: 150px;
+}
+.glyphicon{
+  font-size: 1.5em;
+}
+.glyphicon-edit{
+  font-size: 0.8em;
+}
+.glyphicon-plus{
+  font-size: 0.8em;
+}
+.recommend-button{
+  background-color: #00E676;
+  font-size: 1.5em;
+  width: 200px;
+  height: 150px;
+}

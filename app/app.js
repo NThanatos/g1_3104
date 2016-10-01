@@ -9,7 +9,8 @@ angular.module('G1Project', [
     'G1.Create',
     'G1.AdminDashboard',
     'G1.NewAccountCreation',
-    'G1.Hod'
+    'G1.Hod',
+    'G1.Lecturer'
 ])
    .controller('MainCtrl', function($scope, $http) {
 
@@ -48,6 +49,20 @@ angular.module('G1Project', [
             .when('/NewAccountCreation', {
                 templateUrl: 'views/Admin/NewAccountCreation.html',
                 controller: 'NewAccountCreationCtrl'
+            })
+            .when ('/Lecturer', {
+                templateUrl: 'views/Lecturer.html',
+                controller: 'LecturerCtrl'
+            })
+
+            .when('/modulesGrades_Lect', {
+                templateUrl: 'views/modulesGrades_Lect.html',
+                controller: 'LecturerCtrl'
+            })
+
+            .when('/recommendation', {
+                templateUrl: 'views/recommendation.html',
+                controller: 'LecturerCtrl'
             })
             .otherwise({redirectTo: '/Dashboard'});
 
