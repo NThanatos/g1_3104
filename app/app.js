@@ -10,6 +10,7 @@ angular.module('G1Project', [
     'G1.AdminDashboard',
     'G1.NewAccountCreation',
     'G1.Hod',
+    'G1.login',
     'G1.Lecturer'
 ])
    .controller('MainCtrl', function($scope, $http) {
@@ -77,7 +78,7 @@ angular.module('G1Project', [
 
             .when('/login', {
                 templateUrl: 'views/login.html',
-                controller: 'LoginCtrl'
+                controller: 'loginCtrl'
             })
             .otherwise({redirectTo: '/login'});
 
