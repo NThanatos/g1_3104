@@ -22,6 +22,16 @@ angular.module('G1Project', [
        $scope.LoadingFalse = function() {
            $scope.showLoading = false
        };
+
+       var config = {
+           apiKey: "AIzaSyBCagtKLDBADDPwGVeqZg56iir2opfFF1o",
+           authDomain: "ict3104.firebaseapp.com",
+           databaseURL: "https://ict3104.firebaseio.com",
+           storageBucket: "ict3104.appspot.com",
+           messagingSenderId: "33658218550"
+       };
+       firebase.initializeApp(config);
+
     })
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -64,7 +74,15 @@ angular.module('G1Project', [
                 templateUrl: 'views/recommendation.html',
                 controller: 'LecturerCtrl'
             })
-            .otherwise({redirectTo: '/Dashboard'});
+
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl'
+            })
+            .otherwise({redirectTo: '/login'});
+
+
+
 
     }]);
 
