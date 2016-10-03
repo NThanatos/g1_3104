@@ -13,7 +13,19 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$scope', function($scope) {
+    .controller('loginCtrl', ['$scope', '$firebaseObject', '$firebaseArray', function($scope, $firebaseObject, $firebaseArray) {
+
+        //get the entire database tree
+        const rootRef=firebase.database().ref();
+
+        //zoom in to users table
+        const ref = rootRef.child('users');
+
+        //noticed that object is suitable for json
+        this.userobj = $firebaseObject(ref);
+
+        //this allows us to use the array and the scope notation we are used to
+        $scope.usertable = $firebaseArray(ref);
 
         $scope.login = function(){
             firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
@@ -22,8 +34,10 @@ angular.module('G1.login', ['ngRoute'])
                 var errorMessage = error.message;
                 console.log(errorCode);
                 console.log(errorMessage);
-
+                alert(errorCode);
+                alert(errorMessage);
             });
+
             alert("Welcome "+$scope.email);
         }
 

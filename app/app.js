@@ -1,5 +1,14 @@
 'use strict';
 
+var config = {
+    apiKey: "AIzaSyBCagtKLDBADDPwGVeqZg56iir2opfFF1o",
+    authDomain: "ict3104.firebaseapp.com",
+    databaseURL: "https://ict3104.firebaseio.com",
+    storageBucket: "ict3104.appspot.com",
+    messagingSenderId: "33658218550"
+};
+firebase.initializeApp(config);
+
 // Declare app level module which depends on views, and components
 angular.module('G1Project', [
     'ngRoute',
@@ -11,9 +20,10 @@ angular.module('G1Project', [
     'G1.NewAccountCreation',
     'G1.Hod',
     'G1.login',
-    'G1.Lecturer'
+    'G1.Lecturer',
+    'firebase'
 ])
-   .controller('MainCtrl', function($scope, $http) {
+   .controller('MainCtrl', function($scope, $http, $firebaseObject) {
 
 
        $scope.showLoading = false;
@@ -24,14 +34,6 @@ angular.module('G1Project', [
            $scope.showLoading = false
        };
 
-       var config = {
-           apiKey: "AIzaSyBCagtKLDBADDPwGVeqZg56iir2opfFF1o",
-           authDomain: "ict3104.firebaseapp.com",
-           databaseURL: "https://ict3104.firebaseio.com",
-           storageBucket: "ict3104.appspot.com",
-           messagingSenderId: "33658218550"
-       };
-       firebase.initializeApp(config);
 
     })
 
