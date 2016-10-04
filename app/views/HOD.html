@@ -10,7 +10,7 @@
             </th>
         </tr>
         </thead>
-        <tr ng-repeat="t in Courses" class="courseMenuItem" ng-class="{active:isActiveTab(t.content)}" >
+        <tr ng-repeat="t in Courses" class="courseMenuItem" ng-class="{active:isActiveTab(t.title)}" >
             <td ng-click="onClickTab(t)"><span class="xn-text">{{t.title}}</span> </td>
         </tr>
     </table>
