@@ -5,7 +5,7 @@
 
 angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', function ($route, $rootScope, $scope, $location, $http, $window, $filter) {
+    .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$http', '$window', '$filter', function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray) {
 
         (function initController() {
 
@@ -15,10 +15,13 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
             // $scope.LoadingTrue;
         })();
         function getInfo() {
-            $http.get('http://localhost:81/students.php')
-                .success(function (data) {
-                    $scope.details = data;
-                });
+            //get the entire database tree
+            const rootRef = firebase.database().ref();
+
+            //zoom in to users table
+            const ref = rootRef.child('testUsers');
+            //this allows us to use the array and the scope notation we are used to
+            $scope.details = $firebaseArray(ref);
         }
 
         $scope.viewEditForm = true;
@@ -28,21 +31,55 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
             $scope.currentUser = info;
 
             $scope.viewEditForm = $scope.viewEditForm === false ? true : false;
-        }
+        };
+
+
+        $scope.UpdateInfo = function (info) {
+            $scope.viewEditForm = false;
+            //get the entire database tree
+            const rootRef = firebase.database().ref();
+
+            //zoom in to users table
+            const ref = rootRef.child('testUsers');
+            ref.child(info.$id).update({
+
+                name: info.name,
+                email: info.email,
+                role: info.role
+            });
+            getInfo();
+            $scope.editInfo(info);
+        };
+        $scope.deleteInfo = function (info) {
+            //get the entire database tree
+            const rootRef = firebase.database().ref();
+
+            //zoom in to users table
+            const ref = rootRef.child('testUsers');
+            ref.child(info.$id).remove();
+            getInfo();
+        };
+
+        $scope.AddInfo = function (info) {
+            //get the entire database tree
+            const rootRef = firebase.database().ref();
+
+            //zoom in to users table
+            const ref = rootRef.child('testUsers');
+
+            var newRef = ref.push();
+            newRef.set({
+                name: info.name,
+                email: info.email,
+                role: info.role
+            });
+            $scope.addForm();
+            getInfo();
+        };
+
         $scope.addForm = function () {
 
             $scope.viewAddForm = $scope.viewAddForm === false ? true : false;
         }
 
-        $scope.UpdateInfo = function (info) {
-            $scope.viewEditForm = false;
-            //perform database insertion here
-            getInfo();
-        }
-
-        $scope.AddInfo = function (info) {
-            $scope.viewAddForm = false;
-            //perform database insertion here
-            getInfo();
-        }
     }]);

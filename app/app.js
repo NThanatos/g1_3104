@@ -82,6 +82,10 @@ angular.module('G1Project', [
                 templateUrl: 'views/login.html',
                 controller: 'loginCtrl'
             })
+            .when('/BackUpData', {
+                templateUrl: 'views/Admin/BackUpData.html',
+                controller: 'BackUpDataCtrl'
+            })
             .otherwise({redirectTo: '/login'});
 
 

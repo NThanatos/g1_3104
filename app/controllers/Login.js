@@ -28,6 +28,7 @@ angular.module('G1.login', ['ngRoute'])
         $scope.usertable = $firebaseArray(ref);
 
         $scope.login = function(){
+
             firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;

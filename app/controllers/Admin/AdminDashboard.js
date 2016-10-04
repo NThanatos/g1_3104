@@ -1,11 +1,14 @@
 /**
+ * Created by DHINA on 10/2/2016.
+ */
+/**
  * Created by DHINA on 9/28/2016.
  */
 'use strict';
 
 angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('AdminDashboardCtrl', ['$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', function ($route, $rootScope, $scope, $location, $http, $window, $filter) {
+    .controller('AdminDashboardCtrl', [function () {
 
         (function initController() {
 
@@ -13,12 +16,5 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             // $scope.LoadingFalse();
             // $scope.LoadingTrue;
         })();
-
-//Other Function-------------------------------------------------------------------------------------------------------
-        $scope.NewAccountClick = function () {
-            $window.location.href = 'views/Admin//NewAccountCreation.html';
-        }
-//Other Function-------------------------------------------------------------------------------------------------------
-
 
     }]);    //End of Dashboard controller
