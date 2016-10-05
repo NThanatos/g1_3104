@@ -33,8 +33,7 @@ angular.module('G1Project', [
        $scope.LoadingFalse = function() {
            $scope.showLoading = false
        };
-
-
+       
     })
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -89,6 +88,7 @@ angular.module('G1Project', [
             })
 
             .when('/login', {
+                url:'/inbox/25',
                 templateUrl: 'views/login.html',
                 controller: 'loginCtrl'
             })

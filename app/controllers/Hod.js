@@ -2,7 +2,7 @@
 
 angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', function ($route,$rootScope, $scope,$location,$http,$window,$filter) {
+    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray) {
 
         (function initController() {
 
@@ -10,60 +10,39 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             // $scope.LoadingFalse();
             // $scope.LoadingTrue;
 
-             // $scope.Courses=[{title:'Loading', content:'views/courseGrades.html', status:'t'}];
 
-            $scope.Courses = [
-                {title:'Intro to Software Engineering', status:'Pending'},
-                {title:'Programming Fundamentals',  status:'Published'}
-            ];
-
-             var Courses = firebase.database().ref().child("Courses");
-            Courses.on('value', function (datasnapshot) {
-                $scope.Courses = datasnapshot.val();
-                console.log($scope.Courses[1].title);
-                // $scope.Courses.push({
-                //     title: datasnapshot.child("title").val(),
-                //     status: datasnapshot.child("status").val()
-                // })
-            });
-
-
-
-
-
+            getCourses();
+            //
+            // var Courses = firebase.database().ref().child("Courses");
+            // Courses.on('value', function (datasnapshot) {
+            //     $scope.Courses = datasnapshot.val();
+            //     console.log($scope.Courses[1].title);
+            //     // $scope.Courses.push({
+            //     //     title: datasnapshot.child("title").val(),
+            //     //     status: datasnapshot.child("status").val()
+            //     // })
+            // });
 
 
             $scope.currentTab = '';
-            //Click on tab to change content
-            $scope.onClickTab = function (tab) {
-                $scope.currentTab = 'views/courseGrades.html';
-                $scope.currentCourse = tab.title;
-                $scope.currentCourseStatus = tab.status;
-
-                if ($scope.currentCourseStatus == 'Pending'){
-                    $scope.SelectedStatus = false;
-                }
-                else {
-                    $scope.SelectedStatus = true;
-                }
-
-            };
-            $scope.isActiveTab = function(tabContent) {
-                return tabContent == $scope.currentCourse;
-            };
-            console.log($scope.Courses[1].title);
+            $scope.showGradeTable = true;
+            $scope.NoRecommendation = true;
 
 
             $scope.Grades = [
                 {Name:'Sam',
                 Grade:'A+',
-                Marks: 90},
+                Marks: 90,
+                Recommendation:'test text test text test text test text test text'
+                },
                 {Name:'Tom',
                     Grade:'B+',
-                    Marks: 83},
+                    Marks: 83,
+                    Recommendation:''},
                 {Name:'Lee',
                     Grade:'Fail',
-                    Marks: 39}
+                    Marks: 39,
+                    Recommendation:'test text test text test text test text test text'}
             ];
             $scope.editGradeForm = true;
             $scope.editGradeFormContent=[];
@@ -71,7 +50,18 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
 
         })();
 
+
 //Other Function------------------------------------------------------------------------------------------------------
+        function getCourses() {
+            //get the entire database tree
+            const rootRef = firebase.database().ref();
+
+            //zoom in to users table
+            const ref = rootRef.child('Courses/ICT');
+            //this allows us to use the array and the scope notation we are used to
+            $scope.Courses = $firebaseArray(ref);
+        }
+
         $scope.SaveGradeForm = function () {
             alert("Logic not done!")
         $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
@@ -86,5 +76,29 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.editGradeFormContent = item;
         };
 
+        //Click on tab to change content
+        $scope.onClickTab = function (tab) {
+            $scope.currentTab = 'views/courseGrades.html';
+            $scope.currentCourse = tab.title;
+            $scope.currentCourseStatus = tab.status;
+            $scope.showGradeTable = false;
+            
+            if ($scope.currentCourseStatus == 'Pending'){
+                $scope.SelectedStatus = false;
+            }
+            else {
+                $scope.SelectedStatus = true;
+            }
+
+        };
+        $scope.isActiveTab = function(tabContent) {
+            return tabContent == $scope.currentCourse;
+        };
+
+        $scope.checkRecommemdation = function (item) {
+            if (item == ''){
+                return true;
+            }
+        };
 
     }]);    //End of Dashboard controller

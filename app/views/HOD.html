@@ -16,25 +16,32 @@
     </table>
 </div>
 
-<div ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>
+<div id="courseGradeTable" ng-hide="showGradeTable" ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>
 
 <div class="ModalForms" ng-hide="editGradeForm" style="position: fixed; left:40%; top: 20%;">
     <h5><strong>Edit Student {{editGradeFormContent.Name}} Grade</strong></h5>
     <hr>
     <table>
         <tr>
-            <td>Name:</td>
-            <td>{{editGradeFormContent.Name}}</td>
+            <td>Name:{{editGradeFormContent.Name}}</td>
         </tr>
         <tr>
-            <td>Grade:</td>
-            <td><input placeholder="{{editGradeFormContent.Grade}}"></td>
+            <td>Grade:{{editGradeFormContent.Grade}}</td>
         </tr>
-
+        <tr><hr>
+            <h6 style="align-content: center">Recommendation</h6><hr>
+            <p>{{editGradeFormContent.Recommendation}}</p></tr>
         <tr>
             <td><button class="btn-danger btn-xs" ng-click="toggleeditGradeForm()">Close</button></td>
-            <td style="float:right;"><button class="btn-success btn-xs" ng-click="SaveGradeForm()">Save</button></td>
+            <td style="float:right;"><button class="btn-success btn-xs" ng-click="SaveGradeForm()">Approve</button></td>
         </tr>
     </table>
 </div>
 <div class="loadingMask" ng-hide="editGradeForm"></div>
+
+<script>
+    $("[data-toggle='toggle']").click(function() {
+        var selector = $(this).data("target");
+        $(selector).toggleClass('in');
+    });
+</script>
