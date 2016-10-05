@@ -21,10 +21,16 @@ angular.module('G1Project', [
     'G1.Hod',
     'G1.login',
     'G1.Lecturer',
-    'firebase'
+    'firebase',
+    'ngCookies'
 ])
-   .controller('MainCtrl', function($scope, $http, $firebaseObject) {
+   .controller('MainCtrl', function($scope, $http, $firebaseObject, $cookies, $cookieStore) {
 
+       $cookies.put('user', 'Nicholas');
+       var testCookie = $cookies.get('user');
+
+       alert(testCookie);
+       
 
        $scope.showLoading = false;
        $scope.LoadingTrue = function() {

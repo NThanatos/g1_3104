@@ -2,14 +2,14 @@
 
 angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray) {
+    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray','$cookies','$cookieStore',
+        function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray,$cookies,$cookieStore) {
 
         (function initController() {
 
             //Display spinner during data loading
             // $scope.LoadingFalse();
             // $scope.LoadingTrue;
-
 
             getCourses();
             //
@@ -57,7 +57,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             const rootRef = firebase.database().ref();
 
             //zoom in to users table
-            const ref = rootRef.child('Courses/ICT');
+            const ref = rootRef.child('Courses/ICT/modules');
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
         }
