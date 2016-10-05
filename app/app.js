@@ -33,7 +33,24 @@ angular.module('G1Project', [
                 templateUrl: 'views/Dashboard.html',
                 controller: 'DashboardCtrl'
             })
+
+            .when('/RegisterStudent',{
+                templateUrl: 'views/CreateStudent.html',
+                controller: 'RegisterStudent'
+            })
+
+            .when('/StudentDashboard',{
+                templateUrl: 'views/StudentDashboard.html',
+                controller: 'StudentDashboard'
+            })
+
+            .when('/StudentGrades',{
+                templateUrl: 'views/StudentGrades.html',
+                controller: 'StudentGrades'
+            })
             .otherwise({redirectTo: '/Dashboard'});
+
+
 
     }]);
 

@@ -489,3 +489,7 @@ html, body {
   transform:rotate(180deg);
 }
 
+
+#grradestable {
+  border: 1pt;
+}

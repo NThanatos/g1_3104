@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="G1.StudentDashboard">
+
+<head>
+    <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Angular Material Dependencies -->
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script>  <!-- Use dev version of Angular Material -->
+    <script src="https://rawgit.com/angular/bower-material/master/angular-material.min.js"></script>
+
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="StudentDashboard">
+<h1>Welcome, student. </h1>
+<div ng-controller="StudentDashboard" ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Your Grades</span>
+                        <span class="md-subhead">Grades</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+
+        </div>
+    </md-content>
+</div>
+
+<div ng-controller="StudentDashboard" ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Your Recommendations</span>
+                        <span class="md-subhead">Recommendations:</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+
+        </div>
+    </md-content>
+</div>
+</body>
+
+</html>
