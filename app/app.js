@@ -73,8 +73,18 @@ angular.module('G1Project', [
                 controller: 'LecturerCtrl'
             })
 
+            .when('/editgrade_lect', {
+                templateUrl: 'views/editgrade_lect.html',
+                controller: 'LecturerCtrl'
+            })
+
             .when('/recommendation', {
                 templateUrl: 'views/recommendation.html',
+                controller: 'LecturerCtrl'
+            })
+
+            .when('/addRecommendation', {
+                templateUrl: 'views/addRecommendation.html',
                 controller: 'LecturerCtrl'
             })
 
