@@ -1,0 +1,42 @@
+<!--
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+-->
+<div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+            <div class="panel-heading">
+                <h2>Login</h2>
+
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="email" required />
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+
+                <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                </div>
+                <button ng-click="login()" class="btn btn-primary">Login</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div ng-controller="loginCtrl as ctrl">
+    <p>firebase obj</p>
+    <pre>
+{{ctrl.userobj|json}}
+    </pre>
+    <p>firebase array</p>
+    {{usertable}}
+
+
+    <p>Simple nested query eg to retrieve all emails</p>
+    <p ng-repeat="temp in usertable">
+        {{temp.email}}
+    </p>
+</div>

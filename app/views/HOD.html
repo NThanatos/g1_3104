@@ -1,0 +1,40 @@
+<section class="contentDiv">
+    <h3><strong>Head of Department : </strong> department name here</h3>
+</section>
+<div class="contentDiv" style="position: absolute; max-width: 17%;" >
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>
+                Courses
+            </th>
+        </tr>
+        </thead>
+        <tr ng-repeat="t in Courses" class="courseMenuItem" ng-class="{active:isActiveTab(t.title)}" >
+            <td ng-click="onClickTab(t)"><span class="xn-text">{{t.title}}</span> </td>
+        </tr>
+    </table>
+</div>
+
+<div ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>
+
+<div class="ModalForms" ng-hide="editGradeForm" style="position: fixed; left:40%; top: 20%;">
+    <h5><strong>Edit Student {{editGradeFormContent.Name}} Grade</strong></h5>
+    <hr>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>{{editGradeFormContent.Name}}</td>
+        </tr>
+        <tr>
+            <td>Grade:</td>
+            <td><input placeholder="{{editGradeFormContent.Grade}}"></td>
+        </tr>
+
+        <tr>
+            <td><button class="btn-danger btn-xs" ng-click="toggleeditGradeForm()">Close</button></td>
+            <td style="float:right;"><button class="btn-success btn-xs" ng-click="SaveGradeForm()">Save</button></td>
+        </tr>
+    </table>
+</div>
+<div class="loadingMask" ng-hide="editGradeForm"></div>

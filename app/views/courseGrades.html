@@ -1,0 +1,20 @@
+<section class="contentDiv">
+    <h4><strong>{{currentCourse}} | </strong> Status: {{currentCourseStatus}}</h4>
+    <table class="table table-inverse">
+        <button class="btn-warning btn-sm"  style="float: right" ng-click="PublishGrades()" ng-hide="SelectedStatus">Publish</button>
+        <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Grade</th>
+            <th>Marks</th>
+            <th ng-hide="SelectedStatus">Edit</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="stu in Grades">
+            <td>{{stu.Name}}</td>
+            <td>{{stu.Grade}}</td>
+            <td>{{stu.Marks}}</td>
+            <td ng-hide="SelectedStatus"><button class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
+        </tr>
+    </table>
+</section>

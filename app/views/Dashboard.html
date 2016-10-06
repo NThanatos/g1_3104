@@ -1,6 +1,6 @@
 <div id="dashboardContent">
     <div id="dashboardMain">
-        <section id="NewsSection" class="widget">
+        <section id="NewsSection" class="contentDiv">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#NewsContent">
                 <h5>News <span class="caret"></span></h5>
             </button>
@@ -10,21 +10,21 @@
 
         </section>
 
-        <section id="MyCourseSection" class="widget">
+        <section id="MyCourseSection" class="contentDiv">
 
             <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#MyCourseContent" ng-click="hideSection($scope.MyCourseRotated)">
-                <h5>My Course <span class="caret"></span> <i class="fa fa-angle-up" rotate-flip="rotated"></i></h5>
+                <h5>My Course <span class="caret"></span></h5>
             </button>
             <div class="contentSection" id="MyCourseContent">
                 <h1>hide</h1>
             </div>
         </section>
 
-        <section id="UpcomingEventsSection" class="widget">
+        <section id="UpcomingEventsSection" class="contentDiv">
 
             <button type="button" class="btn btn-primary btn-xs" data-toggle="toggle" data-target="#UpComingEventsContent" ng-click="rotate()">
-                <h5>Upcoming Events <i class="fa fa-angle-up" rotate-flip="rotated"></i></h5>
-            </button>
+            <h5>Upcoming Events <i class="fa fa-angle-up" rotate-flip="rotated"></i></h5>
+        </button>
             <div class="contentSection" id="UpComingEventsContent">
                 <h1>hide</h1>
             </div>
@@ -47,16 +47,7 @@
             <p>blah</p>
             <p>blah</p>
             <p>blah</p>
-
-
         </section>
     </div>
 </div>
-
-<script>
-    $("[data-toggle='toggle']").click(function() {
-        var selector = $(this).data("target");
-        $(selector).toggleClass('in');
-    });
-</script>
 

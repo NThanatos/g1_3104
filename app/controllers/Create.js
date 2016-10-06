@@ -25,6 +25,9 @@ angular.module('G1.Create', ['ngRoute', 'angularUtils.directives.dirPagination',
                 $scope.currentTab = tab.content;
 
             };
+            $scope.isActiveTab = function(tabContent) {
+                return tabContent == $scope.currentTab;
+            };
 
         })();
 
