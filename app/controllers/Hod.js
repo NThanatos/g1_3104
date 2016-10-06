@@ -29,21 +29,21 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.NoRecommendation = true;
 
 
-            $scope.Grades = [
-                {Name:'Sam',
-                Grade:'A+',
-                Marks: 90,
-                Recommendation:'test text test text test text test text test text'
-                },
-                {Name:'Tom',
-                    Grade:'B+',
-                    Marks: 83,
-                    Recommendation:''},
-                {Name:'Lee',
-                    Grade:'Fail',
-                    Marks: 39,
-                    Recommendation:'test text test text test text test text test text'}
-            ];
+            // $scope.Grades = [
+            //     {Name:'Sam',
+            //     Grade:'A+',
+            //     Marks: 90,
+            //     Recommendation:'test text test text test text test text test text'
+            //     },
+            //     {Name:'Tom',
+            //         Grade:'B+',
+            //         Marks: 83,
+            //         Recommendation:''},
+            //     {Name:'Lee',
+            //         Grade:'Fail',
+            //         Marks: 39,
+            //         Recommendation:'test text test text test text test text test text'}
+            // ];
             $scope.editGradeForm = true;
             $scope.editGradeFormContent=[];
 
@@ -62,6 +62,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.Courses = $firebaseArray(ref);
         }
 
+
         $scope.SaveGradeForm = function () {
             alert("Logic not done!")
         $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
@@ -73,6 +74,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
 
         $scope.toggleeditGradeForm = function(item) {
             $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
+            console.log(item)
             $scope.editGradeFormContent = item;
         };
 
@@ -82,7 +84,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.currentCourse = tab.title;
             $scope.currentCourseStatus = tab.status;
             $scope.showGradeTable = false;
-            
+
             if ($scope.currentCourseStatus == 'Pending'){
                 $scope.SelectedStatus = false;
             }
@@ -90,15 +92,38 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                 $scope.SelectedStatus = true;
             }
 
+            // set grades info
+            $scope.Grades = $scope.Courses[$scope.Courses.indexOf(tab)].student
+            console.log('index is : '+ $scope.Courses.indexOf(tab));
+            console.log($scope.Grades);
+            console.log($scope.Courses);
+            // console.log($scope.Grades[0].marks);
         };
         $scope.isActiveTab = function(tabContent) {
             return tabContent == $scope.currentCourse;
         };
 
         $scope.checkRecommemdation = function (item) {
-            if (item == ''){
+            if (item == 0){
                 return true;
             }
         };
+        $scope.getGrade = function (mark) {
+            if (mark > 85){
+                return 'A';
+            }
+                else if(mark > 70){
+                return 'B';
+            }
+            else if(mark > 60){
+                return 'C';
+            }
+            else if(mark > 50){
+                return 'D';
+            }
+            else{
+                return 'Fail';
+            }
+        }
 
     }]);    //End of Dashboard controller
