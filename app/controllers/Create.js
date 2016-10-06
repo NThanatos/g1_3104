@@ -2,14 +2,10 @@
 
 angular.module('G1.Create', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('CreateCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', function ($route,$rootScope, $scope,$location,$http,$window,$filter) {
+    .controller('CreateCtrl', ['$cookies', '$cookieStore', '$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', function ($route, $rootScope, $scope, $cookies, $cookieStore) {
 
         (function initController() {
-
-            //Display spinner during data loading
-            // $scope.LoadingFalse();
-            // $scope.LoadingTrue;
-
+            alert($scope.user);
             //Selection of tab content
             $scope.tabs = [
                 { title:'Create Head of Department', content:'views/CreateHeadOfDepartment.html'},

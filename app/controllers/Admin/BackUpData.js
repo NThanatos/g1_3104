@@ -15,8 +15,8 @@ angular.module('G1.BackUpData', ['ngRoute', 'angularUtils.directives.dirPaginati
 
 //Other Function-------------------------------------------------------------------------------------------------------
         $scope.backup = function () {
-            alert("data downloaded");
-        }
+            alert("Link to go to firebase to import data");
+        };
 
     }]);    //End of Dashboard controller
 

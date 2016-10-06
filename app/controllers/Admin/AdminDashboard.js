@@ -8,13 +8,14 @@
 
 angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('AdminDashboardCtrl', [function () {
+    .controller('AdminDashboardCtrl', ['$cookies', '$cookieStore', function ($cookies, $cookieStore) {
 
         (function initController() {
 
-            //Display spinner during data loading
-            // $scope.LoadingFalse();
-            // $scope.LoadingTrue;
+            $cookieStore.put("user", "dhina");
+            var value = $cookieStore.get("user");
+            alert(value);
+
         })();
 
     }]);    //End of Dashboard controller
