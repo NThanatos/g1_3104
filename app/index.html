@@ -21,7 +21,7 @@
     <!-- END PLUGINS -->
 
     <!--TEMPLATE CSS-->
-    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-black.css"/>
+    <link rel="stylesheet" type="text/css" href="css/theme-black.css"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
     <link href="css/application.css" rel="stylesheet">
     <link href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css"/>
@@ -83,33 +83,36 @@
             <li>
                 <a href="#Dashboard"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
             </li>
+            <li data-toggle="toggle" data-target="#menuTest">
+                <a>
+                    <span class="xn-text">My Modules <span class="caret"></span></span>
+                </a>
+            </li>
+            <li id="menuTest" class="MenuSubItem">
+                <div>
+                    <ul class="x-navigation">
+                        <li>
+                            <a href="#"><span class="fa fa-server"></span><span class="xn-text">ICT1101</span></a>
+                        </li>
+                        <li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">ICT1102</span></a> </li>
+                    </ul>
+                </div>
+            </li>
             <!--<li>-->
                 <!--<a href="#Create"><span class="fa fa-desktop"></span> <span class="xn-text">Create</span></a>-->
             <!--</li>-->
+            <li class="xn-title">Admin</li>
             <li>
                 <a href="#AdminDashboard"><span class="fa fa-desktop"></span> <span class="xn-text">Admin dashboard</span></a>
             </li>
+            <li class="xn-title">Head of Department</li>
             <li>
-                <a href="#Hod"><span class="fa fa-black-tie"></span> <span class="xn-text">Head of Department</span></a>
+                <a href="#Hod"><span class="fa fa-black-tie"></span> <span class="xn-text">View Grades</span></a>
             </li>
+            <li class="xn-title">Lecturer</li>
             <li>
-                <a href="#Lecturer"><span class="fa fa-male"></span> <span class="xn-text">Lecturer</span></a>
+                <a href="#Lecturer"><span class="fa fa-male"></span> <span class="xn-text">My Class Grades</span></a>
             </li>
-            <!--<li data-toggle="toggle" data-target="#menuTest">-->
-                <!--<a>-->
-                    <!--<span class="xn-text">Menu Test <span class="caret"></span></span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li id="menuTest" class="MenuSubItem">-->
-                <!--<div>-->
-                    <!--<ul class="x-navigation">-->
-                        <!--<li>-->
-                            <!--<a href="#"><span class="fa fa-server"></span><span class="xn-text">Sun item</span></a>-->
-                        <!--</li>-->
-                        <!--<li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">Some subitem</span></a> </li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</li>-->
             <!--<li>-->
                 <!--<a data-toggle="toggle" data-target="#menuTest2">-->
                     <!--<span class="xn-text">Menu Test <span class="caret"></span></span>-->
@@ -134,21 +137,11 @@
     <div class="page-content">
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <div class="">
                             <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
                             <main id="content" class="content" role="main">
                                 <!--<h1 class="page-title">{{pageHeader}}</h1>-->
                                 <div id="viewContent" ng-view></div>
                             </main>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
             <!-- END PAGE CONTENT WRAPPER -->
         </div>
         <!-- END PAGE CONTENT -->

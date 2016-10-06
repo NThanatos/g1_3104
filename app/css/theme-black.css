@@ -93,7 +93,8 @@ body {
 .page-container .page-sidebar {
   width: 220px;
   background-color: black;
-  min-height: 850px;
+  min-height: 900px;
+  height: auto;
   float: left;
   position: relative;
   z-index: 3;
