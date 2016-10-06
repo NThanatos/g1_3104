@@ -7,14 +7,14 @@
             <th>Student Name</th>
             <th>Grade</th>
             <th>Marks</th>
-            <th ng-hide="SelectedStatus">Edit</th>
+            <th ng-hide="SelectedStatus">Approve</th>
         </tr>
         </thead>
         <tr ng-repeat="stu in Grades">
-            <td>{{stu.Name}}</td>
-            <td>{{stu.Grade}}</td>
-            <td>{{stu.Marks}}</td>
-            <td ng-hide="SelectedStatus"><button class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td>{{stu.name}}</td>
+            <td>{{getGrade(stu.marks)}}</td>
+            <td>{{stu.marks}}</td>
+            <td ng-hide="SelectedStatus"><button ng-hide="checkRecommemdation(stu.recommendation.value)" class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
         </tr>
     </table>
 </section>

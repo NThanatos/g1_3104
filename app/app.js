@@ -22,10 +22,18 @@ angular.module('G1Project', [
     'G1.login',
     'G1.Lecturer',
     'firebase',
-    'G1.Student'
-])
-   .controller('MainCtrl', function($scope, $http, $firebaseObject) {
+    'G1.Student',
 
+    'ngCookies'
+
+])
+   .controller('MainCtrl', function($scope, $http, $firebaseObject, $cookies, $cookieStore) {
+
+       $cookies.put('user', 'Nicholas');
+       var testCookie = $cookies.get('user');
+
+       alert(testCookie);
+       
 
        $scope.showLoading = false;
        $scope.LoadingTrue = function() {
@@ -34,8 +42,7 @@ angular.module('G1Project', [
        $scope.LoadingFalse = function() {
            $scope.showLoading = false
        };
-
-
+       
     })
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -92,12 +99,23 @@ angular.module('G1Project', [
                 controller: 'LecturerCtrl'
             })
 
+            .when('/editgrade_lect', {
+                templateUrl: 'views/editgrade_lect.html',
+                controller: 'LecturerCtrl'
+            })
+
             .when('/recommendation', {
                 templateUrl: 'views/recommendation.html',
                 controller: 'LecturerCtrl'
             })
 
+            .when('/addRecommendation', {
+                templateUrl: 'views/addRecommendation.html',
+                controller: 'LecturerCtrl'
+            })
+
             .when('/login', {
+                url:'/inbox/25',
                 templateUrl: 'views/login.html',
                 controller: 'loginCtrl'
             })
