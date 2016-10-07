@@ -15,9 +15,9 @@
 
     <!-- START PLUGINS -->
 
-    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- END PLUGINS -->
 
     <!--TEMPLATE CSS-->
@@ -30,8 +30,12 @@
 
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
+
 <body ng-controller="MainCtrl">
 
+    <div ng-hide="hidelogin" ng-include src="'views/login.html'">asdsad</div>
+    <div ng-hide="hidemain">
     <header class="cd-header" style="position: fixed">
         <a class="cd-primary-nav-trigger" href="">
             <span class="cd-menu-icon"></span>
@@ -150,7 +154,7 @@
 
 
 </div>
-<<<<<<< HEAD
+
     <!--TEMPLATE JS-->
     <script src="vendor/jquery/dist/jquery.js"></script>
     <script src="vendor/jquery-pjax/jquery.pjax.js"></script>
@@ -205,13 +209,13 @@
     <script src="js/charts.js"></script>
 
 
-<<<<<<< HEAD
+
    <!--CONTROLLER JS-->
    <script src="controllers/Create.js"></script>
    <script src="controllers/Dashboard.js"></script>
    <script src="controllers/RegisterStudent.js"></script>
    <script src="controllers/Student.js"></script>
-=======
+
     <!--CONTROLLER JS-->
     <script src="controllers/Create.js"></script>
     <script src="controllers/Dashboard.js"></script>
@@ -220,50 +224,28 @@
     <script src="controllers/Hod.js"></script>
     <script src="controllers/Lecturer.js"></script>
     <script src="controllers/Login.js"></script>
->>>>>>> 6a23938ba763a17b96a75ab9eb738130cee819a1
-=======
->>>>>>> c5c8dcf9641d851a26482176edede273cd631799
 
     <!--<script src="js/fsm-sticky-header.js"></script>-->
 
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>-->
 
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script>  <!-- Use dev version of Angular Material -->
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script> --> <!-- Use dev version of Angular Material -->
    <script src="https://rawgit.com/angular/bower-material/master/angular-material.min.js"></script>
 
 
     <!--<div ng-hide="showLoading"  class="ngAnimate">-->
     <!--<div class="loadingMask">-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
-    <!--<br>-->
+
     <!--<i class="fa fa-spinner fa-spin" style="font-size:60px;"></i>-->
     <!--</div>-->
     <!--</div>-->
-
+    </div>
 
 </body>
+
 </html>
 <!--TEMPLATE JS-->
 <script src="vendor/jquery/dist/jquery.js"></script>
