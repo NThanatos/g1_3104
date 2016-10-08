@@ -5,7 +5,7 @@
 
 angular.module('G1.login', ['ngRoute'])
 
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/Login', {
             templateUrl: 'views/login.html',
             controller: 'loginCtrl'
@@ -13,11 +13,11 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$rootScope','$scope', '$firebaseObject', '$firebaseArray', '$location', function($rootScope, $scope, $firebaseObject, $firebaseArray, $location) {
+    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location) {
 
         $scope.$parent.updateHidden(0);
         //get the entire database tree
-        const rootRef=firebase.database().ref();
+        const rootRef = firebase.database().ref();
 
         //zoom in to users table
         const userRef = rootRef.child('testUsers');
@@ -28,16 +28,42 @@ angular.module('G1.login', ['ngRoute'])
         //this allows us to use the array and the scope notation we are used to
         $scope.usertable = $firebaseArray(userRef);
 
-        $scope.login = function() {
+        $scope.login = function () {
+            /*
+             //find child that has key email == to the email passed in
+             userRef.orderByChild("email").equalTo($scope.email).on("value", function(snap){
 
-            //find child that has key email == to the email passed in
-            userRef.orderByChild("email").equalTo($scope.email).on("value", function(snap){
+             //loop into children incase there is more than 1 return
+             snap.forEach(function (childSnap) {
+             //check if email and password is the same
+             if((childSnap.val().password)==$scope.password){
+             console.log("Welcome "+$scope.email);
+
+             //store entire user into userData shared across all controllers
+             $rootScope.userData = childSnap.val();
+             //success=true;
+
+             //update hidden
+             $scope.$parent.updateHidden(1);
+             //route to dashboard
+             $location.path('AdminDashboard')
+             }
+             })
+
+             //get the first child object
+             //var myUser = snap.val();
+
+             //console.log(JSON.stringify(myUser));
+             });
+             */
+            //auto sign in as dhina to save time
+            userRef.orderByChild("email").equalTo("dhin@email.com").on("value", function (snap) {
 
                 //loop into children incase there is more than 1 return
                 snap.forEach(function (childSnap) {
                     //check if email and password is the same
-                    if((childSnap.val().password)==$scope.password){
-                        console.log("Welcome "+$scope.email);
+                    if ((childSnap.val().password) == "testpass") {
+                        console.log("Welcome " + $scope.email);
 
                         //store entire user into userData shared across all controllers
                         $rootScope.userData = childSnap.val();

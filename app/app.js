@@ -20,6 +20,7 @@ angular.module('G1Project', [
     'G1.NewAccountCreation',
     'G1.Hod',
     'G1.login',
+    'G1.logout',
     'G1.Lecturer',
     'firebase',
     'G1.Student',
@@ -54,6 +55,8 @@ angular.module('G1Project', [
            }
 
        }
+
+
     })
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -125,16 +128,22 @@ angular.module('G1Project', [
                 controller: 'LecturerCtrl'
             })
 
-            .when('/login', {
+            .when('/Login', {
                 /*url:'/inbox/25',*/
                 templateUrl: 'views/login.html',
                 controller: 'loginCtrl'
             })
+
+            .when('/Logout', {
+                template: 'views/logout.html', //A template or templateUrl is required by AngularJS, even if your controller always redirects.
+                controller: 'logoutCtrl'
+            })
+
             .when('/BackUpData', {
                 templateUrl: 'views/Admin/BackUpData.html',
                 controller: 'BackUpDataCtrl'
             })
-            .otherwise({redirectTo: '/login'});
+            .otherwise({redirectTo: '/Login'});
 
 
 
