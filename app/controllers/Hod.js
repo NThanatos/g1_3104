@@ -27,23 +27,6 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.currentTab = '';
             $scope.showGradeTable = true;
             $scope.NoRecommendation = true;
-
-
-            // $scope.Grades = [
-            //     {Name:'Sam',
-            //     Grade:'A+',
-            //     Marks: 90,
-            //     Recommendation:'test text test text test text test text test text'
-            //     },
-            //     {Name:'Tom',
-            //         Grade:'B+',
-            //         Marks: 83,
-            //         Recommendation:''},
-            //     {Name:'Lee',
-            //         Grade:'Fail',
-            //         Marks: 39,
-            //         Recommendation:'test text test text test text test text test text'}
-            // ];
             $scope.editGradeForm = true;
             $scope.editGradeFormContent=[];
 
@@ -62,12 +45,6 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.Courses = $firebaseArray(ref);
         }
 
-
-        $scope.SaveGradeForm = function () {
-            alert("Logic not done!")
-        $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
-        }
-
         $scope.PublishGrades = function () {
             alert("Logic not done!")
         }
@@ -84,6 +61,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.currentCourse = tab.title;
             $scope.currentCourseStatus = tab.status;
             $scope.showGradeTable = false;
+            $scope.newTab = tab;
 
             if ($scope.currentCourseStatus == 'Pending'){
                 $scope.SelectedStatus = false;
@@ -124,6 +102,25 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             else{
                 return 'Fail';
             }
+        };
+            
+        $scope.replyRecommendation = function (value, answer) {
+
+            var updateValue = {value: value}
+            var newStatus = {status: answer}
+
+            // need to change student id
+            firebase.database().ref('Courses/ICT/modules/ICT1101/student/KTEeY14xEr-od4jg1ND/recommendation').update(updateValue)
+            firebase.database().ref('Courses/ICT/modules/ICT1101/student/KTEeY14xEr-od4jg1ND').update(newStatus);
+
+            // getCourses()
+            // set grades info
+            $scope.Grades = $scope.Courses[$scope.Courses.indexOf($scope.newTab)].student
+            console.log('index is : '+ $scope.Courses.indexOf($scope.newTab));
+            console.log($scope.Grades);
+            console.log($scope.Courses);
+
+            $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
         }
 
     }]);    //End of Dashboard controller
