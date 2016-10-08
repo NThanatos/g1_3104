@@ -42,8 +42,18 @@ angular.module('G1Project', [
        $scope.LoadingFalse = function() {
            $scope.showLoading = false
        };
-       $scope.hidemain=true;
-       $scope.hidelogin=false;
+
+       $scope.updateHidden=function(int)  {
+
+           if(int==1){
+               $scope.hidemain=false;
+               $scope.hidelogin=true;
+           }else{
+               $scope.hidemain=true;
+               $scope.hidelogin=false;
+           }
+
+       }
     })
 
     .config(['$routeProvider', function ($routeProvider) {

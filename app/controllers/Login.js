@@ -13,42 +13,50 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$scope', '$firebaseObject', '$firebaseArray', function($scope, $firebaseObject, $firebaseArray) {
+    .controller('loginCtrl', ['$rootScope','$scope', '$firebaseObject', '$firebaseArray', '$location', function($rootScope, $scope, $firebaseObject, $firebaseArray, $location) {
 
-
+        $scope.$parent.updateHidden(0);
         //get the entire database tree
         const rootRef=firebase.database().ref();
 
         //zoom in to users table
-        const ref = rootRef.child('testUsers');
+        const userRef = rootRef.child('testUsers');
 
         //noticed that object is suitable for json
-        this.userobj = $firebaseObject(ref);
+        this.userobj = $firebaseObject(userRef);
 
         //this allows us to use the array and the scope notation we are used to
-        $scope.usertable = $firebaseArray(ref);
+        $scope.usertable = $firebaseArray(userRef);
 
         $scope.login = function() {
 
-            /*firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
-             // Handle Errors here.
-             var errorCode = error.code;
-             var errorMessage = error.message;
-             console.log(errorCode);
-             console.log(errorMessage);
-             alert(errorCode);
-             alert(errorMessage);
-             });*/
-            var list = $firebaseArray(ref);
-            var rec = list.$getRecord("foo");
+            //find child that has key email == to the email passed in
+            userRef.orderByChild("email").equalTo($scope.email).on("value", function(snap){
+
+                //loop into children incase there is more than 1 return
+                snap.forEach(function (childSnap) {
+                    //check if email and password is the same
+                    if((childSnap.val().password)==$scope.password){
+                        console.log("Welcome "+$scope.email);
+
+                        //store entire user into userData shared across all controllers
+                        $rootScope.userData = childSnap.val();
+                        //success=true;
+
+                        //update hidden
+                        $scope.$parent.updateHidden(1);
+                        //route to dashboard
+                        $location.path('AdminDashboard')
+                    }
+                })
+
+                //get the first child object
+                //var myUser = snap.val();
+
+                //console.log(JSON.stringify(myUser));
+            });
 
 
-            var user =ref.orderByChild("email");
-            console.log(user);
-
-            alert("Welcome "+$scope.email);
-            $scope.hidelogin=true;
-            $scope.hidemain=false;
         }
 
     }]);

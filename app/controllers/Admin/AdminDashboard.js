@@ -8,13 +8,15 @@
 
 angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('AdminDashboardCtrl', ['$cookies', '$cookieStore', function ($cookies, $cookieStore) {
+    .controller('AdminDashboardCtrl', ['$cookies', '$cookieStore', '$rootScope', function ($cookies, $cookieStore, $rootScope) {
 
         (function initController() {
 
             $cookieStore.put("user", "dhina");
             var value = $cookieStore.get("user");
-            alert(value);
+            var user=$rootScope.userData;
+
+            console.log("welcome "+user.role);
 
         })();
 
