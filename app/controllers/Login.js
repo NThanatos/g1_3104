@@ -13,7 +13,7 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', function ($scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
+    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
 
         //if there isnt any login detail
         if($localStorage.credential==null){
@@ -27,7 +27,7 @@ angular.module('G1.login', ['ngRoute'])
 
 
         //zoom in to users table
-        const userRef = rootRef.child('testUsers');
+        const userRef = rootRef.child('Users');
 
 
         //noticed that object is suitable for json
@@ -79,7 +79,11 @@ angular.module('G1.login', ['ngRoute'])
                         //$rootScope.userData = childSnap.val();
                         //success=true;
 
+                        //for persistent
                         $localStorage.credential= childSnap.val();
+
+                        //for the view
+                        $rootScope.userData = $localStorage.credential;
 
                         //update hidden
                         $scope.$parent.updateHidden(1);

@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="Ng storage component&#10;-persistent login">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/ngStorage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/ngStorage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/ngstorage/package.js" />
+    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Login.js" afterPath="$PROJECT_DIR$/app/controllers/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Logout.js" afterPath="$PROJECT_DIR$/app/controllers/Logout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +28,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="58" column="26" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="26" />
+            <state relative-caret-position="237">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -87,8 +75,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="47" column="26" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="26" />
+            <state relative-caret-position="408">
+              <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -114,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="78" column="45" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="45" />
+            <state relative-caret-position="289">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -134,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminDashboard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminDashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -189,10 +177,10 @@
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/views/Admin/logout.html" />
         <option value="$PROJECT_DIR$/app/controllers/Logout.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/controllers/Login.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/controllers/Login.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
       </list>
     </option>
   </component>
@@ -476,7 +464,7 @@
       <workItem from="1475892410300" duration="8919000" />
       <workItem from="1475904191568" duration="9130000" />
       <workItem from="1476071634056" duration="494000" />
-      <workItem from="1476235704862" duration="5131000" />
+      <workItem from="1476235704862" duration="8108000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -499,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475914361218</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ng storage component&#10;-persistent login (fixed bug)&#10;-view update for before login and after login (hidden views)">
+      <created>1476240971187</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1476240971187</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33011000" />
+    <option name="totallyTimeSpent" value="35988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -543,7 +538,8 @@
     <MESSAGE value="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected" />
     <MESSAGE value="Login form to update hidden scope in controller&#10;-using parent scope&#10;&#10;-able to pass variable using rootScope replacing the need for cookie&#10; &#10; -upon login pass to dashboard" />
     <MESSAGE value="Logout function.&#10;&#10;-added dropdown menu to navigate to profile (incomplete)&#10;-signout option which links to logout controller&#10;&#10;-logoutCtrl will reset rootScope user data that is shared among controller before redirecting to / index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logout function.&#10;&#10;-added dropdown menu to navigate to profile (incomplete)&#10;-signout option which links to logout controller&#10;&#10;-logoutCtrl will reset rootScope user data that is shared among controller before redirecting to / index" />
+    <MESSAGE value="Ng storage component&#10;-persistent login (fixed bug)&#10;-view update for before login and after login (hidden views)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ng storage component&#10;-persistent login (fixed bug)&#10;-view update for before login and after login (hidden views)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -909,10 +905,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="237">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -924,27 +930,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="26" />
+        <state relative-caret-position="408">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="45" />
+        <state relative-caret-position="289">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

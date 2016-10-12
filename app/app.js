@@ -29,13 +29,16 @@ angular.module('G1Project', [
     'ngCookies'
 
 ])
-   .controller('MainCtrl', function($scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage) {
+   .controller('MainCtrl', function($rootScope, $scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage) {
 
        $cookies.put('user', 'Nicholas');
        var testCookie = $cookies.get('user');
 
        //alert(testCookie);
-       
+       if($localStorage.credential!=null){
+        $rootScope.userData=$localStorage.credential;
+       }
+
 
        $scope.showLoading = false;
        $scope.LoadingTrue = function() {

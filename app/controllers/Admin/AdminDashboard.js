@@ -15,7 +15,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             //$cookieStore.put("user", "dhina");
             //var value = $cookieStore.get("user");
             //var user=$rootScope.userData;
-            $rootScope.userData = $localStorage.credential;
+
 
             console.log("welcome "+$rootScope.userData.role);
 
