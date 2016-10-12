@@ -13,17 +13,27 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location) {
+    .controller('loginCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', function ($scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
 
-        $scope.$parent.updateHidden(0);
+        //if there isnt any login detail
+        if($localStorage.credential==null){
+            console.log("hide");
+            $scope.$parent.updateHidden(0);
+        }
+
         //get the entire database tree
         const rootRef = firebase.database().ref();
+
+
 
         //zoom in to users table
         const userRef = rootRef.child('testUsers');
 
+
         //noticed that object is suitable for json
         this.userobj = $firebaseObject(userRef);
+
+
 
         //this allows us to use the array and the scope notation we are used to
         $scope.usertable = $firebaseArray(userRef);
@@ -66,8 +76,10 @@ angular.module('G1.login', ['ngRoute'])
                         console.log("Welcome " + $scope.email);
 
                         //store entire user into userData shared across all controllers
-                        $rootScope.userData = childSnap.val();
+                        //$rootScope.userData = childSnap.val();
                         //success=true;
+
+                        $localStorage.credential= childSnap.val();
 
                         //update hidden
                         $scope.$parent.updateHidden(1);

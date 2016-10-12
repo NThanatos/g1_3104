@@ -34,9 +34,9 @@
 
 <body ng-controller="MainCtrl">
 
-    <div ng-hide="hidelogin" ng-include src="'views/login.html'"></div>
-    <div ng-hide="hidemain">
-    <header class="cd-header"> <!--style="position: fixed"-->>
+    <!--<div ng-hide="hidelogin" ng-include src="'views/login.html'"></div>-->
+    <!--<div ng-hide="hidemain">-->
+    <header class="cd-header" ng-hide="hidemain"> <!--style="position: fixed"-->>
         <!--<a class="cd-primary-nav-trigger" href="">
             <span class="cd-menu-icon"></span>
         </a>-->
@@ -68,7 +68,7 @@
         </div>
     </header>
 
-    <nav>
+    <nav ng-hide="hidemain">
         <ul class="cd-primary-nav">
             <li class="cd-label">Sub header</li>
 
@@ -82,7 +82,7 @@
             <li><a href="#">Link 5</a></li>
         </ul>
     </nav>
-    <section class="cd-intro">
+    <section class="cd-intro" ng-hide="hidemain">
         <img src="Images/background.jpg">
         <div class="introContainer">
             <table class="introTable">
@@ -102,7 +102,7 @@
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
     <!-- START PAGE SIDEBAR -->
-    <div class="page-sidebar">
+    <div class="page-sidebar" ng-hide="hidemain">
         <!-- START X-NAVIGATION -->
         <ul class="x-navigation">
             <li class="xn-logo">
@@ -308,6 +308,7 @@
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
 
 <!-- Firebase -->
 <script src="bower_components/firebase/firebase.js"></script>

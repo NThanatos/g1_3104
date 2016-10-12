@@ -11,10 +11,11 @@ angular.module('G1.logout', ['ngRoute'])
         });
     }])
 
-    .controller('logoutCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location) {
+    .controller('logoutCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', function ($scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
 
         //clear user data and redirect to main in this case login
-        $rootScope.userData=null;
+        //$rootScope.userData=null;
+        $localStorage.credential=null;
         $location.path('/');
 
 

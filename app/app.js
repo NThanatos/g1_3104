@@ -24,11 +24,12 @@ angular.module('G1Project', [
     'G1.Lecturer',
     'firebase',
     'G1.Student',
+    'ngStorage',
 
     'ngCookies'
 
 ])
-   .controller('MainCtrl', function($scope, $http, $firebaseObject, $cookies, $cookieStore) {
+   .controller('MainCtrl', function($scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage) {
 
        $cookies.put('user', 'Nicholas');
        var testCookie = $cookies.get('user');
@@ -48,10 +49,9 @@ angular.module('G1Project', [
 
            if(int==1){
                $scope.hidemain=false;
-               $scope.hidelogin=true;
+
            }else{
                $scope.hidemain=true;
-               $scope.hidelogin=false;
            }
 
        }
