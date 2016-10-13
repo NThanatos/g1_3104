@@ -23,7 +23,7 @@ angular.module('G1Project', [
     'G1.logout',
     'G1.Lecturer',
     'firebase',
-    'G1.Student',
+    // 'G1.Student',
     'ngStorage',
 
     'ngCookies'

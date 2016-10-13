@@ -14,11 +14,7 @@
             <td>{{stu.name}}</td>
             <td>{{getGrade(stu.marks)}}</td>
             <td>{{stu.marks}}</td>
-            <td ng-hide="SelectedStatus">
-                <button ng-hide="checkRecommemdation(stu.recommendation.value)" class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)">
-                    <span class="glyphicon glyphicon-edit"></span>
-                </button>
-            </td>
+            <td ng-hide="SelectedStatus"><button ng-hide="checkRecommemdation(stu.recommendation.value)" class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
         </tr>
     </table>
 </section>

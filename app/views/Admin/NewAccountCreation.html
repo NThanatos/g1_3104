@@ -3,9 +3,9 @@
     <nav class="navbar navbar-default">
         <div class="navbar-header">
             <div class="alert alert-default navbar-brand search-box">
-                <button ng-click="addForm()" class="btn btn-primary">Add Employee <span class="glyphicon glyphicon-plus"
-                                                                                        aria-hidden="true"></span>
-                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create employee <span
+                        class="glyphicon glyphicon-plus"
+                        aria-hidden="true"></span></button>
             </div>
             <div class="alert alert-default input-group search-box">
 <span class="input-group-btn">
@@ -15,6 +15,24 @@
             </div>
 
         </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Employee</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-include src="'templates/form.html'"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Table to show employee detalis -->
         <div class="table-responsive">
             <table class="table table-hover">
@@ -22,6 +40,11 @@
                     <th>Name</th>
                     <th>Email Address</th>
                     <th>Role</th>
+                    <th>Address</th>
+                    <th>Citizenship</th>
+                    <th>NOK</th>
+                    <th>NOK's Contact</th>
+                    <th>Contact</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -29,6 +52,11 @@
                     <td>{{detail.name}}</td>
                     <td>{{detail.email}}</td>
                     <td>{{detail.role}}</td>
+                    <td>{{detail.profile.address}}</td>
+                    <td>{{detail.profile.citizenship}}</td>
+                    <td>{{detail.profile.nok}}</td>
+                    <td>{{detail.profile.nokPhone}}</td>
+                    <td>{{detail.profile.phone}}</td>
                     <td>
                         <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span
                                 class="glyphicon glyphicon-edit"></span></button>
