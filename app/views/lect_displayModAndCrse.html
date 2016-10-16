@@ -1,0 +1,39 @@
+<h1 align="center">View Student Grades</h1>
+<hr />
+
+<table>
+    <tr>
+        <td class="col-md-6">
+            Select a course to filter:
+            <select id="course" ng-model="course" ng-options = "crse as crse for crse in cseArr">
+                <option value="" disabled>Select a course</option>
+            </select>
+        </td>
+
+        <td class="col-md-6">
+            Select a module to filter:
+            <select id="module" ng-model="module" ng-options = "mod as mod for mod in modArr">
+                <option value="" disabled>Select a module</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<br>
+<table class="table">
+    <tr class="thead-inverse">
+        <th class="col-md-3">Course Name</th>
+        <th class="col-md-2">Module Name</th>
+        <th class="col-md-2">Actions</th>
+    </tr>
+
+    <tr ng-repeat="studentrecord in dataArr | filter:course | filter:module">
+        <td>{{studentrecord.CrseName}}</td>
+        <td>{{studentrecord.ModName}}</td>
+        <td>
+            <button class="btn btn-info" ng-click="clickMod(studentrecord)">
+                View Students
+            </button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,32 @@
+<h1 align="center">View Student Grades</h1>
+<hr />
+
+<div align="right">
+    <button class="btn btn-primary" ng-hide="(StudentArr[0].status == 'Entered')" ng-click="changeView('lect_enterGrade')">
+        Enter Grade for All Students
+    </button>
+</div>
+
+<br>
+
+<table class="table">
+    <tr class="thead-inverse">
+        <th class="col-md-3">Student Name</th>
+        <th class="col-md-3">Grade</th>
+        <th class="col-md-2">Marks</th>
+        <th class="col-md-2">Status</th>
+        <th class="col-md-2">Actions</th>
+    </tr>
+
+    <tr ng-repeat="student in StudentArr">
+        <td>{{student.name}}</td>
+        <td>{{getGrade(student.marks)}}</td>
+        <td>{{student.marks}}</td>
+        <td>{{student.status}}</td>
+        <td>
+            <button class="btn btn-success" ng-hide="(student.status == 'New')"  ng-click="changeView('addRecommendation')">
+                <span class="glyphicon glyphicon-plus">Add Recommendation</span>
+            </button>
+        </td>
+    </tr>
+</table>

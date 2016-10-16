@@ -29,6 +29,29 @@ angular.module('G1Project', [
     'ngCookies'
 
 ])
+    .factory("myFactory", function(){
+        var studData = '';
+        var service = {};
+        var savedData = '';
+
+        service.setData = function(student){
+            studData = student;
+        };
+
+        service.getData = function(){
+            return studData;
+        };
+
+        service.setCrseModData = function(crsemod){
+            savedData = crsemod;
+        }
+        service.getCrseModData = function(){
+            return savedData;
+        }
+        return service;
+
+    })
+
    .controller('MainCtrl', function($rootScope, $scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage) {
 
        $cookies.put('user', 'Nicholas');
@@ -106,18 +129,25 @@ angular.module('G1Project', [
                 templateUrl: 'views/Admin/NewAccountCreation.html',
                 controller: 'NewAccountCreationCtrl'
             })
+
+        //lecturer
             .when ('/Lecturer', {
                 templateUrl: 'views/Lecturer.html',
                 controller: 'LecturerCtrl'
             })
 
-            .when('/modulesGrades_Lect', {
-                templateUrl: 'views/modulesGrades_Lect.html',
+            .when('/lect_displayModAndCrse', {
+                templateUrl: 'views/lect_displayModAndCrse.html',
+                controller: 'LecturerCtrl'
+            })
+			
+			.when ('/viewIndivModule', {
+                templateUrl: 'views/viewIndivModule.html',
                 controller: 'LecturerCtrl'
             })
 
-            .when('/editgrade_lect', {
-                templateUrl: 'views/editgrade_lect.html',
+            .when('/lect_enterGrade', {
+                templateUrl: 'views/lect_enterGrade.html',
                 controller: 'LecturerCtrl'
             })
 
