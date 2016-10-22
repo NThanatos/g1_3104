@@ -69,6 +69,8 @@ angular.module('G1.login', ['ngRoute'])
             //auto sign in as dhina to save time
             userRef.orderByChild("email").equalTo("dhin@email.com").on("value", function (snap) {
 
+                console.log(snap.key)
+
                 //loop into children incase there is more than 1 return
                 snap.forEach(function (childSnap) {
                     //check if email and password is the same
@@ -87,8 +89,10 @@ angular.module('G1.login', ['ngRoute'])
 
                         //update hidden
                         $scope.$parent.updateHidden(1);
+
+
                         //route to dashboard
-                        $location.path('AdminDashboard')
+                        $location.path('Dashboard')
                     }
                 })
 
