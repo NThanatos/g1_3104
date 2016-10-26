@@ -1,36 +1,22 @@
 <h1 align="center">Student Recommendation</h1>
 <hr/>
-<br>
-<div>
-    <div align="right">
-        <button class="btn btn-primary" ng-click="changeView('addRecommendation')">
-            <span class="glyphicon glyphicon-plus"></span> Add Recommendation
-        </button>
-    </div>
-</div>
+
 
 <br>
 <table class="table">
     <tr class="table-inverse">
-        <th>ID</th>
         <th class="col-md-2">Course</th>
-        <th class="col-md-4">Module</th>
-        <th class="col-md-3">Student Name</th>
-        <th class="col-md-3">Recommendation</th>
-    </tr>
-    <tr>
-        <th>1</th>
-        <th class="col-md-2">ICT</th>
-        <th class="col-md-4">ICT3104</th>
-        <th class="col-md-3">Johnathan</th>
-        <th class="col-md-3">Recommend to moderate his grade due to his great participation display in class. </th>
+        <th class="col-md-2">Module</th>
+        <th class="col-md-2">Student Name</th>
+        <th class="col-md-3">Recommendation Mark</th>
+        <th class="col-md-3">Recommendation Text</th>
     </tr>
 
-    <tr>
-        <th>2</th>
-        <th class="col-md-2">ACC</th>
-        <th class="col-md-4">ACC3102</th>
-        <th class="col-md-3">Jasmine</th>
-        <th class="col-md-3">Recommend to moderate her grade due to her great participation display in class. </th>
+    <tr ng-repeat="recommendationrec in allrecommendation">
+        <td>{{recommendationrec.course}}</td>
+        <td>{{recommendationrec.module}}</td>
+        <td>{{recommendationrec.student_name}}</td>
+        <td>{{recommendationrec.student_recommended_mark}}</td>
+        <td>{{recommendationrec.student_recommended_text}}</td>
     </tr>
 </table>

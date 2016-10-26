@@ -1,38 +1,28 @@
-<h1>Add Recommendation</h1>
-<form name="recommendationForm" ng-submit="addrecommend()">
+<h1 align="center">Add Recommendation</h1>
+<hr />
 
-    <div class="form-group">
-        <label>Course: </label>
-        <input type="text" class="form-control" name="coursename" ng-model="coursename" disabled>
-    </div>
+<form name="entergrade" ng-submit="submitRecommendGrade(selectedStud.id)">
+    <table class="table">
+        <tr class="thead-inverse">
+            <th class="col-md-3">Student Name</th>
+            <th class="col-md-2">Recommended Mark</th>
+            <th class="col-md-2">Recommendation Text</th>
+        </tr>
 
-    <div class="form-group">
-        <label ng-for="modulename">Module: </label>
-        <input type="text" class="form-control" name="modulename" ng-model="modulename" disabled>
-    </div>
+        <tr>
+            <td><input type="hidden" ng-model="student.name">{{selectedStud.name}}</td>
 
-    <div class="form-group">
-        <label ng-for="studentname">Student Name: </label>
-        <input type="text" class="form-control" name="studentname" ng-model="studentname" disabled>
-    </div>
+            <td><input type="text" name="recommendMark" ng-model="recommendMark" required></td>
+            <td><textarea name="recommendText" ng-model="recommendText" rows="5" style="resize: none" required></textarea></td>
+        </tr>
 
-    <div class="form-group">
-        <label ng-for="studentgrade">Student Grade: </label>
-        <input type="text" class="form-control" name="studentgrade" ng-model="studentgrade" disabled>
-    </div>
+        <tr>
+            <td colspan="3">
+                <input type='submit' value='Add Recommendation' class="btn btn-primary form-control">
 
-    <div class="form-group">
-        <label ng-for="studentmark">Student Marks: </label>
-        <input type="text" class="form-control" name="studentmark" ng-model="studentmark" disabled>
-    </div>
+                <input type='reset' value='Reset' class='btn btn-danger form-control'>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label ng-for="recommendation">Recommendation: </label>
-        <textarea class="form-control" name="recommendation" ng-model="recommendation" rows="5" style="resize: none"></textarea>
-    </div>
-
-    <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button class="btn btn-default">Cancel</button>
-    </div>
 </form>

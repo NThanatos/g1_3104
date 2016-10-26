@@ -32,6 +32,10 @@ angular.module('G1Project', [
         var studData = '';
         var service = {};
         var savedData = '';
+        var recommendData= '';
+        var recommendRecord='';
+
+        var studrec = '';
 
         service.setData = function(student){
             studData = student;
@@ -43,10 +47,36 @@ angular.module('G1Project', [
 
         service.setCrseModData = function(crsemod){
             savedData = crsemod;
-        }
+        };
         service.getCrseModData = function(){
             return savedData;
-        }
+        };
+
+        service.setstudent = function(stud){
+            studrec = stud;
+        };
+        service.getstudent = function(){
+            return studrec;
+        };
+
+        service.setStudRecommend = function(recommend){
+
+            recommendData = recommend;
+        };
+        service.getStudRecommend = function(){
+
+            return recommendData;
+        };
+
+        service.setViewRecommendation = function(rec){
+
+            recommendRecord = rec;
+        };
+        service.getViewRecommendation = function(){
+
+            return recommendRecord;
+        };
+
         return service;
 
     })

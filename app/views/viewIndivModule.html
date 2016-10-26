@@ -2,7 +2,7 @@
 <hr />
 
 <div align="right">
-    <button class="btn btn-primary" ng-hide="(StudentArr[0].status == 'Entered')" ng-click="changeView('lect_enterGrade')">
+    <button class="btn btn-primary" ng-hide="(ArrayStudent[0].status != 'New')" ng-click="changeView('lect_enterGrade')">
         Enter Grade for All Students
     </button>
 </div>
@@ -55,7 +55,7 @@
         </td>
         <td>{{student.status}}</td>
         <td>
-            <button class="btn btn-success" ng-hide="(student.status == 'New')"  ng-click="changeView('addRecommendation')">
+            <button class="btn btn-success" ng-show="(student.status == 'Entered')"  ng-click="addrecommend(student, key)">
                 <span class="glyphicon glyphicon-plus">Add Recommendation</span>
             </button>
         </td>

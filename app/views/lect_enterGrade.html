@@ -1,20 +1,26 @@
 <h1 align="center">Enter All Student Grades</h1>
 <hr />
 
-<form name="entergrade" ng-submit="submitGrade(studentMarks)">
+<form name="entergrade" ng-submit="submitGrade(ArrayStudent)">
     <table class="table">
         <tr class="thead-inverse">
             <th class="col-md-3">Student Name</th>
             <th class="col-md-2">Marks</th>
+            <th class="col-md-2">Add Recommendation?</th>
         </tr>
 
-        <tr ng-repeat="student in StudentArr">
+        <tr ng-repeat="student in ArrayStudent">
             <td><input type="hidden" ng-model="student.name">{{student.name}}</td>
-            <td><input type="text" name="studentmarks" id="studentmarks" ng-model="student.marks"></td>
+            <td><input type="text" name="studentmarks" id="studentmarks" ng-model="student.marks" required></td>
+            <td>
+                <select ng-model="student.recommend" ng-options="choices.choice for choices in recommendChoice" required>
+                    <option value="" disabled>Select recommendation choice</option>
+                </select>
+            </td>
         </tr>
 
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <input type='submit' value='Submit All Grades' class="btn btn-primary form-control">
 
                 <input type='reset' value='Reset' class='btn btn-danger form-control'>

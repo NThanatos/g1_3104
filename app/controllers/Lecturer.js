@@ -16,10 +16,14 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
             const ref = rootRef.child('Courses');
 
             //here can use passed in variable + so that later behind that value can easier to swap
-            const courseRef=rootRef.child('Courses/'+'ICT');
-            const moduleRef=courseRef.child('modules/'+'ICT1101');
+///////
+            var selectdata = myFactory.getCrseModData();
+            const courseRef=rootRef.child('Courses/'+ selectdata.CrseName);
+            const moduleRef=courseRef.child('modules/'+ selectdata.ModName);
             const studentRef=moduleRef.child("student");
             $scope.students = $firebaseObject(studentRef);
+            $scope.ArrayStudent = $firebaseArray(studentRef);
+/////////
 
         //this is to get the different course and differnt modules
             $scope.modArr = [];   //store all the modules  - for dropdown filtering usage
@@ -52,7 +56,7 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
 
 
 
-            $scope.Coursesarr = $firebaseArray(ref);  //array of json objects from courses
+            //$scope.Coursesarr = $firebaseArray(ref);  //array of json objects from courses
 
         //this is to retrieve the all the students that was under the selected course and module and display it in the table next view
             $scope.studentArr = [];  //store all the students that register for the course and module
@@ -64,21 +68,21 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
 
                 myFactory.setCrseModData(unimod);   //store the module and course that was selected into the factory so that it can be reference at any view page
 
-                for(var j=0; j<$scope.Coursesarr.length;j++){
-                    if($scope.Coursesarr[j].$id == $scope.selectedCourse){  //check if the course and the selected course is the same
-                        for(var sm in $scope.Coursesarr[j].modules){
-                            if(sm == $scope.selectedModule){   //check if the module and the selected module is the same
-                                $scope.studentobj = $scope.Coursesarr[j].modules[sm].student;
-                                for(var s in $scope.studentobj){
-                                    var obj = $scope.studentobj[s];
-                                    obj.id = s;  //add in another id attribute into the student object
-                                    $scope.studentArr.push(obj);
-                                }
-                            }
-                        }
-                    }
-                }
-                myFactory.setData($scope.studentArr);  //store the students that was register for that course and module into the factory
+//                for(var j=0; j<$scope.Coursesarr.length;j++){
+//                    if($scope.Coursesarr[j].$id == $scope.selectedCourse){  //check if the course and the selected course is the same
+//                        for(var sm in $scope.Coursesarr[j].modules){
+//                            if(sm == $scope.selectedModule){   //check if the module and the selected module is the same
+//                                $scope.studentobj = $scope.Coursesarr[j].modules[sm].student;
+//                                for(var s in $scope.studentobj){
+//                                    var obj = $scope.studentobj[s];
+//                                    obj.id = s;  //add in another id attribute into the student object
+//                                    $scope.studentArr.push(obj);
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//                myFactory.setData($scope.studentArr);  //store the students that was register for that course and module into the factory
                 $window.location.href = '#/viewIndivModule';   //redirect to the individual page
             };
 
@@ -104,41 +108,142 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
                 }
             };
 
+            //to populate for the drop down list to allow lecturer to choose whether to give recommendation to the student or not
+            $scope.recommendChoice =
+                [
+                    {id: 1, choice: "yes"},
+                    {id: 2, choice: "no"}
+                ];
+
         //retrieve the student which was used when user click to view students
-            $scope.StudentArr = myFactory.getData();
+//            $scope.StudentArr = myFactory.getData();
+
+
 
         //when lecturer click on the submit button to submit the grades of all the student....
-            $scope.submitGrade = function (marks) {
-                $scope.SelectedCrseMod = myFactory.getCrseModData();  //get the course and modules that previously user selected from the factory
+            $scope.submitGrade = function (result) {
+                // $scope.SelectedCrseMod = myFactory.getCrseModData();  //get the course and modules that previously user selected from the factory
+                //
+                // $scope.selectCrse = $scope.SelectedCrseMod.CrseName;
+                // $scope.selectMod = $scope.SelectedCrseMod.ModName;
 
-                $scope.selectCrse = $scope.SelectedCrseMod.CrseName;
-                $scope.selectMod = $scope.SelectedCrseMod.ModName;
+                // const rootRef = firebase.database().ref();
+                // const ref = rootRef.child('Courses');
+                // const crselist = ref.child($scope.selectCrse);
+                // const modlist = crselist.child('modules/' + $scope.selectMod);
+                // const studlist = modlist.child('student');
 
-                const rootRef = firebase.database().ref();
-                const ref = rootRef.child('Courses');
-                const crselist = ref.child($scope.selectCrse);
-                const modlist = crselist.child('modules/' + $scope.selectMod);
-                const studlist = modlist.child('student');
+//                console.log("studentmarks", $scope.StudentArr); //the marks is updated with the marks that was entered as input
 
-                console.log("studentmarks", $scope.StudentArr); //the marks is updated with the marks that was entered as input
+                // for(var i = 0; i< $scope.StudentArr.length; i++){
+                //     modlist.on("value", function(modchild){
+                //         for(var s in modchild.val().student){
+                //             if(s == $scope.StudentArr[i].id){
+                //                 const studobj = studlist.child(s);
+                //                 studobj.update({
+                //                     marks: $scope.StudentArr[i].marks,   //this is to add the new attribute key and value into the existing object in the database
+                //                     status: "Entered"   //this is to update the existing value
+                //                 });
+                //
+                //             }
+                //         }
+                //     });
+                // }
+////////
+                for(var i = 0; i< result.length; i++){
+                    console.log("result", result[i]);
+                    //check the recommend choice lecturer selects
+                    var choice = result[i].recommend.choice;
+                    var selectedchoice = "";
+                    if(choice == "no"){    //if choice is no, means lecturer dont intend to submit recommendation for this student
+                        selectedchoice = "Completed";
+                    }
+                    else if (choice == "yes"){
+                        selectedchoice = "Entered";
+                    }
 
-                for(var i = 0; i< $scope.StudentArr.length; i++){
-                    modlist.on("value", function(modchild){
-                        for(var s in modchild.val().student){
-                            if(s == $scope.StudentArr[i].id){
-                                const studobj = studlist.child(s);
-                                studobj.update({
-                                    marks: $scope.StudentArr[i].marks,   //this is to add the new attribute key and value into the existing object in the database
-                                    status: "Entered"   //this is to update the existing value
-                                });
-
-                            }
-                        }
-                    });
+                    studentRef.child(result[i].$id).update({
+                        marks: result[i].marks,
+                        status: selectedchoice
+                    })
                 }
+                $window.location.href = '#/viewIndivModule';
+///////
             };
 
+        //it will trigger when lecturer click add recommendation button
+            $scope.addrecommend = function (content, key){
+                content.id = key;   //add in another attribute , id, into the object
+                $scope.selectedStud = content;
+                myFactory.setStudRecommend($scope.selectedStud);
 
+                $window.location.href = '#/addRecommendation';
+            };
+        //retrieve the selected student data from factory
+            $scope.selectedStud = myFactory.getStudRecommend();
+
+        //trigger when lecturer submit recommendation
+            $scope.submitRecommendGrade = function(id){
+                //update the database
+                studentRef.child(id).update({
+                    recommendation: {
+                        RecommendedMark: $scope.recommendMark,
+                        message: $scope.recommendText
+                    },
+                    status: "Pending"  //update the status.
+                });
+                $window.location.href = '#/viewIndivModule';
+            };
+
+         //retrive all the students records that have recommendation made by the lecturer
+            $scope.viewAllRecommendation = function(){
+                $scope.allrecommendation = [];
+                ref.on('value', function(crse){
+                    var indivcourseobj = crse.val();
+                    crse.forEach(function(title){
+                        var indivcrsename = title.key;
+                        title.forEach(function(titleChild){
+                            var titlename = titleChild.key;
+                            if("modules" == titlename){
+                                var modobj = titleChild.val();
+                                titleChild.forEach(function(mod){
+                                    var modname = mod.key;
+                                    mod.forEach(function(modChild){
+                                        var modChildTitle = modChild.key;
+                                        if("student" == modChildTitle){
+                                            modChild.forEach(function(stud){
+                                                var studid = stud.key;
+                                                var studobj = stud.val();
+                                                if(studobj.recommendation != null){
+                                                    //student with recommendation made
+                                                    $scope.allrecommendation.push({
+                                                        course: indivcrsename,
+                                                        module: modname,
+                                                        student_id: studid,
+                                                        student_name: studobj.name,
+                                                        student_recommended_mark: studobj.recommendation.RecommendedMark,
+                                                        student_recommended_text: studobj.recommendation.message
+
+                                                    })
+                                                }
+                                            })
+                                        }
+                                    })
+                                })
+                            }
+                        })
+
+                    })
+                });
+                console.log($scope.allrecommendation);
+                myFactory.setViewRecommendation($scope.allrecommendation);
+                $window.location.href = '#/recommendation';
+            };
+
+            //retrieve the recommendation from factory
+            $scope.allrecommendation = myFactory.getViewRecommendation();
+
+/////
         //click link to respective view
             $scope.changeView = function(view){
                 $location.path(view);
