@@ -4,16 +4,22 @@
 
 'use strict';
 
-angular.module('G1.Lecturer', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
+angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase', 'ui.bootstrap'])
 
-    .controller('LecturerCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', 'myFactory',
-        function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray,myFactory) {
+    .controller('LecturerCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', 'myFactory', '$mdDialog',
+        function ($route, $rootScope, $scope, $location, $http, $window, $filter, $firebaseObject, $firebaseArray, myFactory, $mdDialog) {
 
         (function initController() {
 
             const rootRef = firebase.database().ref();
         //point to the obj under courses
             const ref = rootRef.child('Courses');
+
+            //here can use passed in variable + so that later behind that value can easier to swap
+            const courseRef=rootRef.child('Courses/'+'ICT');
+            const moduleRef=courseRef.child('modules/'+'ICT1101');
+            const studentRef=moduleRef.child("student");
+            $scope.students = $firebaseObject(studentRef);
 
         //this is to get the different course and differnt modules
             $scope.modArr = [];   //store all the modules  - for dropdown filtering usage
@@ -137,6 +143,47 @@ angular.module('G1.Lecturer', ['ngRoute', 'angularUtils.directives.dirPagination
             $scope.changeView = function(view){
                 $location.path(view);
             };
+
+            //edit prompt
+            $scope.editPrompt = function(ev, currentMark, studentid) {
+                // Appending dialog to document.body to cover sidenav in docs app
+                console.log(currentMark);
+
+
+
+                var confirm = $mdDialog.prompt()
+                    .title('Modify Mark')
+                    .textContent('Current Mark: '+ currentMark)
+                    .placeholder('New Mark')
+                    .ariaLabel('Enter New mark')
+                    .targetEvent(ev)
+                    .ok('Save')
+                    .cancel('Cancel');
+
+                $mdDialog.show(confirm).then(function(result) {
+                    //check if result is valid number
+                    if(angular.isNumber(parseInt(result))){
+                        //update
+
+                        //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
+                        studentRef.child(studentid).update({marks:result});
+                        //tempstudent.marks=result;
+                        //tempstudent.$save();
+                    }
+
+
+
+                }, function() {
+                    //else do nothing
+                });
+            };
+
+
+
+
+
+
+
 
 
 
@@ -344,3 +391,4 @@ angular.module('G1.Lecturer', ['ngRoute', 'angularUtils.directives.dirPagination
 
 
     }]);    //End of Lecturer controller
+

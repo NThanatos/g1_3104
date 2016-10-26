@@ -25,7 +25,6 @@ angular.module('G1Project', [
     'firebase',
     //'G1.Student',
     'ngStorage',
-
     'ngCookies'
 
 ])

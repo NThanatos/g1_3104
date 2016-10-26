@@ -18,10 +18,41 @@
         <th class="col-md-2">Actions</th>
     </tr>
 
-    <tr ng-repeat="student in StudentArr">
+    <!--<tr ng-repeat="student in StudentArr">
         <td>{{student.name}}</td>
         <td>{{getGrade(student.marks)}}</td>
-        <td>{{student.marks}}</td>
+        <td>{{student.marks}}
+            &lt;!&ndash;<button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="open('warning')">&ndash;&gt;
+
+
+            <button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="editPrompt($even, student.key)">
+                <span class="glyphicon glyphicon-edit"> Edit</span>
+            </button>
+
+
+        </td>
+        <td>{{student.status}}</td>
+        <td>
+            <button class="btn btn-success" ng-hide="(student.status == 'New')"  ng-click="changeView('addRecommendation')">
+                <span class="glyphicon glyphicon-plus">Add Recommendation</span>
+            </button>
+        </td>
+    </tr>-->
+
+    <!--split out the key and student so that i can pass back the student id-->
+    <tr ng-repeat="(key, student) in students">
+        <td>{{student.name}}</td>
+        <td>{{getGrade(student.marks)}}</td>
+        <td>{{student.marks}}
+            <!--<button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="open('warning')">-->
+
+
+            <button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="editPrompt($even, student.marks, key)">
+                <span class="glyphicon glyphicon-edit"> Edit</span>
+            </button>
+
+
+        </td>
         <td>{{student.status}}</td>
         <td>
             <button class="btn btn-success" ng-hide="(student.status == 'New')"  ng-click="changeView('addRecommendation')">
@@ -30,3 +61,4 @@
         </td>
     </tr>
 </table>
+{{students}}
