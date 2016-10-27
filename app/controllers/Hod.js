@@ -6,48 +6,15 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
         function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray,$cookies,$cookieStore) {
 
         (function initController() {
-
-            //Display spinner during data loading
-            // $scope.LoadingFalse();
-            // $scope.LoadingTrue;
-
             getCourses();
-            //
-            // var Courses = firebase.database().ref().child("Courses");
-            // Courses.on('value', function (datasnapshot) {
-            //     $scope.Courses = datasnapshot.val();
-            //     console.log($scope.Courses[1].title);
-            //     // $scope.Courses.push({
-            //     //     title: datasnapshot.child("title").val(),
-            //     //     status: datasnapshot.child("status").val()
-            //     // })
-            // });
-
 
             $scope.currentTab = '';
             $scope.showGradeTable = true;
             $scope.NoRecommendation = true;
-
-
-            // $scope.Grades = [
-            //     {Name:'Sam',
-            //     Grade:'A+',
-            //     Marks: 90,
-            //     Recommendation:'test text test text test text test text test text'
-            //     },
-            //     {Name:'Tom',
-            //         Grade:'B+',
-            //         Marks: 83,
-            //         Recommendation:''},
-            //     {Name:'Lee',
-            //         Grade:'Fail',
-            //         Marks: 39,
-            //         Recommendation:'test text test text test text test text test text'}
-            // ];
             $scope.editGradeForm = true;
+            $scope.moderateForm = true;
             $scope.editGradeFormContent=[];
-
-
+            $scope.ModerateMarksBy = 0;
         })();
 
 
@@ -60,31 +27,50 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             const ref = rootRef.child('Courses/ICT/modules');
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
+            console.log($firebaseArray(ref))
         }
 
-
-        $scope.SaveGradeForm = function () {
-            alert("Logic not done!")
-        $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
-        }
-
+        
         $scope.PublishGrades = function () {
-            alert("Logic not done!")
+            var PublishStatus = {status: 'Published'}
+            firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId).update(PublishStatus);
+            $scope.currentCourseStatus = 'Published';
+            $scope.SelectedStatus = true;
         }
 
         $scope.toggleeditGradeForm = function(item) {
             $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
-            console.log(item)
             $scope.editGradeFormContent = item;
+            $scope.selectStudentId = item.$id;
+            // console.log(item.$id)
         };
 
+            $scope.SetmoderateMarks = function(input){
+                $scope.ModerateMarksBy = input;
+                console.log('Moderate mark change to :' + input)
+            };
+
+            $scope.moderateMarks = function (mark) {
+                var newMark = parseInt(mark)
+                console.log(mark);
+                for (var i= 0; i < $scope.Grades.length ;i++){
+                    console.log($scope.Grades[i].marks);
+                    console.log($scope.Grades[i].$id);
+                    $scope.Grades[i].marks = $scope.Grades[i].marks + newMark;
+                    console.log($scope.Grades[i].marks);
+                    firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+$scope.Grades[i].$id).update({marks: $scope.Grades[i].marks });
+                }
+            };
+            
         //Click on tab to change content
         $scope.onClickTab = function (tab) {
             $scope.currentTab = 'views/courseGrades.html';
             $scope.currentCourse = tab.title;
             $scope.currentCourseStatus = tab.status;
             $scope.showGradeTable = false;
-
+            $scope.newTab = tab;
+            $scope.currentCourseId = tab.$id;
+            // console.log($scope.currentCourseId)
             if ($scope.currentCourseStatus == 'Pending'){
                 $scope.SelectedStatus = false;
             }
@@ -93,18 +79,23 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             }
 
             // set grades info
-            $scope.Grades = $scope.Courses[$scope.Courses.indexOf(tab)].student
-            console.log('index is : '+ $scope.Courses.indexOf(tab));
+            // $scope.Grades = $scope.Courses[$scope.Courses.indexOf(tab)].student
+            const srootRef = firebase.database().ref();
+            const Sref = srootRef.child('Courses/ICT/modules/'+$scope.currentCourseId+'/student');
+            //this allows us to use the array and the scope notation we are used to
+            $scope.Grades = $firebaseArray(Sref);
             console.log($scope.Grades);
-            console.log($scope.Courses);
-            // console.log($scope.Grades[0].marks);
         };
+
         $scope.isActiveTab = function(tabContent) {
             return tabContent == $scope.currentCourse;
         };
 
         $scope.checkRecommemdation = function (item) {
-            if (item == 0){
+            if (item == 'Pending'){
+                return false;
+            }
+            else {
                 return true;
             }
         };
@@ -124,6 +115,19 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             else{
                 return 'Fail';
             }
+        };
+            
+        $scope.replyRecommendation = function (answer) {
+
+            var newStatus = {status: answer}
+
+            // need to change student id
+           // firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId +'/recommendation').update(updateValue);
+            firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId ).update(newStatus);
+
+            // refesh grades info
+            $scope.Grades = $scope.Courses[$scope.Courses.indexOf($scope.newTab)].student
+            $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
         }
 
     }]);    //End of Dashboard controller

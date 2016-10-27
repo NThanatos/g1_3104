@@ -1,0 +1,213 @@
+{
+  "Courses" : {
+    "ACC" : {
+      "modules" : {
+        "ACC2102" : {
+          "lecturers" : "name"
+        }
+      }
+    },
+    "ICT" : {
+      "hod" : {
+        "id" : "dummyhod"
+      },
+      "modules" : {
+        "ICT1101" : {
+          "lecturers" : {
+            "KTxD6xM3gbdwP2p6sh4" : {
+              "email" : "wedwjedojweodjew@email.com",
+              "name" : "dhiadohiasd"
+            },
+            "timestamp" : {
+              "status" : "active"
+            },
+            "timestamp2" : {
+              "status" : "notactive"
+            }
+          },
+          "status" : "Pending",
+          "student" : {
+            "KTEeY14xEr-od4jg1ND" : {
+              "marks" : 37,
+              "name" : "dhina",
+              "recommendation" : {
+                "RecommendedMark" : 71,
+                "message" : "I recommend dhina for B",
+                "value" : 1
+              },
+              "status" : "Approved"
+            },
+            "KTxEMxrAYVSdtr0K1NH" : {
+              "marks" : 79,
+              "name" : "mary",
+              "recommendation" : {
+                "RecommendedMark" : 90,
+                "message" : "I recommend her"
+              },
+              "status" : "Pending"
+            },
+            "test" : {
+              "marks" : 89,
+              "name" : "Nicholas",
+              "recommendation" : {
+                "RecommendedMark" : 75,
+                "message" : "i recommend him",
+                "value" : 1
+              },
+              "status" : "Completed"
+            }
+          },
+          "title" : "Programming Fundamentals "
+        },
+        "ICT1102" : {
+          "status" : "Published",
+          "student" : {
+            "KTxEMxrAYVSdtr0K1NH" : {
+              "marks" : 32,
+              "name" : "winnie",
+              "recommendation" : {
+                "RecommendedMark" : 70,
+                "message" : "she deserve better"
+              },
+              "status" : "New"
+            },
+            "WNkaMxrNYVSdtr0N2CA" : {
+              "marks" : 90,
+              "name" : "John",
+              "status" : "New"
+            }
+          },
+          "title" : "Intro to Software Engineering"
+        }
+      }
+    }
+  },
+  "Users" : {
+    "-KTEeY14xEr-od4jg1ND" : {
+      "email" : "dhin@email.com",
+      "name" : "dhinakaranwedwed",
+      "password" : "testpass",
+      "profile" : {
+        "address" : "asdasdsad",
+        "citizenship" : "singaporean",
+        "gender" : "male",
+        "nok" : "adasd",
+        "nokPhone" : 99923452,
+        "phone" : 91235235
+      },
+      "role" : "Admin"
+    },
+    "-KTxBSx1mWi_pxEJ8onJ" : {
+      "email" : "dhina@email.com",
+      "name" : "efwefwefwef",
+      "password" : "owjefowefijwpif",
+      "profile" : {
+        "address" : "rghqerghoeqrgioerhgioerg",
+        "citizenship" : "erfwirfberf",
+        "gender" : "male",
+        "nok" : "fgwergwgweg",
+        "nokPhone" : "31312312312",
+        "phone" : "123123123"
+      },
+      "role" : "lecturer"
+    },
+    "-KTxD6xM3gbdwP2p6sh4" : {
+      "email" : "wedwjedojweodjew@email.com",
+      "name" : "dhiadohiasd",
+      "password" : "98123218937heui12",
+      "profile" : {
+        "address" : "fkhwelrhgjergeg",
+        "citizenship" : "jidfhiuwhfowrhf",
+        "gender" : "male",
+        "nok" : "kjfiuwerhfuerhfuier",
+        "nokPhone" : "129803791823798123",
+        "phone" : "34891623894123984"
+      },
+      "role" : "lecturer"
+    },
+    "-KTxEE0OHdNA4JEPTnrM" : {
+      "email" : "email@memail.com",
+      "name" : "ewwedewdwe",
+      "password" : "epofkwepofkew",
+      "profile" : {
+        "address" : "ewdwedwedwedwe",
+        "citizenship" : "wedwedwed",
+        "gender" : "female",
+        "nok" : "ferferfref",
+        "nokPhone" : "123123123",
+        "phone" : "123423432"
+      },
+      "role" : "hod"
+    },
+    "-KTxEMxrAYVSdtr0K1NH" : {
+      "email" : "student@memail.com",
+      "name" : "student",
+      "password" : "asd",
+      "profile" : {
+        "address" : "home",
+        "citizenship" : "sigaprean",
+        "gender" : "male",
+        "nok" : "father",
+        "nokPhone" : "123123123",
+        "phone" : "123423432"
+      },
+      "role" : "student"
+    },
+    "-KTxEPerLTp0F9-QSTtj" : {
+      "email" : "hod@memail.com",
+      "name" : "hod",
+      "password" : "epofkwepofkew",
+      "profile" : {
+        "address" : "home",
+        "citizenship" : "sigaprean",
+        "gender" : "male",
+        "nok" : "father",
+        "nokPhone" : "123123123",
+        "phone" : "123423432"
+      },
+      "role" : "hod"
+    },
+    "-KTxETQXbv90X5gCFqOm" : {
+      "email" : "lecturer@memail.com",
+      "name" : "lecturer",
+      "password" : "epofkwepofkew",
+      "profile" : {
+        "address" : "home",
+        "citizenship" : "sigaprean",
+        "gender" : "male",
+        "nok" : "father",
+        "nokPhone" : "123123123",
+        "phone" : "123423432"
+      },
+      "role" : "lecturer"
+    },
+    "-KTxEWA4imlqZW_MSY0m" : {
+      "email" : "admin@memail.com",
+      "name" : "admin",
+      "password" : "epofkwepofkew",
+      "profile" : {
+        "address" : "home",
+        "citizenship" : "sigaprean",
+        "gender" : "male",
+        "nok" : "father",
+        "nokPhone" : "123123123",
+        "phone" : "123423432"
+      },
+      "role" : "lecturer"
+    },
+    "-KV3jhtOeHowmiv3pcLP" : {
+      "email" : "poryee1@hotmail.com",
+      "name" : "por yee",
+      "password" : "rox",
+      "profile" : {
+        "address" : "Bedok north",
+        "citizenship" : "singaporean",
+        "gender" : "male",
+        "nok" : "aming",
+        "nokPhone" : "123",
+        "phone" : "91855929"
+      },
+      "role" : "hod"
+    }
+  }
+}

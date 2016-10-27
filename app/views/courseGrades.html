@@ -1,6 +1,7 @@
 <section class="contentDiv">
     <h4><strong>{{currentCourse}} | </strong> Status: {{currentCourseStatus}}</h4>
     <table class="table table-inverse">
+        <button class="btn-success btn-sm"  data-toggle="modal" data-target="#myModal" style="float:left" ng-hide="SelectedStatus">Moderate</button>
         <button class="btn-warning btn-sm"  style="float: right" ng-click="PublishGrades()" ng-hide="SelectedStatus">Publish</button>
         <thead>
         <tr>
@@ -14,7 +15,41 @@
             <td>{{stu.name}}</td>
             <td>{{getGrade(stu.marks)}}</td>
             <td>{{stu.marks}}</td>
-            <td ng-hide="SelectedStatus"><button ng-hide="checkRecommemdation(stu.recommendation.value)" class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td ng-hide="SelectedStatus">
+                <button ng-hide="checkRecommemdation(stu.status)" class="btn-primary btn-xs" ng-click="toggleeditGradeForm(stu)">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </button>
+            </td>
         </tr>
     </table>
 </section>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Moderate grades</h4>
+            </div>
+            <div class="modal-body">
+                    <input type="range" min="-100" max="100" value="0" id="fader"
+                           step="1" oninput="outputUpdate(value)" ng-model="ModerateMarksBy">
+                    <output for="fader" id="moderateBy">0</output>
+                <script type="text/javascript">console.log('hello world');
+                console.log(angular.element('#moderateBy').text());
+                </script>
+                <button class="btn-warning btn-sm"  ng-click="moderateMarks(ModerateMarksBy)">Moderate marks</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function outputUpdate(vol) {
+            document.querySelector('#moderateBy').value = vol
+            console.log(vol);
+        }
+
+    </script>
+</div>
