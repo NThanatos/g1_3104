@@ -68,29 +68,52 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
         };
 
         $scope.AddInfo = function (info) {
-            alert()
             //get the entire database tree
             const rootRef = firebase.database().ref();
 
             //zoom in to users table
             const ref = rootRef.child('Users');
-
             var newRef = ref.push();
-            newRef.set({
-                name: info.name,
-                email: info.email,
-                role: info.role,
-                password: info.password,
-                profile: {
-                    address: info.profile.address,
-                    citizenship: info.profile.citizenship,
-                    gender: info.profile.gender,
-                    nok: info.profile.nok,
-                    nokPhone: info.profile.nokPhone,
-                    phone: info.profile.phone
-                }
+            if(info.role=='student')
+            {
+                newRef.set({
+                    name: info.name,
+                    email: info.email,
+                    role: info.role,
+                    yearJoined: info.yearJoined,
+                    password: info.password,
+                    profile: {
+                        address: info.profile.address,
+                        citizenship: info.profile.citizenship,
+                        gender: info.profile.gender,
+                        nok: info.profile.nok,
+                        nokPhone: info.profile.nokPhone,
+                        phone: info.profile.phone
+                    }
 
-            });
+                });
+            }
+            else
+            {
+                newRef.set({
+                    name: info.name,
+                    email: info.email,
+                    role: info.role,
+
+                    password: info.password,
+                    profile: {
+                        address: info.profile.address,
+                        citizenship: info.profile.citizenship,
+                        gender: info.profile.gender,
+                        nok: info.profile.nok,
+                        nokPhone: info.profile.nokPhone,
+                        phone: info.profile.phone
+                    }
+
+                });
+            }
+
+
             getInfo();
         };
 
