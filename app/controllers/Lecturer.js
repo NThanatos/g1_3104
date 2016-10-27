@@ -11,19 +11,24 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
 
         (function initController() {
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //haven check if the modules and courses is only taught by that lecturer (because no role yet)
+            //haven check that students displayed in lecturer view are not archieve as archieve student should not appear (because no year yet)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
             const rootRef = firebase.database().ref();
         //point to the obj under courses
             const ref = rootRef.child('Courses');
 
             //here can use passed in variable + so that later behind that value can easier to swap
-///////
             var selectdata = myFactory.getCrseModData();
             const courseRef=rootRef.child('Courses/'+ selectdata.CrseName);
             const moduleRef=courseRef.child('modules/'+ selectdata.ModName);
             const studentRef=moduleRef.child("student");
             $scope.students = $firebaseObject(studentRef);
             $scope.ArrayStudent = $firebaseArray(studentRef);
-/////////
 
         //this is to get the different course and differnt modules
             $scope.modArr = [];   //store all the modules  - for dropdown filtering usage
@@ -55,9 +60,6 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
             });
 
 
-
-            //$scope.Coursesarr = $firebaseArray(ref);  //array of json objects from courses
-
         //this is to retrieve the all the students that was under the selected course and module and display it in the table next view
             $scope.studentArr = [];  //store all the students that register for the course and module
             //when the view student button was clicked...
@@ -68,21 +70,6 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
 
                 myFactory.setCrseModData(unimod);   //store the module and course that was selected into the factory so that it can be reference at any view page
 
-//                for(var j=0; j<$scope.Coursesarr.length;j++){
-//                    if($scope.Coursesarr[j].$id == $scope.selectedCourse){  //check if the course and the selected course is the same
-//                        for(var sm in $scope.Coursesarr[j].modules){
-//                            if(sm == $scope.selectedModule){   //check if the module and the selected module is the same
-//                                $scope.studentobj = $scope.Coursesarr[j].modules[sm].student;
-//                                for(var s in $scope.studentobj){
-//                                    var obj = $scope.studentobj[s];
-//                                    obj.id = s;  //add in another id attribute into the student object
-//                                    $scope.studentArr.push(obj);
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//                myFactory.setData($scope.studentArr);  //store the students that was register for that course and module into the factory
                 $window.location.href = '#/viewIndivModule';   //redirect to the individual page
             };
 
@@ -115,41 +102,9 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
                     {id: 2, choice: "no"}
                 ];
 
-        //retrieve the student which was used when user click to view students
-//            $scope.StudentArr = myFactory.getData();
-
-
-
         //when lecturer click on the submit button to submit the grades of all the student....
             $scope.submitGrade = function (result) {
-                // $scope.SelectedCrseMod = myFactory.getCrseModData();  //get the course and modules that previously user selected from the factory
-                //
-                // $scope.selectCrse = $scope.SelectedCrseMod.CrseName;
-                // $scope.selectMod = $scope.SelectedCrseMod.ModName;
 
-                // const rootRef = firebase.database().ref();
-                // const ref = rootRef.child('Courses');
-                // const crselist = ref.child($scope.selectCrse);
-                // const modlist = crselist.child('modules/' + $scope.selectMod);
-                // const studlist = modlist.child('student');
-
-//                console.log("studentmarks", $scope.StudentArr); //the marks is updated with the marks that was entered as input
-
-                // for(var i = 0; i< $scope.StudentArr.length; i++){
-                //     modlist.on("value", function(modchild){
-                //         for(var s in modchild.val().student){
-                //             if(s == $scope.StudentArr[i].id){
-                //                 const studobj = studlist.child(s);
-                //                 studobj.update({
-                //                     marks: $scope.StudentArr[i].marks,   //this is to add the new attribute key and value into the existing object in the database
-                //                     status: "Entered"   //this is to update the existing value
-                //                 });
-                //
-                //             }
-                //         }
-                //     });
-                // }
-////////
                 for(var i = 0; i< result.length; i++){
                     console.log("result", result[i]);
                     //check the recommend choice lecturer selects
@@ -168,7 +123,7 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
                     })
                 }
                 $window.location.href = '#/viewIndivModule';
-///////
+
             };
 
         //it will trigger when lecturer click add recommendation button
@@ -179,6 +134,15 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
 
                 $window.location.href = '#/addRecommendation';
             };
+
+            //change the status when hod reject the recommendation
+            $scope.changestatus = function(key){
+                studentRef.child(key).update({
+                    status: "Completed"
+                });
+                $window.location.href = '#/viewIndivModule';
+            };
+
         //retrieve the selected student data from factory
             $scope.selectedStud = myFactory.getStudRecommend();
 
@@ -243,7 +207,6 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
             //retrieve the recommendation from factory
             $scope.allrecommendation = myFactory.getViewRecommendation();
 
-/////
         //click link to respective view
             $scope.changeView = function(view){
                 $location.path(view);
@@ -282,213 +245,6 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
                     //else do nothing
                 });
             };
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //testing data
-            // $scope.dataTesting =
-            //     [
-            //         {
-            //             "id": "asdaf",
-            //             "course":
-            //                 [
-            //                     {
-            //                         "crseName": "ICT",
-            //                         "hod": "prof1",
-            //                         "modules":
-            //                             [
-            //                                 {
-            //                                     "modName": "ICT1001",
-            //                                     "lecturer":
-            //                                         [
-            //                                             {"lectName": "lect1"},
-            //                                             {"lectName": "lect2"}
-            //                                         ],
-            //                                     "students":
-            //                                         [
-            //                                             {
-            //                                                 "studMatrix": "STU1243",
-            //                                                 "studName": "stud1",
-            //                                                 "studMarks": 45,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": 70, "message": "increase", "value": 1}
-            //                                                     ],
-            //                                                 "marksStatus": "entered"
-            //                                             },
-            //                                             {
-            //                                                 "studMatrix": "STU3251",
-            //                                                 "studName": "stud2",
-            //                                                 "studMarks": null,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": null, "message": null, "value": null}
-            //                                                     ],
-            //                                                 "marksStatus": "new"
-            //                                             }
-            //                                         ]
-            //                                 },
-            //
-            //                                 {
-            //                                     "modName": "ICT2102",
-            //                                     "lecturer":
-            //                                         [
-            //                                             {"lectName": "lect3"},
-            //                                             {"lectName": "lect4"}
-            //                                         ],
-            //                                     "students":
-            //                                         [
-            //                                             {
-            //                                                 "studMatrix": "STU3546",
-            //                                                 "studName": "stud3",
-            //                                                 "studMarks": 45,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": 70, "message": "increase", "value": 1}
-            //                                                     ],
-            //                                                 "marksStatus": "entered"
-            //                                             },
-            //                                             {
-            //                                                 "studMatrix": "STU12435",
-            //                                                 "studName": "stud4",
-            //                                                 "studMarks": null,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": null, "message": null, "value": null}
-            //                                                     ],
-            //                                                 "marksStatus": "new"
-            //                                             }
-            //                                         ]
-            //                                 }
-            //                             ]
-            //                     },
-            //
-            //                     {
-            //                         "crseName": "ACC",
-            //                         "hod": "prof2",
-            //                         "modules":
-            //                             [
-            //                                 {
-            //                                     "modName": "ACC2102",
-            //                                     "lecturer":
-            //                                         [
-            //                                             {"lectName": "lect5"},
-            //                                             {"lectName": "lect6"}
-            //                                         ],
-            //                                     "students":
-            //                                         [
-            //                                             {
-            //                                                 "studMatrix": "STU3821",
-            //                                                 "studName": "stud5",
-            //                                                 "studMarks": 45,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": 70, "message": "increase", "value": 1}
-            //                                                     ],
-            //                                                 "marksStatus": "entered"
-            //                                             },
-            //                                             {
-            //                                                 "studMatrix": "STU2350",
-            //                                                 "studName": "stud6",
-            //                                                 "studMarks": null,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": null, "message": null, "value": null}
-            //                                                     ],
-            //                                                 "marksStatus": "new"
-            //                                             }
-            //                                         ]
-            //                                 },
-            //
-            //                                 {
-            //                                     "modName": "ACC4201",
-            //                                     "lecturer":
-            //                                         [
-            //                                             {"lectName": "lect7"},
-            //                                             {"lectName": "lect8"}
-            //                                         ],
-            //                                     "students":
-            //                                         [
-            //                                             {
-            //                                                 "studMatrix": "STU9053",
-            //                                                 "studName": "stud7",
-            //                                                 "studMarks": 45,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": 70, "message": "increase", "value": 1}
-            //                                                     ],
-            //                                                 "marksStatus": "entered"
-            //                                             },
-            //                                             {
-            //                                                 "studMatrix": "STU0002",
-            //                                                 "studName": "stud8",
-            //                                                 "studMarks": null,
-            //                                                 "studRecommendation":
-            //                                                     [
-            //                                                         {"recommendMark": null, "message": null, "value": null}
-            //                                                     ],
-            //                                                 "marksStatus": "new"
-            //                                             }
-            //                                         ]
-            //                                 }
-            //                             ]
-            //                     }
-            //                 ]
-            //
-            //         }
-            //     ];
-            //
-            // //transform the data
-            // $scope.datatestingTransformed = [];
-            // $scope.courseName = [];
-            // $scope.moduleName = [];
-            // $scope.dataTesting.forEach(function(rootref){
-            //     rootref.course.forEach(function(courseref) {
-            //         courseref.modules.forEach(function(modref){
-            //             modref.students.forEach(function(sturef){
-            //                 //get the different courses
-            //                 var courseSame = false;
-            //                 for (var i = 0; i < $scope.courseName.length; i++) {
-            //                     if ($scope.courseName[i] == courseref.crseName) {
-            //                         courseSame = true;
-            //                     }
-            //                 }
-            //                 if (courseSame == false) {
-            //                     $scope.courseName.push(courseref.crseName);
-            //                 }
-            //                 //get the different modules
-            //                 var moduleSame = false;
-            //                 for (var m = 0; m < $scope.moduleName.length; m++) {
-            //                     if ($scope.moduleName[m] == modref.modName) {
-            //                         moduleSame = true;
-            //                     }
-            //                 }
-            //                 if (moduleSame == false) {
-            //                     $scope.moduleName.push(modref.modName);
-            //                 }
-            //
-            //                 //array with course, modules, student
-            //                 $scope.datatestingTransformed.push({
-            //                     id: rootref.id,
-            //                     coursename: courseref.crseName,
-            //                     modulename: modref.modName,
-            //                     stumatrix: sturef.studMatrix,
-            //                     stumarks: sturef.studMarks,
-            //                     publishstatus: sturef.marksStatus
-            //                 });
-            //             });
-            //         });
-            //     });
-            // });
 
         })();
 
