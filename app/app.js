@@ -139,14 +139,14 @@ angular.module('G1Project', [
                 controller: 'RegisterStudent'
             })
 
-            .when('/StudentDashboard',{
-                templateUrl: 'views/StudentDashboard.html',
-                controller: 'StudentCtrl'
-            })
+            //.when('/StudentDashboard',{
+            //    templateUrl: 'views/StudentDashboard.html',
+            //    controller: 'StudentCtr'
+            //})
 
             .when('/StudentGrades',{
                 templateUrl: 'views/StudentGrades.html',
-                controller: 'Studentasd' //cannot same name as another one on top ^
+                controller: 'StudentCtrl' //cannot same name as another one on top ^
             })
             .otherwise({redirectTo: '/Dashboard'})
 

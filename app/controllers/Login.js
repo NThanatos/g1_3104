@@ -83,9 +83,13 @@ angular.module('G1.login', ['ngRoute'])
 
                         //for persistent
                         $localStorage.credential= childSnap.val();
+                        $localStorage.studentCredential = snap.val();
+
 
                         //for the view
                         $rootScope.userData = $localStorage.credential;
+                        $rootScope.studentData = $localStorage.studentCredential;
+
 
                         //update hidden
                         $scope.$parent.updateHidden(1);
@@ -93,6 +97,8 @@ angular.module('G1.login', ['ngRoute'])
 
                         //route to dashboard
                         $location.path('Dashboard')
+
+
                     }
                 })
 
