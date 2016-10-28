@@ -49,14 +49,16 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                 for(var count= 0; count < $scope.archArr.length ;count++){
                     console.log($scope.archArr[count])
                     var GetRef = rootRef.child('Users/'+ $scope.archArr[count])
-                    $scope.Users.push($firebaseObject(GetRef))
-                    //console.log($scope.Users.length)
-                    //console.log($scope.Users[count])
-                    //
-                    // var asd = $scope.Users[0];
-                    //
-                    // console.log(asd);
-                    // firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users[count])
+                    // $scope.Users.push($firebaseObject(GetRef))
+                    var tempUser = [];
+                    var temparr = []
+                    tempUser.push($firebaseArray(GetRef))
+                    $scope.Users.push(tempUser[count])
+                    console.log($scope.Users.length)
+                    console.log($scope.Users)
+                    temparr.push(tempUser[count]);
+                    
+                    firebase.database().ref('archive/'+ $scope.archArr[count]).set(temparr[count])
                     // firebase.database().ref('archive/'+ $scope.archArr[count]).set({name: 'tester', value: 2})
                 }
  //               firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users)
@@ -69,13 +71,15 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                 //for each student that is required to achieve
                 snap.forEach(function (childSnap) {
                     $scope.temp = childSnap.val();
-
-                    console.log(childSnap.key);
-                    console.log($scope.temp);
-                    console.log($scope.temp.name);
-                    console.log($scope.temp.email);
-                    console.log($scope.temp.profile);
-                    //achref.update();
+                    //insert one obj into firebase
+                    firebase.database().ref('archive/'+ childSnap.key).update({
+                        name: $scope.temp.name,
+                        email:$scope.temp.email,
+                        yearJoined:$scope.temp.yearJoined,
+                        profile: $scope.temp.profile
+                    })
+                    //remove here
+                    firebase.database().ref('Users/'+ childSnap.key).remove()
                 })
             });
 
