@@ -26,6 +26,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
         function getUsers() {
             const rootRef = firebase.database().ref();
             const ref = rootRef.child('Users');
+            /*
             // $scope.Users = $firebaseArray(ref)
             ref.on('value', function(crse){
                 crse.forEach(function(keymod){
@@ -59,6 +60,23 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                     // firebase.database().ref('archive/'+ $scope.archArr[count]).set({name: 'tester', value: 2})
                 }
  //               firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users)
+            });
+            */
+            const achref = ref.child("testach");
+            //todays year -3
+            var year = "2013";
+            ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {
+                //for each student that is required to achieve
+                snap.forEach(function (childSnap) {
+                    $scope.temp = childSnap.val();
+
+                    console.log(childSnap.key);
+                    console.log($scope.temp);
+                    console.log($scope.temp.name);
+                    console.log($scope.temp.email);
+                    console.log($scope.temp.profile);
+                    //achref.update();
+                })
             });
 
         };
