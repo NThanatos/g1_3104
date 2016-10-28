@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Lecturer.js" afterPath="$PROJECT_DIR$/app/controllers/Lecturer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/viewIndivModule.html" afterPath="$PROJECT_DIR$/app/views/viewIndivModule.html" />
     </list>
     <ignored path="group1_3104.iws" />
@@ -26,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="viewIndivModule.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="viewIndivModule.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/viewIndivModule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="249">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -58,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-170">
-              <caret line="191" column="9" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
+              <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,10 +147,10 @@
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/bower_components/bootstrap/dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/views/myModalContent.html" />
-        <option value="$PROJECT_DIR$/app/views/viewIndivModule.html" />
         <option value="$PROJECT_DIR$/app/controllers/Lecturer.js" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/views/viewIndivModule.html" />
       </list>
     </option>
   </component>
@@ -565,7 +562,7 @@
       <workItem from="1476877630086" duration="298000" />
       <workItem from="1477106472030" duration="4131000" />
       <workItem from="1477444310950" duration="23201000" />
-      <workItem from="1477550816778" duration="6808000" />
+      <workItem from="1477550816778" duration="6912000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -616,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477499969024</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated Edit only to show only approved, removed uncessary firebase object in view">
+      <created>1477617042639</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1477617042639</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71578000" />
+    <option name="totallyTimeSpent" value="71682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -683,7 +687,8 @@
     <MESSAGE value="updated path for database from test&#10;refresh rootscope in app.js instead of admindashboard" />
     <MESSAGE value="Implemented ng-ifs to only show relavent navigation side bar for appropriate user roles commmented to ease development" />
     <MESSAGE value="Added Angular Material to bower&#10;Created MdDialog for edit popup within lecturer page to modify marks&#10;Updated Firebase students scope for easier access instead of studentarr&#10;included update function for firebase specific object update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Angular Material to bower&#10;Created MdDialog for edit popup within lecturer page to modify marks&#10;Updated Firebase students scope for easier access instead of studentarr&#10;included update function for firebase specific object update" />
+    <MESSAGE value="Updated Edit only to show only approved, removed uncessary firebase object in view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Edit only to show only approved, removed uncessary firebase object in view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -967,14 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/viewIndivModule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1004,7 +1001,15 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
-          <caret line="191" column="9" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/viewIndivModule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
           <folding />
         </state>
       </provider>
