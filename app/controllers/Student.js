@@ -77,18 +77,10 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
                                         //{
                                         //    alert("not")
                                         //}
-
-
                                     }
-
                                 )
-
-
                             })
-
                         })
-
-
                     })
                 })
                 $rootScope.transferTest = $scope.resultsArray;

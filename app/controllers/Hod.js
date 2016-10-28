@@ -27,7 +27,8 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             const ref = rootRef.child('Courses/ICT/modules');
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
-            console.log($firebaseArray(ref))
+            console.log($scope.Courses.length)
+
         }
 
         
@@ -54,10 +55,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                 var newMark = parseInt(mark)
                 console.log(mark);
                 for (var i= 0; i < $scope.Grades.length ;i++){
-                    console.log($scope.Grades[i].marks);
-                    console.log($scope.Grades[i].$id);
                     $scope.Grades[i].marks = $scope.Grades[i].marks + newMark;
-                    console.log($scope.Grades[i].marks);
                     firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+$scope.Grades[i].$id).update({marks: $scope.Grades[i].marks });
                 }
             };
@@ -84,7 +82,6 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             const Sref = srootRef.child('Courses/ICT/modules/'+$scope.currentCourseId+'/student');
             //this allows us to use the array and the scope notation we are used to
             $scope.Grades = $firebaseArray(Sref);
-            console.log($scope.Grades);
         };
 
         $scope.isActiveTab = function(tabContent) {

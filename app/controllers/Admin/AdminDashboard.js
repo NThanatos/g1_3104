@@ -6,19 +6,62 @@
  */
 'use strict';
 
-angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
+angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('AdminDashboardCtrl', ['$rootScope', '$localStorage', function ($rootScope, $localStorage) {
+    .controller('AdminDashboardCtrl', ['$rootScope', '$localStorage', '$scope', '$firebaseObject', '$firebaseArray',
+        function ($rootScope, $localStorage, $scope, $firebaseObject, $firebaseArray) {
 
         (function initController() {
+            $scope.archArr = [];
+            $scope.Users = [];
+            getUsers();
 
             //$cookieStore.put("user", "dhina");
             //var value = $cookieStore.get("user");
             //var user=$rootScope.userData;
 
-
-            console.log("welcome "+$rootScope.userData.role);
-
         })();
+
+        //Archive student function
+        function getUsers() {
+            const rootRef = firebase.database().ref();
+            const ref = rootRef.child('Users');
+            // $scope.Users = $firebaseArray(ref)
+            ref.on('value', function(crse){
+                crse.forEach(function(keymod){
+                    keymod.forEach(function(title){
+                        if(title.key == 'yearJoined'){
+                            var tempcheck = title.val()
+                            tempcheck = parseInt(tempcheck)
+                            //add date year
+                            if (tempcheck < 2015){
+                                $scope.archArr.push(keymod.key);
+                                console.log(keymod);
+                            }
+                            
+                        }
+                    })
+
+                });
+                console.log($scope.archArr.length)
+
+                for(var count= 0; count < $scope.archArr.length ;count++){
+                    console.log($scope.archArr[count])
+                    var GetRef = rootRef.child('Users/'+ $scope.archArr[count])
+                    $scope.Users.push($firebaseObject(GetRef))
+                    //console.log($scope.Users.length)
+                    //console.log($scope.Users[count])
+                    //
+                    // var asd = $scope.Users[0];
+                    //
+                    // console.log(asd);
+                    // firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users[count])
+                    // firebase.database().ref('archive/'+ $scope.archArr[count]).set({name: 'tester', value: 2})
+                }
+ //               firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users)
+            });
+
+        };
+        //Archive student function - end
 
     }]);    //End of Dashboard controller
