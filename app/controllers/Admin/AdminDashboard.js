@@ -66,7 +66,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             */
             const achref = ref.child("testach");
             //todays year -3
-            var year = "2013";
+            var year = new Date().getFullYear() - 3
             ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {
                 //for each student that is required to achieve
                 snap.forEach(function (childSnap) {
