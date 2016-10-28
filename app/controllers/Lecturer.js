@@ -234,7 +234,7 @@ angular.module('G1.Lecturer', ['ngMaterial','ngRoute', 'angularUtils.directives.
                         //update
 
                         //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
-                        studentRef.child(studentid).update({marks:result});
+                        studentRef.child(studentid).update({marks:parseInt(result), status:"Completed"});
                         //tempstudent.marks=result;
                         //tempstudent.$save();
                     }

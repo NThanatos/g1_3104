@@ -26,7 +26,7 @@
             <!--<button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="open('warning')">-->
 
 
-            <button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="editPrompt($even, student.marks, key)">
+            <button class="btn btn-warning" ng-hide="(student.status != 'Approved')"  ng-click="editPrompt($even, student.marks, key)">
                 <span class="glyphicon glyphicon-edit"> Edit</span>
             </button>
 
@@ -44,4 +44,9 @@
         </td>
     </tr>
 </table>
-{{students}}
+<output id="demo">Click the button to change the text in this paragraph.</output>
+
+<script type="text/javascript">
+    console.log("Hello world");
+    console.log(angular.element('#demo').text());
+</script>
