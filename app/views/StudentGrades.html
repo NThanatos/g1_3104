@@ -43,11 +43,11 @@
 <!--<p>loop here</p>-->
 <!--<ul>-->
 <!--<li ng-repeat="item in transferTest">{{item.Module_Code}}</li>-->
-<!--<li ng-repeat="item in transferTest">{{item.Marks}}</li>-->
+<!--<li ng-repeat="item in transferTest">{{item.Grades}}</li>-->
 <!--<li ng-repeat="item in transferTest">{{item.Recommendation}}</li>-->
 <!--</ul>-->
 <!--</div>-->
-
+<h2>Your GPA: {{gpa}}</h2>
 <div ng-controller="StudentCtrl">
     <table id="grades">
         <tr style="border: 1px solid black; padding: 50px; background-color: black; color: white;">
@@ -61,14 +61,20 @@
         <tr ng-repeat="item in resultsArray">
             <td>{{item.Module_Name}}</td>
             <td>{{item.Module_Code}}</td>
-            <td>{{item.Marks}}</td>
+            <td>{{item.Grades}}</td>
             <td>{{item.Recommendation}}</td>
         </tr>
 
 
 
     </table>
+
+
+
+
 </div>
+
+
 
 
 

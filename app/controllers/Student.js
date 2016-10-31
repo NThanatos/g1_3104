@@ -12,6 +12,8 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
 
         (function initController() {
 
+
+
             $scope.rotated = false;
             $scope.rotate = function() {
                 $scope.rotated = !$scope.rotated;
@@ -42,6 +44,7 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
                 $scope.userKey = "KTxEMxrAYVSdtr0K1NH"
 
             }
+            $scope.gpa = decryptGPA($scope.userKey);
 
             var coursesRef = rootRef.child('Courses')
             coursesRef.once('value', function (snapshot) {
@@ -59,7 +62,10 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
 
                                             $scope.moduleName = moduleCode.val().title;
                                             //$scope.studentName = userRole2.val().name;
-                                            $scope.marks = userRole2.val().marks;
+                                            $scope.grades = getGrade(userRole2.val().marks);
+
+
+
                                             //$scope.resultArray[modulePos].push($scope.marks)
                                             userRole2.forEach(function (recommendationSnap) {
                                                 recommendationSnap.forEach(function (getMessage) {
@@ -69,7 +75,7 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
                                             })
 
                                             $scope.moduleCode = moduleCode.key //module code
-                                            $scope.resultsArray.push({"Module_Name": $scope.moduleName,"Module_Code": $scope.moduleCode, "Marks" :$scope.marks,"Recommendation" :$scope.moduleRecommendation})
+                                            $scope.resultsArray.push({"Module_Name": $scope.moduleName,"Module_Code": $scope.moduleCode, "Grades" :$scope.grades,"Recommendation" :$scope.moduleRecommendation})
                                             console.log($scope.resultsArray, " array results")
                                         }
 
@@ -91,9 +97,28 @@ var app= angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPa
         })();
 
 //Other Function-------------------------------------------------------------------------------------------------------
+         function getGrade(mark) {
+            if (mark > 85){
+                return 'A';
+            }
+            else if(mark > 70){
+                return 'B';
+            }
+            else if(mark > 60){
+                return 'C';
+            }
+            else if(mark > 50){
+                return 'D';
+            }
+            else{
+                return 'Fail';
+            }
+        };
 
-
-
+        function decryptGPA(userkey) {
+            //TODO: get encrypted GPA from userstable for userkey..then decrypt then send back
+                return "4.5"
+        };
     }])
     .directive("rotateFlip", function() {
         var first = true;

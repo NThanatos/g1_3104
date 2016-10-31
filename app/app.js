@@ -23,7 +23,8 @@ angular.module('G1Project', [
     'G1.logout',
     'G1.Lecturer',
     'firebase',
-    //'G1.Student',
+    'G1.Student',
+    'G1.StudentDashboard',
     'ngStorage',
     'ngCookies'
 
@@ -139,10 +140,10 @@ angular.module('G1Project', [
                 controller: 'RegisterStudent'
             })
 
-            //.when('/StudentDashboard',{
-            //    templateUrl: 'views/StudentDashboard.html',
-            //    controller: 'StudentCtr'
-            //})
+            .when('/StudentDashboard',{
+               templateUrl: 'views/Student/StudentDashboard.html',
+               controller: 'StudentDashboardCtrl'
+            })
 
             .when('/StudentGrades',{
                 templateUrl: 'views/StudentGrades.html',
