@@ -147,7 +147,7 @@ angular.module('G1Project', [
             })
 
             .when('/StudentGrades', {
-                templateUrl: 'views/StudentGrades.html',
+                templateUrl: 'views/Student/StudentGrades.html',
                 controller: 'StudentCtrl' //cannot same name as another one on top ^
             })
             .otherwise({redirectTo: '/Dashboard'})
@@ -189,6 +189,10 @@ angular.module('G1Project', [
 
             .when('/addRecommendation', {
                 templateUrl: 'views/addRecommendation.html',
+                controller: 'LecturerCtrl'
+            })
+            .when('/ViewStudentGrades', {
+                templateUrl: 'views/ViewStudentGrades.html',
                 controller: 'LecturerCtrl'
             })
 
