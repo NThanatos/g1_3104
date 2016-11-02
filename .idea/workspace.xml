@@ -1,120 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="Finished student dashboard">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/angular-cryptography.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/angular-cryptography/mdo-angular-cryptography.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/aes-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/aes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/cipher-core-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/cipher-core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/core-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-base64-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-base64.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-utf16-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-utf16.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/evpkdf-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/evpkdf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/format-hex-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/format-hex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/hmac-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/hmac.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/lib-typedarrays-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/lib-typedarrays.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/md5-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-cfb-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-cfb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-gladman-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-gladman.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ecb-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ecb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ofb-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ofb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-ansix923-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-ansix923.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso10126-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso10126.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso97971-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso97971.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-nopadding-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-nopadding.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-zeropadding-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-zeropadding.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pbkdf2-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/pbkdf2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-legacy-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-legacy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rc4-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/rc4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/ripemd160-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/ripemd160.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha1-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha224-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha224.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha256-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha256.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha3-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha384-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha384.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha512-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha512.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/tripledes-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/tripledes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/x64-core-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/components/x64-core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/copyright.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/push.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/aes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-ripemd160.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha224.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha256.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha384.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha512.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/pbkdf2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rabbit-legacy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rabbit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rc4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/ripemd160.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha224.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha256.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha384.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha512.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/tripledes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower_components/cryptojslib/status.bat" />
+    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Login.js" afterPath="$PROJECT_DIR$/app/controllers/Login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Student.js" afterPath="$PROJECT_DIR$/app/controllers/Student.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/StudentDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/StudentDashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/NewAccountCreation.html" afterPath="$PROJECT_DIR$/app/views/Admin/NewAccountCreation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/StudentGrades.html" afterPath="$PROJECT_DIR$/app/views/StudentGrades.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -263,6 +152,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -400,7 +329,7 @@
       <workItem from="1477910971534" duration="7732000" />
       <workItem from="1477978552857" duration="2426000" />
       <workItem from="1477996412363" duration="10247000" />
-      <workItem from="1478049441080" duration="7656000" />
+      <workItem from="1478049441080" duration="9173000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -479,11 +408,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477924017438</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Calculating GPA done and components needed for encryption added">
+      <created>1478057579302</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1478057579302</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104290000" />
+    <option name="totallyTimeSpent" value="105807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -550,7 +486,8 @@
     <MESSAGE value="removed alert and console logs from module view" />
     <MESSAGE value="completed archiving on users to archive table&#10;&#10;-move from modules to archive not done" />
     <MESSAGE value="Finished student dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished student dashboard" />
+    <MESSAGE value="Calculating GPA done and components needed for encryption added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calculating GPA done and components needed for encryption added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -805,19 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#534#863#0" expanded="false" />
-            <element signature="e#979#1110#0" expanded="false" />
-            <element signature="e#1158#1614#0" expanded="false" />
-            <element signature="e#1660#1924#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/StudentDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -850,21 +774,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Student.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="145" column="76" selection-start-line="145" selection-start-column="76" selection-end-line="145" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="356" column="30" selection-start-line="356" selection-start-column="30" selection-end-line="356" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <element signature="e#534#863#0" expanded="false" />
+            <element signature="e#979#1110#0" expanded="false" />
+            <element signature="e#1660#1924#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Student.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

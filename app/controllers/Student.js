@@ -141,9 +141,16 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
 
             function encryptGPAandSendtoFirebase(userkey, gpa) {
 
-                var encrypted = $crypto.encrypt(gpa.toString());
-                var decrypted = $crypto.decrypt(encrypted);
-                //TODO: store encrypted gpa into user table based on userkey
+                var encryptedgpa = $crypto.encrypt(gpa.toString());
+                var decryptedgpa = $crypto.decrypt(encryptedgpa);
+                const rootRef = firebase.database().ref();
+                var hyphen = "-";
+                var fullUserKey =hyphen.concat(userkey);
+                //zoom in to users table
+                const ref = rootRef.child('Users');
+                ref.child(fullUserKey).update({
+                    gpa: encryptedgpa
+                });
             };
         }])
 // .directive("rotateFlip", function () {
