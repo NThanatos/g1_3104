@@ -195,7 +195,10 @@ angular.module('G1Project', [
                 templateUrl: 'views/ViewStudentGrades.html',
                 controller: 'LecturerCtrl'
             })
-
+            .when('/changepassword', {
+                templateUrl: 'views/changepassword.html',
+                controller: 'loginCtrl'
+            })
             .when('/Login', {
                 /*url:'/inbox/25',*/
                 templateUrl: 'views/login.html',

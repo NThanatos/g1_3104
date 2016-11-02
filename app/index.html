@@ -36,71 +36,73 @@
 
 <body ng-controller="MainCtrl">
 
-    <!--<div ng-hide="hidelogin" ng-include src="'views/login.html'"></div>-->
-    <!--<div ng-hide="hidemain">-->
-    <header class="cd-header" ng-hide="hidemain"> <!--style="position: fixed"-->>
-        <!--<a class="cd-primary-nav-trigger" href="">
-            <span class="cd-menu-icon"></span>
-        </a>-->
-        <!--<ul class="nav navbar-nav">
-            <li ng-class="{active: isActive('/profile')}">
-                <a href="#/profile"><i class="fa fa-dashboard"></i> You</a>
-            </li>
-            <li ng-class="{active: isActive('/find')}">
-                <a href="#/find"><i class="fa fa-bar-chart-o"></i> Find Friends</a>
-            </li>
-            <li ng-class="{active: isActive('/network')}">
-                <a href="#/network"><i class="fa fa-table"></i> Network </a>
-            </li>
-            <li ng-class="{active: isActive('/chat')}">
-                <a href="#/chat"><i class="fa fa-edit"></i> Chat Room </a>
-            </li>
-        </ul>-->
-        <div class="dropdown" style="float: right;">
-            <button class="btn btn-default dropdown-toggle" type="button" md-position-mode="target-right target" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                {{userData.name}}
-                    <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<!--<div ng-hide="hidelogin" ng-include src="'views/login.html'"></div>-->
+<!--<div ng-hide="hidemain">-->
+<header class="cd-header" ng-hide="hidemain"> <!--style="position: fixed"-->>
+    <!--<a class="cd-primary-nav-trigger" href="">
+        <span class="cd-menu-icon"></span>
+    </a>-->
+    <!--<ul class="nav navbar-nav">
+        <li ng-class="{active: isActive('/profile')}">
+            <a href="#/profile"><i class="fa fa-dashboard"></i> You</a>
+        </li>
+        <li ng-class="{active: isActive('/find')}">
+            <a href="#/find"><i class="fa fa-bar-chart-o"></i> Find Friends</a>
+        </li>
+        <li ng-class="{active: isActive('/network')}">
+            <a href="#/network"><i class="fa fa-table"></i> Network </a>
+        </li>
+        <li ng-class="{active: isActive('/chat')}">
+            <a href="#/chat"><i class="fa fa-edit"></i> Chat Room </a>
+        </li>
+    </ul>-->
+    <div class="dropdown" style="float: right;">
+        <button class="btn btn-default dropdown-toggle" type="button" md-position-mode="target-right target"
+                id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{userData.name}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
-                <li><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
 
-                <li><a href="#/Logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <nav ng-hide="hidemain">
-        <ul class="cd-primary-nav">
-            <li class="cd-label">Sub header</li>
-
-            <li><a href="#Dashboard">Dashboard</a></li>
-            <li><a href="#Create">Create</a></li>
-            <li><a href="#">Link 3</a></li>
-
-            <li class="cd-label">Sub header</li>
-
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
+            <li><a href="#/Logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+            <li><a href="#changepassword"><i class="fa fa-wrench"></i>Change Password</a></li>
         </ul>
-    </nav>
-    <section class="cd-intro" ng-hide="hidemain">
-        <img src="Images/background.jpg">
-        <div class="introContainer">
-            <table class="introTable">
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<th>-->
-                        <!--<h1>Student Management System</h1>-->
-                    <!--</th>-->
-                    <!--<th>-->
-                        <!--<h1>Something</h1>-->
-                    <!--</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-            </table>
-        </div>
-    </section>
+    </div>
+</header>
+
+<nav ng-hide="hidemain">
+    <ul class="cd-primary-nav">
+        <li class="cd-label">Sub header</li>
+
+        <li><a href="#Dashboard">Dashboard</a></li>
+        <li><a href="#Create">Create</a></li>
+        <li><a href="#">Link 3</a></li>
+
+        <li class="cd-label">Sub header</li>
+
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+</nav>
+<section class="cd-intro" ng-hide="hidemain">
+    <img src="Images/background.jpg">
+    <div class="introContainer">
+        <table class="introTable">
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<th>-->
+            <!--<h1>Student Management System</h1>-->
+            <!--</th>-->
+            <!--<th>-->
+            <!--<h1>Something</h1>-->
+            <!--</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+        </table>
+    </div>
+</section>
 <!-- START PAGE CONTAINER -->
 <div class="page-container">
     <!-- START PAGE SIDEBAR -->
@@ -117,42 +119,43 @@
             </li>
 
 
-                <li data-toggle="toggle" data-target="#menuTest">
-                    <a>
-                        <span class="xn-text">My Modules <span class="caret"></span></span>
-                    </a>
-                </li>
-                <li id="menuTest" class="MenuSubItem">
-                    <div>
-                        <ul class="x-navigation">
-                            <li>
-                                <a href="#"><span class="fa fa-server"></span><span class="xn-text">ICT1101</span></a>
-                            </li>
-                            <li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">ICT1102</span></a> </li>
-                        </ul>
-                    </div>
-                </li>
+            <li data-toggle="toggle" data-target="#menuTest">
+                <a>
+                    <span class="xn-text">My Modules <span class="caret"></span></span>
+                </a>
+            </li>
+            <li id="menuTest" class="MenuSubItem">
+                <div>
+                    <ul class="x-navigation">
+                        <li>
+                            <a href="#"><span class="fa fa-server"></span><span class="xn-text">ICT1101</span></a>
+                        </li>
+                        <li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">ICT1102</span></a></li>
+                    </ul>
+                </div>
+            </li>
 
             <!--<li>-->
-                <!--<a href="#Create"><span class="fa fa-desktop"></span> <span class="xn-text">Create</span></a>-->
+            <!--<a href="#Create"><span class="fa fa-desktop"></span> <span class="xn-text">Create</span></a>-->
             <!--</li>-->
 
-                <li class="xn-title">Admin</li>
-                <li>
-                    <a href="#AdminDashboard"><span class="fa fa-desktop"></span> <span class="xn-text">Admin dashboard</span></a>
-                </li>
+            <li class="xn-title">Admin</li>
+            <li>
+                <a href="#AdminDashboard"><span class="fa fa-desktop"></span> <span
+                        class="xn-text">Admin dashboard</span></a>
+            </li>
 
 
-                <li class="xn-title">Head of Department</li>
-                <li>
-                    <a href="#Hod"><span class="fa fa-black-tie"></span> <span class="xn-text">View Grades</span></a>
-                </li>
+            <li class="xn-title">Head of Department</li>
+            <li>
+                <a href="#Hod"><span class="fa fa-black-tie"></span> <span class="xn-text">View Grades</span></a>
+            </li>
 
 
-                <li class="xn-title">Lecturer</li>
-                <li>
-                    <a href="#Lecturer"><span class="fa fa-male"></span> <span class="xn-text">My Class Grades</span></a>
-                </li>
+            <li class="xn-title">Lecturer</li>
+            <li>
+                <a href="#Lecturer"><span class="fa fa-male"></span> <span class="xn-text">My Class Grades</span></a>
+            </li>
             <li class="xn-title">Student</li>
             <li>
                 <a href="#StudentDashboard"><span class="fa fa-male"></span> <span class="xn-text">Student</span></a>
@@ -179,19 +182,19 @@
                 </li>
             </div>
             <!--<li>-->
-                <!--<a data-toggle="toggle" data-target="#menuTest2">-->
-                    <!--<span class="xn-text">Menu Test <span class="caret"></span></span>-->
-                <!--</a>-->
+            <!--<a data-toggle="toggle" data-target="#menuTest2">-->
+            <!--<span class="xn-text">Menu Test <span class="caret"></span></span>-->
+            <!--</a>-->
             <!--</li>-->
             <!--<li>-->
-                <!--<div id="menuTest2" class="MenuSubItem">-->
-                    <!--<ul class="x-navigation">-->
-                        <!--<li>-->
-                            <!--<a href="#"><span class="fa fa-server"></span><span class="xn-text">Sun item</span></a>-->
-                        <!--</li>-->
-                        <!--<li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">Some subitem</span></a> </li>-->
-                    <!--</ul>-->
-                <!--</div>-->
+            <!--<div id="menuTest2" class="MenuSubItem">-->
+            <!--<ul class="x-navigation">-->
+            <!--<li>-->
+            <!--<a href="#"><span class="fa fa-server"></span><span class="xn-text">Sun item</span></a>-->
+            <!--</li>-->
+            <!--<li><a href="#"><span class="fa fa-anchor"></span><span class="xn-text">Some subitem</span></a> </li>-->
+            <!--</ul>-->
+            <!--</div>-->
             <!--</li>-->
 
         </ul>
@@ -203,11 +206,11 @@
     <div class="page-content">
         <!-- PAGE CONTENT WRAPPER -->
         <div class="page-content-wrap">
-                            <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
-                            <main id="content" class="content" role="main">
-                                <!--<h1 class="page-title">{{pageHeader}}</h1>-->
-                                <div id="viewContent" ng-view></div>
-                            </main>
+            <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
+            <main id="content" class="content" role="main">
+                <!--<h1 class="page-title">{{pageHeader}}</h1>-->
+                <div id="viewContent" ng-view></div>
+            </main>
             <!-- END PAGE CONTENT WRAPPER -->
         </div>
         <!-- END PAGE CONTENT -->
@@ -217,90 +220,90 @@
 
 </div>
 
-    <!--TEMPLATE JS-->
-    <script src="vendor/jquery/dist/jquery.js"></script>
-    <script src="vendor/jquery-pjax/jquery.pjax.js"></script>
-    <script src="vendor/tether/dist/js/tether.js"></script>
-    <script src="vendor/bootstrap/js/dist/util.js"></script>
-    <script src="vendor/bootstrap/js/dist/collapse.js"></script>
-    <script src="vendor/bootstrap/js/dist/dropdown.js"></script>
-    <script src="vendor/bootstrap/js/dist/button.js"></script>
-    <script src="vendor/bootstrap/js/dist/tooltip.js"></script>
-    <script src="vendor/bootstrap/js/dist/alert.js"></script>
-    <script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="vendor/widgster/widgster.js"></script>
+<!--TEMPLATE JS-->
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="vendor/tether/dist/js/tether.js"></script>
+<script src="vendor/bootstrap/js/dist/util.js"></script>
+<script src="vendor/bootstrap/js/dist/collapse.js"></script>
+<script src="vendor/bootstrap/js/dist/dropdown.js"></script>
+<script src="vendor/bootstrap/js/dist/button.js"></script>
+<script src="vendor/bootstrap/js/dist/tooltip.js"></script>
+<script src="vendor/bootstrap/js/dist/alert.js"></script>
+<script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="vendor/widgster/widgster.js"></script>
 
-    <script src="vendor/underscore/underscore.js"></script>
-    <script src="vendor/jquery.sparkline/index.js"></script>
-    <script src="vendor/jquery.sparkline/index.js"></script>
-    <script src="vendor/d3/d3.min.js"></script>
-    <script src="vendor/rickshaw/rickshaw.min.js"></script>
-    <script src="vendor/raphael/raphael-min.js"></script>
-    <script src="vendor/jQuery-Mapael/js/jquery.mapael.js"></script>
-    <script src="vendor/jQuery-Mapael/js/maps/usa_states.js"></script>
-    <script src="vendor/jQuery-Mapael/js/maps/world_countries.js"></script>
-    <script src="vendor/bootstrap/js/dist/popover.js"></script>
-    <script src="vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js"></script>
-    <script src="vendor/jquery-animateNumber/jquery.animateNumber.min.js"></script>
-    <script src="vendor/jquery/indexMenu.js"></script>
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/jquery.sparkline/index.js"></script>
+<script src="vendor/jquery.sparkline/index.js"></script>
+<script src="vendor/d3/d3.min.js"></script>
+<script src="vendor/rickshaw/rickshaw.min.js"></script>
+<script src="vendor/raphael/raphael-min.js"></script>
+<script src="vendor/jQuery-Mapael/js/jquery.mapael.js"></script>
+<script src="vendor/jQuery-Mapael/js/maps/usa_states.js"></script>
+<script src="vendor/jQuery-Mapael/js/maps/world_countries.js"></script>
+<script src="vendor/bootstrap/js/dist/popover.js"></script>
+<script src="vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js"></script>
+<script src="vendor/jquery-animateNumber/jquery.animateNumber.min.js"></script>
+<script src="vendor/jquery/indexMenu.js"></script>
 
-    <!--BOWER JS-->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
-    <!--<script src="bower_components/Chart.js/dist/Chart.bundle.min.js"></script>-->
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+<!--BOWER JS-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+<!--<script src="bower_components/Chart.js/dist/Chart.bundle.min.js"></script>-->
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
 
-    <!-- Firebase -->
-    <script src="bower_components/firebase/firebase.js"></script>
+<!-- Firebase -->
+<script src="bower_components/firebase/firebase.js"></script>
 
-    <!-- AngularFire -->
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+<!-- AngularFire -->
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 
-    <!-- Angular Material -->
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+<!-- Angular Material -->
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 
-    <!--COMMON JS-->
-    <script src="app.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/index.js"></script>
- <!--   <script src="js/charts.js"></script>-->
-
-
-
-   <!--CONTROLLER JS-->
-   <script src="controllers/Create.js"></script>
-   <script src="controllers/Dashboard.js"></script>
-   <script src="controllers/Student.js"></script>
-
-    <!--CONTROLLER JS-->
-    <script src="controllers/Create.js"></script>
-    <script src="controllers/Dashboard.js"></script>
-    <script src="controllers/Admin/AdminDashboard.js"></script>
-    <script src="controllers/Admin/NewAccountCreation.js"></script>
-    <script src="controllers/Hod.js"></script>
-    <script src="controllers/Lecturer.js"></script>
-    <script src="controllers/Login.js"></script>
-
-    <!--<script src="js/fsm-sticky-header.js"></script>-->
-
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>-->
-
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script> --> <!-- Use dev version of Angular Material -->
-   <script src="https://rawgit.com/angular/bower-material/master/angular-material.min.js"></script>
+<!--COMMON JS-->
+<script src="app.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+<script src="js/index.js"></script>
+<!--   <script src="js/charts.js"></script>-->
 
 
-    </div>
+<!--CONTROLLER JS-->
+<script src="controllers/Create.js"></script>
+<script src="controllers/Dashboard.js"></script>
+<script src="controllers/Student.js"></script>
+
+<!--CONTROLLER JS-->
+<script src="controllers/Create.js"></script>
+<script src="controllers/Dashboard.js"></script>
+<script src="controllers/Admin/AdminDashboard.js"></script>
+<script src="controllers/Admin/NewAccountCreation.js"></script>
+<script src="controllers/Hod.js"></script>
+<script src="controllers/Lecturer.js"></script>
+<script src="controllers/Login.js"></script>
+
+<!--<script src="js/fsm-sticky-header.js"></script>-->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>-->
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script> -->
+<!-- Use dev version of Angular Material -->
+<script src="https://rawgit.com/angular/bower-material/master/angular-material.min.js"></script>
+
+
+</div>
 
 </body>
 
@@ -373,7 +376,7 @@
 <script src="controllers/StudentDashboard.js"></script>
 <script src="controllers/Student.js"></script>
 <script>
-    $("[data-toggle='toggle']").click(function() {
+    $("[data-toggle='toggle']").click(function () {
         var selector = $(this).data("target");
         $(selector).toggleClass('in');
     });
