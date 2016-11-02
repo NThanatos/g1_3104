@@ -4,20 +4,18 @@
 
 'use strict';
 
-var app= angular.module('G1.StudentDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
+angular.module('G1.StudentDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('StudentDashboardCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray) {
+    .controller('StudentDashboardCtrl', ['$rootScope', '$localStorage', '$scope', '$firebaseObject', '$firebaseArray','$crypto',
+        function ($rootScope, $localStorage, $scope, $firebaseObject, $firebaseArray, $crypto) {
 
-        //should retrieve the student key from login.js
+            (function initController() {
+                //TODO: get encrypted gpa then decrypt it $localStorage.credential.gpa
 
-        (function initController() {
+            })();
+           //Archive student function - end
 
-        })();
+        }]);    //End of Dashboard controller
 
-//Other Function-------------------------------------------------------------------------------------------------------
-
-
-
-    }])
 
 

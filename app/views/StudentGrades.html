@@ -48,21 +48,23 @@
 <!--</ul>-->
 <!--</div>-->
 <h2>Your GPA: {{gpa}}</h2>
-<div ng-controller="StudentCtrl">
+<div>
     <table id="grades">
         <tr style="border: 1px solid black; padding: 50px; background-color: black; color: white;">
 
             <td style="border: 1px solid black">Module Name</td>
             <td style="border: 1px solid black">Module Code</td>
             <td style="border: 1px solid black">Grade</td>
-            <td style="border: 1px solid black">Recommendations</td>
+            <td style="border: 1px solid black">Credit Units</td>
+            <!--<td style="border: 1px solid black">Recommendations</td>-->
         </tr>
 
         <tr ng-repeat="item in resultsArray">
             <td>{{item.Module_Name}}</td>
             <td>{{item.Module_Code}}</td>
             <td>{{item.Grades}}</td>
-            <td>{{item.Recommendation}}</td>
+            <td>{{item.Credit_Units}}</td>
+            <!--<td>{{item.Recommendation}}</td>-->
         </tr>
 
 

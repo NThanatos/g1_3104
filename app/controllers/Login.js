@@ -13,7 +13,8 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
+    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage',
+        function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location, $localStorage) {
 
         //if there isnt any login detail
         if($localStorage.credential==null){

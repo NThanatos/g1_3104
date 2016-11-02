@@ -26,54 +26,55 @@ angular.module('G1Project', [
     'G1.Student',
     'G1.StudentDashboard',
     'ngStorage',
-    'ngCookies'
+    'ngCookies',
+    'mdo-angular-cryptography'
 
 ])
-    .factory("myFactory", function(){
+    .factory("myFactory", function () {
         var studData = '';
         var service = {};
         var savedData = '';
-        var recommendData= '';
-        var recommendRecord='';
+        var recommendData = '';
+        var recommendRecord = '';
 
         var studrec = '';
 
-        service.setData = function(student){
+        service.setData = function (student) {
             studData = student;
         };
 
-        service.getData = function(){
+        service.getData = function () {
             return studData;
         };
 
-        service.setCrseModData = function(crsemod){
+        service.setCrseModData = function (crsemod) {
             savedData = crsemod;
         };
-        service.getCrseModData = function(){
+        service.getCrseModData = function () {
             return savedData;
         };
 
-        service.setstudent = function(stud){
+        service.setstudent = function (stud) {
             studrec = stud;
         };
-        service.getstudent = function(){
+        service.getstudent = function () {
             return studrec;
         };
 
-        service.setStudRecommend = function(recommend){
+        service.setStudRecommend = function (recommend) {
 
             recommendData = recommend;
         };
-        service.getStudRecommend = function(){
+        service.getStudRecommend = function () {
 
             return recommendData;
         };
 
-        service.setViewRecommendation = function(rec){
+        service.setViewRecommendation = function (rec) {
 
             recommendRecord = rec;
         };
-        service.getViewRecommendation = function(){
+        service.getViewRecommendation = function () {
 
             return recommendRecord;
         };
@@ -82,35 +83,35 @@ angular.module('G1Project', [
 
     })
 
-   .controller('MainCtrl', function($rootScope, $scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage) {
+    .controller('MainCtrl', function ($rootScope, $scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage,$crypto) {
 
-       $cookies.put('user', 'Nicholas');
-       var testCookie = $cookies.get('user');
+        $cookies.put('user', 'Nicholas');
+        var testCookie = $cookies.get('user');
 
-       //alert(testCookie);
-       if($localStorage.credential!=null){
-        $rootScope.userData=$localStorage.credential;
-       }
+        //alert(testCookie);
+        if ($localStorage.credential != null) {
+            $rootScope.userData = $localStorage.credential;
+        }
 
 
-       $scope.showLoading = false;
-       $scope.LoadingTrue = function() {
-           $scope.showLoading = true
-       };
-       $scope.LoadingFalse = function() {
-           $scope.showLoading = false
-       };
+        $scope.showLoading = false;
+        $scope.LoadingTrue = function () {
+            $scope.showLoading = true
+        };
+        $scope.LoadingFalse = function () {
+            $scope.showLoading = false
+        };
 
-       $scope.updateHidden=function(int)  {
+        $scope.updateHidden = function (int) {
 
-           if(int==1){
-               $scope.hidemain=false;
+            if (int == 1) {
+                $scope.hidemain = false;
 
-           }else{
-               $scope.hidemain=true;
-           }
+            } else {
+                $scope.hidemain = true;
+            }
 
-       }
+        }
 
 
     })
@@ -135,17 +136,17 @@ angular.module('G1Project', [
             })
 
 
-            .when('/RegisterStudent',{
+            .when('/RegisterStudent', {
                 templateUrl: 'views/CreateStudent.html',
                 controller: 'RegisterStudent'
             })
 
-            .when('/StudentDashboard',{
-               templateUrl: 'views/Student/StudentDashboard.html',
-               controller: 'StudentDashboardCtrl'
+            .when('/StudentDashboard', {
+                templateUrl: 'views/Student/StudentDashboard.html',
+                controller: 'StudentDashboardCtrl'
             })
 
-            .when('/StudentGrades',{
+            .when('/StudentGrades', {
                 templateUrl: 'views/StudentGrades.html',
                 controller: 'StudentCtrl' //cannot same name as another one on top ^
             })
@@ -160,8 +161,8 @@ angular.module('G1Project', [
                 controller: 'NewAccountCreationCtrl'
             })
 
-        //lecturer
-            .when ('/Lecturer', {
+            //lecturer
+            .when('/Lecturer', {
                 templateUrl: 'views/Lecturer.html',
                 controller: 'LecturerCtrl'
             })
@@ -170,8 +171,8 @@ angular.module('G1Project', [
                 templateUrl: 'views/lect_displayModAndCrse.html',
                 controller: 'LecturerCtrl'
             })
-			
-			.when ('/viewIndivModule', {
+
+            .when('/viewIndivModule', {
                 templateUrl: 'views/viewIndivModule.html',
                 controller: 'LecturerCtrl'
             })
@@ -209,7 +210,9 @@ angular.module('G1Project', [
             .otherwise({redirectTo: '/Login'});
 
 
-
+    }])
+    .config(['$cryptoProvider', function ($cryptoProvider) {
+        $cryptoProvider.setCryptographyKey('ABCD123');
     }]);
 
 

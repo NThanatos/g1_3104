@@ -8,8 +8,8 @@
 
 angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('AdminDashboardCtrl', ['$rootScope', '$localStorage', '$scope', '$firebaseObject', '$firebaseArray',
-        function ($rootScope, $localStorage, $scope, $firebaseObject, $firebaseArray) {
+    .controller('AdminDashboardCtrl', ['$rootScope', '$localStorage', '$scope', '$firebaseObject', '$firebaseArray','$crypto',
+        function ($rootScope, $localStorage, $scope, $firebaseObject, $firebaseArray, $crypto) {
 
         (function initController() {
             $scope.archArr = [];

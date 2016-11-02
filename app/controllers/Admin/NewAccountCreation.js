@@ -5,18 +5,10 @@
 
 angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$http', '$window', '$filter', function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray) {
+    .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$http', '$window', '$filter','$crypto',
+        function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray, $crypto) {
         (function initController() {
-            // $scope.currentUser=null;
-            // $scope.currentUser.email = "";
-            // $scope.currentUser.role = "";
-            // $scope.currentUser.password = "";
-            // $scope.currentUser.profile.address = "";
-            // $scope.currentUser.profile.citizenship = "";
-            // $scope.currentUser.profile.gender = "";
-            // $scope.currentUser.profile.nok = "";
-            // $scope.currentUser.profile.nokPhone = "";
-            // $scope.currentUser.profile.phone = "";
+
             getInfo();
 
 
@@ -82,6 +74,7 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
                     role: info.role,
                     yearJoined: info.yearJoined,
                     password: info.password,
+                    gpa:0.00,
                     profile: {
                         address: info.profile.address,
                         citizenship: info.profile.citizenship,
@@ -116,5 +109,9 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
 
             getInfo();
         };
+
+
+
+
 
     }]);
