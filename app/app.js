@@ -167,6 +167,11 @@ angular.module('G1Project', [
                 controller: 'LecturerCtrl'
             })
 
+            .when('/lect_viewStudentParticulars',{
+                templateUrl: 'views/viewStudentParticulars.html',
+                controller: 'LecturerCtrl'
+            })
+
             .when('/lect_displayModAndCrse', {
                 templateUrl: 'views/lect_displayModAndCrse.html',
                 controller: 'LecturerCtrl'

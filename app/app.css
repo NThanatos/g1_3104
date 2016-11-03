@@ -853,3 +853,10 @@ body.page-container-boxed .page-container {
   width: 200px;
   height: 150px;
 }
+
+.particulars-button {
+  background-color: #15a1d3;
+  font-size: 1.5em;
+  width: 200px;
+  height: 150px;
+}

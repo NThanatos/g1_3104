@@ -247,6 +247,43 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                     });
                 };
 
+                /*-----------------------------Retrieve Student Particulars-----------------------------*/
+                function getStudentParticulars() {
+                    $scope.studentParticularsArr = []
+                    //lecturers and hod are general, they don't belong to any courses.
+                    //So retrieve all the student particulars in a list, which includes their name, gender and phone number
+                    //and display them with a delete button in the view to delete the student in the system.
+
+                    const userRef2 = rootRef.child('Users');
+                    userRef2.once("value",function(snapshot) {
+                        snapshot.forEach(function(userSnap) {
+                            userSnap.forEach(function(userDetails) {
+                                userDetails.forEach(function() {
+                                    $scope.Student_Email = userSnap.val().email;
+                                    $scope.Student_Name = userSnap.val().name;
+                                    $scope.Address = userDetails.val().address;
+                                    $scope.Gender = userDetails.val().gender;
+                                    $scope.userKey = userSnap.key
+                                })
+                            })
+                            if(userSnap.val().role == "student") {
+                                $scope.studentParticularsArr.push(
+                                    {
+                                        "User_Key": $scope.userKey,
+                                        "Student_Email": $scope.Student_Email,
+                                        "Student_Name": $scope.Student_Name,
+                                        "Address": $scope.Address,
+                                        "Gender": $scope.Gender
+
+                                    })
+                            }
+                        })
+                    })
+                }
+                /*------------------------End of Retrieving Student Particulars---------------------------*/
+                getStudentParticulars();
+
+
             })();
 
 //Other Function-------------------------------------------------------------------------------------------------------
@@ -274,6 +311,22 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                     })
                 })
             }
+
+
+            /*---------------------------Delete Student Particulars Function-----------------------*/
+            $scope.deleteStudentParticulars = function(item) {
+                //get the entire database tree
+                //alert("test: " + item) //item is the email passed in.
+                const rootRef = firebase.database().ref();
+
+                //zoom in to users table
+                const ref = rootRef.child('Users');
+
+                ref.child(item).remove();
+                getStudentParticulars();
+            }
+            /*-------------------------End of Delete Student Particulars Function------------------*/
+
 
         }]);    //End of Lecturer controller
 

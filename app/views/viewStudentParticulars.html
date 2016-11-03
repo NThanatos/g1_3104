@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="LecturerCtrl" class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <!--<td style="border: 1px solid black">Student Key</td>-->
+            <th>Student Email</th>
+            <th>Student Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <td>Action</td>
+        </tr>
+
+        <tr ng-repeat="item in studentParticularsArr">
+            <!--<td>{{item.User_Key}}</td>-->
+            <td>{{item.Student_Email}}</td>
+            <td>{{item.Student_Name}}</td>
+            <td>{{item.Gender}}</td>
+            <td>{{item.Address}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="deleteStudentParticulars(item.User_Key)" title="Delete"><span
+                        class="glyphicon glyphicon-trash"></span></button>
+            </td>
+            <!--<td>{{item.Recommendation}}</td>-->
+        </tr>
+
+
+
+    </table>
+</div>
+</body>
+</html>
