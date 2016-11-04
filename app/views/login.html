@@ -31,78 +31,6 @@
 </div>
 
 
-<div class="container-fluid">
-    <div>
-        <div class="row">
-            <div class="span8">
-                <h1>Time-based One-time Password Algorithm</h1>
-
-                <p>Install Google Authenticator on your smartphone:<a href="http://itunes.apple.com/au/app/google-authenticator/id388497605?mt=8">iOS</a>, <a href="https://market.android.com/details?id=com.google.android.apps.authenticator&hl=en">Android</a>,
-                    <a href="http://m.google.com/authenticator">Blackberry</a>. As the TOTP is an open standard you can
-                    use this app to create one-time passwords for your own application. You add an account plus secret
-                    by scanning a QR code (more info on the <a href="http://code.google.com/p/google-authenticator/wiki/KeyUriFormat">google code wiki</a>).
-            </div>
-        </div>
-        <div class="row">
-
-
-            <fieldset>
-                <div class="clearfix">
-                    <label for="secret">Secret (base32)</label>
-                    <form ng-submit="mysubmit()" ng-controller="loginCtrl">
-                        Enter Secret Key and hit submit:
-                        <div class="input">
-                            <input type="text" size="30" name="secret" id="secret" class="xlarge"
-                                   value="ASDASDASDASDASDASASDASD"/>
-                        </div>
-
-                        <input type="submit" id="submit" value="Submit"/>
-                    </form>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>Secret (hex)</label>
-                    <div class="input"><span class="label label-default" id="secretHex"></span>
-                        <span id='secretHexLength'></span></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>QR Code</label>
-                    <div class="input"><img id="qrImg" src=""/></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>Unix epoch div 30 (padded hex)</label>
-                    <div class="input"><span class="label label-default" id='epoch'></span></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>HMAC(secret, time)</label>
-                    <div class="input" id='hmac'></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>One-time Password</label>
-                    <div class="input"><span class="label label-primary" id='otp'></span></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>Updating in</label>
-                    <div class="input"><span id='updatingIn'></span></div>
-                </div>
-                <!-- /clearfix -->
-                <div class="clearfix">
-                    <label>One-time Password2</label>
-                    <div class="input"><span class="label label-primary" id='otp2'></span></div>
-                </div>
-
-            </fieldset>
-
-        </div>
-    </div>
-</div>
-
-<!--
 <div ng-controller="loginCtrl as ctrl">
     <p>firebase obj</p>
     <pre>
@@ -116,4 +44,4 @@
     <p ng-repeat="temp in usertable">
         {{temp.email}}
     </p>
-</div>-->
+</div>

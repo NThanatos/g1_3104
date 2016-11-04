@@ -23,56 +23,59 @@ angular.module('G1.profile', ['ngRoute', 'angularUtils.directives.dirPagination'
             $scope.submit_form = function (user, profile) {
 
 
-                //search user by id from credential
-                for (var key in $localStorage.studentCredential) {
-                    //update firebase
-                    //if field was updated and not empty
-                    var updated = false;
-                    if (user) {
-                        userref.child(key).update(user);
-                        updated = true;
+                //update firebase
+                //if field was updated and not empty
+                var updated = false;
+                var checkemail=$scope.account.email;
+                if (user) {
+                    userref.child($localStorage.userid).update(user);
+
+                    //double check email incase user change their email address
+                    if(user.hasOwnProperty('email')){
+                        checkemail=user.email;
                     }
-
-                    //if field was updated and not empty
-                    if (profile) {
-                        userref.child(key + "/profile").update(profile);
-                        updated = true;
-                    }
-
-                    if (updated) {
-                        //update cookie
-                        userref.orderByChild("email").equalTo($scope.account.email).on("value", function (snap) {
-
-                            console.log(snap.key)
-
-                            //loop into children incase there is more than 1 return
-                            snap.forEach(function (childSnap) {
-
-
-
-                                //store entire user into userData shared across all controllers
-                                //$rootScope.userData = childSnap.val();
-                                //success=true;
-
-                                //for persistent
-                                $localStorage.credential = childSnap.val();
-                                $localStorage.studentCredential = snap.val();
-
-
-                                //for the view
-                                $rootScope.userData = $localStorage.credential;
-                                $rootScope.studentData = $localStorage.studentCredential;
-
-
-                            })
-                        })
-
-
-                    }
-                    else{
-                        alert("No Changes");
-                    }
+                    updated = true;
                 }
+
+                //if field was updated and not empty
+                if (profile) {
+                    userref.child($localStorage.userid + "/profile").update(profile);
+                    updated = true;
+                }
+
+                if (updated) {
+                    //update cookie
+
+                    userref.orderByChild("email").equalTo(checkemail).on("value", function (snap) {
+
+                        console.log(snap.val());
+
+                        //loop into children incase there is more than 1 return
+                        snap.forEach(function (childSnap) {
+
+                            console.log(childSnap.val());
+
+                            //store entire user into userData shared across all controllers
+                            //$rootScope.userData = childSnap.val();
+                            //success=true;
+
+                            //for persistent
+                            $localStorage.credential = childSnap.val();
+                            $localStorage.studentCredential = snap.val();
+
+
+                            //for the view
+                            $rootScope.userData = $localStorage.credential;
+                            $rootScope.studentData = $localStorage.studentCredential;
+
+
+                        })
+                    })
+                }
+                else{
+                    alert("No Changes");
+                }
+
 
             }
 

@@ -34,12 +34,28 @@ angular.module('G1.login', ['ngRoute'])
             this.userobj = $firebaseObject(userRef);
 
 
+
+            $scope.secret2fa = false;
+
+            $scope.togglesecret=function(){
+                if($scope.secret2fa){
+                    console.log("yeah");
+                }else{
+                    //remove secret from database on toggle
+                    userRef.child($localStorage.userid).child("secretkey").remove();
+                }
+            }
+
+
             //this allows us to use the array and the scope notation we are used to
             $scope.usertable = $firebaseArray(userRef);
             $scope.Changepassword = function (newPasswordDetails) {
                 //getting current date
                 var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy');
                 //TODO: need to get current user's key and input here
+
+                //can use $localStorage.userid to get key
+
                 userRef.child("-KVUqoT2ykRVvp3HK_Kn").on("value", function (snap) {
                     //if old password matches change the password
                     if (newPasswordDetails.oldpassword == snap.val().password) {
@@ -55,6 +71,9 @@ angular.module('G1.login', ['ngRoute'])
 
                 });
             }
+
+
+
             $scope.login = function () {
                 /*
                  //find child that has key email == to the email passed in
@@ -94,20 +113,48 @@ angular.module('G1.login', ['ngRoute'])
                 //auto sign in as dhina to save time
                 userRef.orderByChild("email").equalTo("dhin@email.com").on("value", function (snap) {
 
-                    console.log(snap.key)
 
                     //loop into children incase there is more than 1 return
                     snap.forEach(function (childSnap) {
                         //check if email and password is the same
                         if ((childSnap.val().password) == "testpass") {
-                            console.log("Welcome " + $scope.email);
 
 
-                            //store entire user into userData shared across all controllers
-                            //$rootScope.userData = childSnap.val();
-                            //success=true;
+                            var asd=false;
+                            //Checks if user has 2fa authentication
+
+                            if(asd){
+                                var confirm = $mdDialog.prompt()
+                                    .title('Modify Mark')
+                                    .textContent('Current Mark: ' + currentMark)
+                                    .placeholder('New Mark')
+                                    .ariaLabel('Enter New mark')
+                                    .targetEvent(ev)
+                                    .ok('Save')
+                                    .cancel('Cancel');
+
+                                $mdDialog.show(confirm).then(function (result) {
+                                    //check if result is valid number
+                                    if (angular.isNumber(parseInt(result))) {
+                                        //update
+
+                                        //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
+                                        studentRef.child(studentid).update({marks: parseInt(result), status: "Completed"});
+                                        //tempstudent.marks=result;
+                                        //tempstudent.$save();
+                                    }
+
+
+                                }, function () {
+                                    //else do nothing
+                                });
+                            }
+
+
+
 
                             //for persistent
+                            $localStorage.userid=childSnap.key;
                             $localStorage.credential = childSnap.val();
                             $localStorage.studentCredential = snap.val();
 
@@ -171,9 +218,9 @@ angular.module('G1.login', ['ngRoute'])
                 return str;
             }
 
-            function updateOtp() {
+            function updateOtp(secretkey) {
 
-                var key = base32tohex($('#secret').val());
+                var key = base32tohex(secretkey);
                 var epoch = Math.round(new Date().getTime() / 1000.0);
                 var time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
 
@@ -201,22 +248,40 @@ angular.module('G1.login', ['ngRoute'])
                 var otp = (hex2dec(hmac.substr(offset * 2, 8)) & hex2dec('7fffffff')) + '';
                 otp = (otp).substr(otp.length - 6, 6);
 
-                $('#otp').text(otp);
+                //save to firebase
+                return otp
+
             }
 
             function timer() {
                 var epoch = Math.round(new Date().getTime() / 1000.0);
                 var countDown = 30 - (epoch % 30);
-                if (epoch % 30 == 0) updateOtp();
+                if (epoch % 30 == 0) {
+                    var otp=updateOtp($scope.secretkey);
+                    $('#otp').text(otp);
+                }
                 $('#updatingIn').text(countDown);
 
             }
 
 
-            $scope.mysubmit = function () {
+            $scope.mysubmit = function (secretkey) {
+                //store secretkey to firebase
 
-                alert("im in");
-                updateOtp();
+
+                //update firebase
+                //if field was updated and not empty
+                var updated = false;
+                //if secretkey is valid
+                if (secretkey) {
+                    userRef.child($localStorage.userid).update({secretkey:secretkey});
+                    updated = true;
+                }
+
+                //update view
+                var otp=updateOtp($scope.secretkey);
+                $('#otp').text(otp);
+
                 setInterval(timer, 1000);
                 /*
                  $('#update').click(function (event) {

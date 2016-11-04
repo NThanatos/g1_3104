@@ -16,6 +16,8 @@ angular.module('G1.logout', ['ngRoute'])
         //clear user data and redirect to main in this case login
         //$rootScope.userData=null;
         $localStorage.credential=null;
+        $localStorage.userid=null;
+        $localStorage.studentCredential=null;
         $location.path('/');
 
 
