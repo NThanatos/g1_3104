@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('G1.login', ['ngRoute'])
+angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/Login', {
@@ -13,8 +13,8 @@ angular.module('G1.login', ['ngRoute'])
 
     }])
 
-    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', '$filter',
-        function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location, $localStorage, $filter) {
+    .controller('loginCtrl', ['$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$localStorage', '$filter', '$mdDialog',
+        function ($rootScope, $scope, $firebaseObject, $firebaseArray, $location, $localStorage, $filter, $mdDialog) {
 
             //if there isnt any login detail
             if ($localStorage.credential == null) {
@@ -33,14 +33,14 @@ angular.module('G1.login', ['ngRoute'])
             //noticed that object is suitable for json
             this.userobj = $firebaseObject(userRef);
 
+            $scope.secret2fa=false;
 
 
-            $scope.secret2fa = false;
 
-            $scope.togglesecret=function(){
-                if($scope.secret2fa){
+            $scope.togglesecret = function () {
+                if ($scope.secret2fa) {
                     console.log("yeah");
-                }else{
+                } else {
                     //remove secret from database on toggle
                     userRef.child($localStorage.userid).child("secretkey").remove();
                 }
@@ -71,7 +71,6 @@ angular.module('G1.login', ['ngRoute'])
 
                 });
             }
-
 
 
             $scope.login = function () {
@@ -120,29 +119,34 @@ angular.module('G1.login', ['ngRoute'])
                         if ((childSnap.val().password) == "testpass") {
 
 
-                            var asd=false;
+                            var successfullogin = true;
                             //Checks if user has 2fa authentication
 
-                            if(asd){
+                            if (childSnap.val().secretkey) {
+                                $scope.fbsecret = childSnap.val().secretkey;
+
+
+                                $scope.fbotp = updateOtp($scope.fbsecret);
+                                setInterval(timermatch, 1000);
+
+                                successfullogin = false;
                                 var confirm = $mdDialog.prompt()
-                                    .title('Modify Mark')
-                                    .textContent('Current Mark: ' + currentMark)
-                                    .placeholder('New Mark')
-                                    .ariaLabel('Enter New mark')
-                                    .targetEvent(ev)
+                                    .title('2FA Authentication')
+                                    .textContent('Enter your generated 6 digit secret token')
+                                    .placeholder('Secret Token')
                                     .ok('Save')
                                     .cancel('Cancel');
 
                                 $mdDialog.show(confirm).then(function (result) {
-                                    //check if result is valid number
-                                    if (angular.isNumber(parseInt(result))) {
-                                        //update
+                                    //check if result matches
 
-                                        //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
-                                        studentRef.child(studentid).update({marks: parseInt(result), status: "Completed"});
-                                        //tempstudent.marks=result;
-                                        //tempstudent.$save();
+                                    //check if valid token
+                                    if($scope.fbotp==result){
+                                        successfullogin = true;
+                                        //route to dashboard
+                                        $location.path('Dashboard');
                                     }
+
 
 
                                 }, function () {
@@ -151,10 +155,8 @@ angular.module('G1.login', ['ngRoute'])
                             }
 
 
-
-
                             //for persistent
-                            $localStorage.userid=childSnap.key;
+                            $localStorage.userid = childSnap.key;
                             $localStorage.credential = childSnap.val();
                             $localStorage.studentCredential = snap.val();
 
@@ -164,12 +166,14 @@ angular.module('G1.login', ['ngRoute'])
                             $rootScope.studentData = $localStorage.studentCredential;
 
 
-                            //update hidden
-                            $scope.$parent.updateHidden(1);
+                            if (successfullogin) {
+                                //update hidden
+                                $scope.$parent.updateHidden(1);
 
 
-                            //route to dashboard
-                            $location.path('Dashboard')
+                                //route to dashboard
+                                $location.path('Dashboard');
+                            }
 
 
                         }
@@ -257,10 +261,20 @@ angular.module('G1.login', ['ngRoute'])
                 var epoch = Math.round(new Date().getTime() / 1000.0);
                 var countDown = 30 - (epoch % 30);
                 if (epoch % 30 == 0) {
-                    var otp=updateOtp($scope.secretkey);
+                    var otp = updateOtp($scope.secretkey);
                     $('#otp').text(otp);
                 }
                 $('#updatingIn').text(countDown);
+
+            }
+
+            function timermatch() {
+                var epoch = Math.round(new Date().getTime() / 1000.0);
+                var countDown = 30 - (epoch % 30);
+                if (epoch % 30 == 0) {
+                    $scope.fbotp = updateOtp($scope.fbsecret);
+                    console.log($scope.fbotp);
+                }
 
             }
 
@@ -274,12 +288,12 @@ angular.module('G1.login', ['ngRoute'])
                 var updated = false;
                 //if secretkey is valid
                 if (secretkey) {
-                    userRef.child($localStorage.userid).update({secretkey:secretkey});
+                    userRef.child($localStorage.userid).update({secretkey: secretkey});
                     updated = true;
                 }
 
                 //update view
-                var otp=updateOtp($scope.secretkey);
+                var otp = updateOtp($scope.secretkey);
                 $('#otp').text(otp);
 
                 setInterval(timer, 1000);
