@@ -1,0 +1,93 @@
+<div class="container">
+    <h1>Edit Profile</h1>
+    <hr>
+    <div class="row">
+
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <div class="alert alert-info alert-dismissable" ng-hide="profilealert">
+                <a class="panel-close close" ng-click="alert()">×</a>
+                <i class="fa fa-coffee"></i>
+                Profile Updated
+            </div>
+            <h3>Personal info</h3>
+
+            <form class="form-horizontal" role="form" ng-submit="submit_form(user, profile)">
+                <h4>Account info</h4>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" ng-model="user.name" ng-value="account.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" ng-model="user.email" ng-value="account.email">
+                    </div>
+                </div>
+
+                <br>
+                <h4>Profile info</h4>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Phone Number:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.phone"
+                               ng-value="account.profile.phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Address:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.address"
+                               ng-value="account.profile.address">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Citizenship:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.citizenship"
+                               ng-value="account.profile.citizenship">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Gender:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.gender"
+                               ng-value="account.profile.gender">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">NOK:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.nok"
+                               ng-value="account.profile.nok">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">NOK Number:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" ng-model="profile.nokPhone"
+                               ng-value="account.profile.nokPhone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="submit" id="submit" class="btn btn-primary" value="Save Changes"/>
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Cancel">
+                    </div>
+                </div>
+            </form><!--
+            <pre>user = {{user | json}}</pre>
+            <pre>profile = {{profile | json}}</pre>-->
+        </div>
+    </div>
+</div>
+<hr>

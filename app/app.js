@@ -24,6 +24,7 @@ angular.module('G1Project', [
     'G1.Lecturer',
     'firebase',
     'G1.Student',
+    'G1.profile',
     'G1.StudentDashboard',
     'ngStorage',
     'ngCookies',
@@ -165,6 +166,10 @@ angular.module('G1Project', [
             .when('/Lecturer', {
                 templateUrl: 'views/Lecturer.html',
                 controller: 'LecturerCtrl'
+            })
+            .when ('/profile', {
+                templateUrl: 'views/profile.html',
+                controller: 'profileCtrl'
             })
 
             .when('/lect_viewStudentParticulars',{
