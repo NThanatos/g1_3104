@@ -14,7 +14,6 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
         (function initController() {
             $scope.archArr = [];
             $scope.Users = [];
-            getUsers();
 
             //$cookieStore.put("user", "dhina");
             //var value = $cookieStore.get("user");
@@ -23,48 +22,10 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
         })();
 
         //Archive student function
-        function getUsers() {
+        $scope.archiveStudent = function() {
+            console.log("Starting student archive")
             const rootRef = firebase.database().ref();
             const ref = rootRef.child('Users');
-            /*
-            // $scope.Users = $firebaseArray(ref)
-            ref.on('value', function(crse){
-                crse.forEach(function(keymod){
-                    keymod.forEach(function(title){
-                        if(title.key == 'yearJoined'){
-                            var tempcheck = title.val()
-                            tempcheck = parseInt(tempcheck)
-                            //add date year
-                            if (tempcheck < 2015){
-                                $scope.archArr.push(keymod.key);
-                                console.log(keymod);
-                            }
-                            
-                        }
-                    })
-
-                });
-                console.log($scope.archArr.length)
-
-                for(var count= 0; count < $scope.archArr.length ;count++){
-                    console.log($scope.archArr[count])
-                    var GetRef = rootRef.child('Users/'+ $scope.archArr[count])
-                    // $scope.Users.push($firebaseObject(GetRef))
-                    var tempUser = [];
-                    var temparr = []
-                    tempUser.push($firebaseArray(GetRef))
-                    $scope.Users.push(tempUser[count])
-                    console.log($scope.Users.length)
-                    console.log($scope.Users)
-                    temparr.push(tempUser[count]);
-                    
-                    firebase.database().ref('archive/'+ $scope.archArr[count]).set(temparr[count])
-                    // firebase.database().ref('archive/'+ $scope.archArr[count]).set({name: 'tester', value: 2})
-                }
- //               firebase.database().ref('archive/'+ $scope.archArr[count]).set($scope.Users)
-            });
-            */
-            const achref = ref.child("testach");
             //todays year -3
             var year = new Date().getFullYear() - 3
             ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {

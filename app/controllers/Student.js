@@ -13,6 +13,8 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
 
             (function initController() {
 
+
+                getUserProfile("-KV5tpBJNHBSLDGlVQH7");
                 //temp var for holding total gpa points
                 $scope.currenttotalGPApoints = 0;
                 //temp var for holding total credit hour
@@ -152,24 +154,62 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
                     gpa: encryptedgpa
                 });
             };
-        }])
-// .directive("rotateFlip", function () {
-//     var first = true;
-//     return {
-//         restrict: "A",
-//         scope: {
-//             flag: "=rotateFlip"
-//         },
-//         link: function (scope, element) {
-//             scope.$watch("flag", function () {
-//                 _toggle(scope, element, !first);
-//                 first = false;
-//             });
-//
-//             function _toggle(scope, element) {
-//                 element.toggleClass("rotated", scope.flag);
-//             }
-//         }
-//     }
-// });
+
+        function getUserProfile(IDkey) {
+            console.log("Getting current user info...")
+            var rootRef = firebase.database().ref();
+            var ref = rootRef.child('Users');
+
+            firebase.database().ref('Users/' + IDkey).on('value', function(snapshot) {
+                $scope.UserInfo = snapshot.val();
+                console.log(snapshot.val());
+            });
+        };
+
+        $scope.SaveProfile = function (item) {
+            console.log("save profile")
+            console.log(item)
+            // const rootRef = firebase.database().ref();
+            // //zoom in to users table
+            // const ref = rootRef.child('Users/KV5tpBJNHBSLDGlVQH7');
+            // var newRef = ref.update();
+            //     newRef.set({
+            //         profile: {
+            //             address: item.profile.address,
+            //             nok: item.profile.nok,
+            //             nokPhone: item.profile.nokPhone,
+            //             phone: item.profile.phone
+            //         }
+            //
+            //     });
+            firebase.database().ref('Users/-KV5tpBJNHBSLDGlVQH7').update({
+                profile: {
+                    address: item.profile.address,
+                    nok: item.profile.nok,
+                    nokPhone: item.profile.nokPhone,
+                    phone: item.profile.phone
+                }
+            })
+        };
+
+    }])
+    .directive("rotateFlip", function() {
+        var first = true;
+        return {
+            restrict: "A",
+            scope: {
+                flag: "=rotateFlip"
+            },
+            link: function(scope, element) {
+                scope.$watch("flag", function() {
+                    _toggle(scope, element, !first);
+                    first = false;
+                });
+
+                function _toggle(scope, element) {
+                    element.toggleClass("rotated", scope.flag);
+                }
+            }
+        }
+    });
 

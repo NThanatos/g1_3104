@@ -151,6 +151,10 @@ angular.module('G1Project', [
                 templateUrl: 'views/Student/StudentGrades.html',
                 controller: 'StudentCtrl' //cannot same name as another one on top ^
             })
+            .when('/StudentEditProfile',{
+                templateUrl: 'views/StudentEditProfile.html',
+                controller: 'StudentCtrl' //cannot same name as another one on top ^
+            })
             .otherwise({redirectTo: '/Dashboard'})
 
             .when('/AdminDashboard', {
