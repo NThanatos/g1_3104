@@ -6,15 +6,15 @@
 
 angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
-    .controller('StudentCtrl', ['$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', '$crypto',
-        function ($route, $rootScope, $scope, $location, $http, $window, $filter, $crypto) {
+    .controller('StudentCtrl', ['$route', '$rootScope', '$scope', '$location', '$localStorage', '$http', '$window', '$filter', '$crypto',
+        function ($route, $rootScope, $scope, $location, $localStorage, $http, $window, $filter, $crypto) {
 
             //should retrieve the student key from login.js
 
             (function initController() {
 
-
-                getUserProfile("-KV5tpBJNHBSLDGlVQH7");
+                getUserProfile($localStorage.userid);
+                // getUserProfile("-KV5tpBJNHBSLDGlVQH7");
                 //temp var for holding total gpa points
                 $scope.currenttotalGPApoints = 0;
                 //temp var for holding total credit hour
@@ -168,21 +168,9 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
 
         $scope.SaveProfile = function (item) {
             console.log("save profile")
-            console.log(item)
-            // const rootRef = firebase.database().ref();
-            // //zoom in to users table
-            // const ref = rootRef.child('Users/KV5tpBJNHBSLDGlVQH7');
-            // var newRef = ref.update();
-            //     newRef.set({
-            //         profile: {
-            //             address: item.profile.address,
-            //             nok: item.profile.nok,
-            //             nokPhone: item.profile.nokPhone,
-            //             phone: item.profile.phone
-            //         }
-            //
-            //     });
-            firebase.database().ref('Users/-KV5tpBJNHBSLDGlVQH7').update({
+            //change code to current user ID
+            // firebase.database().ref('Users/-KV5tpBJNHBSLDGlVQH7').update({
+            firebase.database().ref('Users/'+ $localStorage.userid).update({
                 profile: {
                     address: item.profile.address,
                     nok: item.profile.nok,
