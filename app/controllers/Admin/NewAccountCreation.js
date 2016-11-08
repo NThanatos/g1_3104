@@ -6,7 +6,7 @@
 angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
     .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$http', '$window', '$filter', '$crypto',
-        function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray, $crypto) {
+        function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray, $location, $http, $window, $filter, $crypto) {
             (function initController() {
 
                 getInfo();
@@ -60,6 +60,8 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
             };
 
             $scope.AddInfo = function (info) {
+                var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy'); //for lastchangepassword field
+
                 //get the entire database tree
                 const rootRef = firebase.database().ref();
 
@@ -68,11 +70,13 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
                 var newRef = ref.push();
                 if (info.role == 'student') {
                     newRef.set({
+                        accountStatus: "Activated",
                         name: info.name,
                         email: info.email,
                         role: info.role,
                         yearJoined: info.yearJoined,
                         password: info.password,
+                        passwordChangedDate: currentDate,
                         gpa: 0.00,
                         profile: {
                             address: info.profile.address,
@@ -87,11 +91,13 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
                 }
                 else {
                     newRef.set({
+                        accountStatus: "Activated",
                         name: info.name,
                         email: info.email,
                         role: info.role,
 
                         password: info.password,
+                        passwordChangedDate: currentDate,
                         profile: {
                             address: info.profile.address,
                             citizenship: info.profile.citizenship,

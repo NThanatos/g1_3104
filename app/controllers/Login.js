@@ -50,6 +50,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
             //this allows us to use the array and the scope notation we are used to
             $scope.usertable = $firebaseArray(userRef);
             $scope.Changepassword = function (newPasswordDetails) {
+
                 //getting current date
                 var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy');
                 //TODO: need to get current user's key and input here
@@ -88,6 +89,8 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
 
                  //loop into children incase there is more than 1 return
                  snap.forEach(function (childSnap) {
+                 //check if the account was deactivated due to not changing password after 100 days
+                 if(childSnap.val().accountStatus != "Deactivated") {
                  //check if email and password is the same
                  if((childSnap.val().password)==$scope.password){
                  console.log("Welcome "+$scope.email);
@@ -100,6 +103,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                  $scope.$parent.updateHidden(1);
                  //route to dashboard
                  $location.path('AdminDashboard')
+                 }
                  }
                  })
 
@@ -115,67 +119,70 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
 
                     //loop into children incase there is more than 1 return
                     snap.forEach(function (childSnap) {
-                        //check if email and password is the same
-                        if ((childSnap.val().password) == "testpass") {
+                        //check if the account was deactivated due to not changing password after 100 days
+                        if(childSnap.val().accountStatus != "Deactivated") {
+
+                            //check if email and password is the same
+                            if ((childSnap.val().password) == "testpass") {
 
 
-                            var successfullogin = true;
-                            //Checks if user has 2fa authentication
+                                var successfullogin = true;
+                                //Checks if user has 2fa authentication
 
-                            if (childSnap.val().secretkey) {
-                                $scope.fbsecret = childSnap.val().secretkey;
-
-
-                                $scope.fbotp = updateOtp($scope.fbsecret);
-                                setInterval(timermatch, 1000);
-
-                                successfullogin = false;
-                                var confirm = $mdDialog.prompt()
-                                    .title('2FA Authentication')
-                                    .textContent('Enter your generated 6 digit secret token')
-                                    .placeholder('Secret Token')
-                                    .ok('Save')
-                                    .cancel('Cancel');
-
-                                $mdDialog.show(confirm).then(function (result) {
-                                    //check if result matches
-
-                                    //check if valid token
-                                    if($scope.fbotp==result){
-                                        successfullogin = true;
-                                        //route to dashboard
-                                        $location.path('Dashboard');
-                                    }
+                                if (childSnap.val().secretkey) {
+                                    $scope.fbsecret = childSnap.val().secretkey;
 
 
+                                    $scope.fbotp = updateOtp($scope.fbsecret);
+                                    setInterval(timermatch, 1000);
 
-                                }, function () {
-                                    //else do nothing
-                                });
+                                    successfullogin = false;
+                                    var confirm = $mdDialog.prompt()
+                                        .title('2FA Authentication')
+                                        .textContent('Enter your generated 6 digit secret token')
+                                        .placeholder('Secret Token')
+                                        .ok('Save')
+                                        .cancel('Cancel');
+
+                                    $mdDialog.show(confirm).then(function (result) {
+                                        //check if result matches
+
+                                        //check if valid token
+                                        if ($scope.fbotp == result) {
+                                            successfullogin = true;
+                                            //route to dashboard
+                                            $location.path('Dashboard');
+                                        }
+
+
+                                    }, function () {
+                                        //else do nothing
+                                    });
+                                }
+
+
+                                //for persistent
+                                $localStorage.userid = childSnap.key;
+                                $localStorage.credential = childSnap.val();
+                                $localStorage.studentCredential = snap.val();
+
+
+                                //for the view
+                                $rootScope.userData = $localStorage.credential;
+                                $rootScope.studentData = $localStorage.studentCredential;
+
+
+                                if (successfullogin) {
+                                    //update hidden
+                                    $scope.$parent.updateHidden(1);
+
+
+                                    //route to dashboard
+                                    $location.path('Dashboard');
+                                }
+
+
                             }
-
-
-                            //for persistent
-                            $localStorage.userid = childSnap.key;
-                            $localStorage.credential = childSnap.val();
-                            $localStorage.studentCredential = snap.val();
-
-
-                            //for the view
-                            $rootScope.userData = $localStorage.credential;
-                            $rootScope.studentData = $localStorage.studentCredential;
-
-
-                            if (successfullogin) {
-                                //update hidden
-                                $scope.$parent.updateHidden(1);
-
-
-                                //route to dashboard
-                                $location.path('Dashboard');
-                            }
-
-
                         }
                     })
 
