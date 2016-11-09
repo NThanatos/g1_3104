@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.css" afterPath="$PROJECT_DIR$/app/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Dashboard.html" afterPath="$PROJECT_DIR$/app/views/Dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Lecturer.html" afterPath="$PROJECT_DIR$/app/views/Lecturer.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -509,7 +505,7 @@
       <workItem from="1478163221346" duration="767000" />
       <workItem from="1478322043786" duration="3010000" />
       <workItem from="1478483879734" duration="509000" />
-      <workItem from="1478654019512" duration="4209000" />
+      <workItem from="1478654019512" duration="4230000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -588,11 +584,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478326275965</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Part 1 of redesign done">
+      <created>1478658280950</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1478658280950</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94679000" />
+    <option name="totallyTimeSpent" value="94700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -659,7 +662,8 @@
     <MESSAGE value="removed alert and console logs from module view" />
     <MESSAGE value="completed archiving on users to archive table&#10;&#10;-move from modules to archive not done" />
     <MESSAGE value="update student profile completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="update student profile completed" />
+    <MESSAGE value="Part 1 of redesign done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part 1 of redesign done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
