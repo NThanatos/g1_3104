@@ -48,7 +48,7 @@ angular.module('G1.profile', ['ngRoute', 'angularUtils.directives.dirPagination'
 
                     userref.orderByChild("email").equalTo(checkemail).on("value", function (snap) {
 
-                        console.log(snap.val());
+                        $scope.profilealert = false;
 
                         //loop into children incase there is more than 1 return
                         snap.forEach(function (childSnap) {
