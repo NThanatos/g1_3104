@@ -860,6 +860,12 @@ body.page-container-boxed .page-container {
   width: 200px;
   height: 150px;
 }
+.gpa-button {
+  background-color: #330033;
+  font-size: 1.5em;
+  width: 200px;
+  height: 150px;
+}
 
 #dropdownMenu1{
   min-width: 180px;

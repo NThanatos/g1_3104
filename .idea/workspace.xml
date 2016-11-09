@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Student.js" afterPath="$PROJECT_DIR$/app/controllers/Student.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.css" afterPath="$PROJECT_DIR$/app/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Dashboard.html" afterPath="$PROJECT_DIR$/app/views/Dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Lecturer.html" afterPath="$PROJECT_DIR$/app/views/Lecturer.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +17,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -23,70 +25,7 @@
     <favorites_list name="group1_3104" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="StudentEditProfile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/StudentEditProfile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Student.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="171" column="77" selection-start-line="171" selection-start-column="77" selection-end-line="171" selection-end-column="77" />
-              <folding>
-                <element signature="e#0#47#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="119" selection-start-line="15" selection-start-column="102" selection-end-line="15" selection-end-column="119" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="93" column="52" selection-start-line="93" selection-start-column="52" selection-end-line="93" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewAccountCreation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="114" selection-start-line="7" selection-start-column="114" selection-end-line="7" selection-end-column="114" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hod.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Hod.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,7 +56,6 @@
         <option value="$PROJECT_DIR$/app/css/index.css" />
         <option value="$PROJECT_DIR$/app/controllers/StudentGrades.js" />
         <option value="$PROJECT_DIR$/app/views/CreateStudent.html" />
-        <option value="$PROJECT_DIR$/app/app.css" />
         <option value="$PROJECT_DIR$/app/views/StudentDashboard.html" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/views/HOD.html" />
@@ -131,16 +69,19 @@
         <option value="$PROJECT_DIR$/app/controllers/Lecturer.js" />
         <option value="$PROJECT_DIR$/app/views/viewIndivModule.html" />
         <option value="$PROJECT_DIR$/app/controllers/StudentDashboard.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/StudentGrades.html" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
         <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
-        <option value="$PROJECT_DIR$/app/views/Student/StudentDashboard.html" />
         <option value="$PROJECT_DIR$/app/test.php" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/views/StudentEditProfile.html" />
         <option value="$PROJECT_DIR$/app/controllers/Student.js" />
+        <option value="$PROJECT_DIR$/app/views/Dashboard.html" />
+        <option value="$PROJECT_DIR$/app/views/Student/StudentDashboard.html" />
+        <option value="$PROJECT_DIR$/app/views/Lecturer.html" />
+        <option value="$PROJECT_DIR$/app/app.css" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -156,8 +97,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -230,6 +171,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -248,7 +229,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="Images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,10 +250,6 @@
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -281,7 +258,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../g1_3104" />
+    <property name="last_opened_file_path" value="$USER_HOME$/g1_3104" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
@@ -313,22 +290,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/app.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/app.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular/.bower.json</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Lecturer.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Login.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Logout.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Student.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/StudentDashboard.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Admin/NewAccountCreation.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Lecturer.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/login.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/form.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Admin/AdminDashboard.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/changepassword.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -336,119 +303,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/copyright/profiles_settings.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Images/dailybackup.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/.bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/angular-cryptography.d.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/angular-cryptography/mdo-angular-cryptography.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/.bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/.gitattributes</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/aes-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/aes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/cipher-core-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/cipher-core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/core-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-base64-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-base64.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-utf16-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/enc-utf16.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/evpkdf-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/evpkdf.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/format-hex-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/format-hex.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/hmac-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/hmac.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/lib-typedarrays-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/lib-typedarrays.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/md5-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/md5.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-cfb-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-cfb.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-gladman-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-gladman.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ctr.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ecb-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ecb.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ofb-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/mode-ofb.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-ansix923-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-ansix923.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso10126-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso10126.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso97971-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-iso97971.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-nopadding-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-nopadding.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-zeropadding-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pad-zeropadding.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pbkdf2-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/pbkdf2.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-legacy-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-legacy.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rabbit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rc4-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/rc4.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/ripemd160-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/ripemd160.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha1-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha224-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha224.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha256-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha256.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha3-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha3.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha384-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha384.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha512-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/sha512.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/tripledes-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/tripledes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/x64-core-min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/components/x64-core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/copyright.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/push.bat</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/aes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-md5.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-ripemd160.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha224.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha256.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha3.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha384.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/hmac-sha512.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/md5.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/pbkdf2.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rabbit-legacy.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rabbit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/rc4.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/ripemd160.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha224.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha256.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha3.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha384.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/sha512.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/rollups/tripledes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/bower_components/cryptojslib/status.bat</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/profile.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/js/sha.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/js/totp.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Student/StudentGrades.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/changepassword.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/profile.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/viewStudentGrades.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/viewStudentParticulars.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Images/send_email.png</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -456,7 +311,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/StudentGrades.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -654,6 +508,8 @@
       <workItem from="1478055871627" duration="2821000" />
       <workItem from="1478163221346" duration="767000" />
       <workItem from="1478322043786" duration="3010000" />
+      <workItem from="1478483879734" duration="509000" />
+      <workItem from="1478654019512" duration="4209000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -736,16 +592,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89961000" />
+    <option name="totallyTimeSpent" value="94679000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12802951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28550512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295711" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33802816" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12828948" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -810,16 +666,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RegisterStudent.js" />
-    <entry file="file://$PROJECT_DIR$/app/views/StudentDashboard.html" />
-    <entry file="file://$PROJECT_DIR$/app/views/CreateStudent.html" />
     <entry file="file://$PROJECT_DIR$/app/controllers/Create.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -860,20 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="737" column="24" selection-start-line="737" selection-start-column="24" selection-end-line="737" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -967,27 +799,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Lecturer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/StudentGrades.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1033">
-          <caret line="371" column="44" selection-start-line="371" selection-start-column="44" selection-end-line="371" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/StudentGrades.html" />
     <entry file="file://$PROJECT_DIR$/app/controllers/StudentDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1023,37 +835,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Student/StudentDashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="89" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/HOD.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test.php" />
     <entry file="file://$PROJECT_DIR$/app/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="73" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,7 +895,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="1581">
           <caret line="93" column="52" selection-start-line="93" selection-start-column="52" selection-end-line="93" selection-end-column="52" />
           <folding />
         </state>
@@ -1112,11 +903,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Student.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="17">
           <caret line="171" column="77" selection-start-line="171" selection-start-column="77" selection-end-line="171" selection-end-column="77" />
           <folding>
             <element signature="e#0#47#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Images/registration.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Images/databackup.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Images/business_information_management.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Images/send_email.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="118" column="116" selection-start-line="118" selection-start-column="116" selection-end-line="118" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Student/StudentDashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Lecturer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="863" column="28" selection-start-line="863" selection-start-column="28" selection-end-line="863" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
