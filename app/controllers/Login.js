@@ -33,18 +33,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
             //noticed that object is suitable for json
             this.userobj = $firebaseObject(userRef);
 
-            $scope.secret2fa=false;
 
-
-
-            $scope.togglesecret = function () {
-                if ($scope.secret2fa) {
-                    console.log("yeah");
-                } else {
-                    //remove secret from database on toggle
-                    userRef.child($localStorage.userid).child("secretkey").remove();
-                }
-            }
 
 
             //this allows us to use the array and the scope notation we are used to
@@ -114,7 +103,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                  });
                  */
                 //auto sign in as dhina to save time
-                userRef.orderByChild("email").equalTo("dhin@email.com").on("value", function (snap) {
+                userRef.orderByChild("email").equalTo("dhin@email.com").once("value", function (snap) {
 
 
                     //loop into children incase there is more than 1 return
