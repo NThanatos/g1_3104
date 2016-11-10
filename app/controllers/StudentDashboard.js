@@ -10,7 +10,6 @@ angular.module('G1.StudentDashboard', ['ngRoute', 'angularUtils.directives.dirPa
         function ($rootScope, $localStorage, $scope, $firebaseObject, $firebaseArray, $crypto) {
 
             (function initController() {
-                //TODO: get encrypted gpa then decrypt it $localStorage.credential.gpa
 
             })();
            //Archive student function - end

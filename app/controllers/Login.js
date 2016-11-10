@@ -46,11 +46,11 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
 
                 //can use $localStorage.userid to get key
 
-                userRef.child("-KVUqoT2ykRVvp3HK_Kn").on("value", function (snap) {
+                userRef.child($localStorage.userid).on("value", function (snap) {
                     //if old password matches change the password
                     if (newPasswordDetails.oldpassword == snap.val().password) {
                         //TODO: need to get current user's key and input here
-                        userRef.child("-KVUqoT2ykRVvp3HK_Kn").update({
+                        userRef.child($localStorage.userid).update({
                             password: newPasswordDetails.newpassword,
                             passwordChangedDate: currentDate
                         });

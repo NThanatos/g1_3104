@@ -50,7 +50,7 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
 
                 }
 
-
+                alert("keyyyyy" + $localStorage.userid);
                 var coursesRef = rootRef.child('Courses')
                 coursesRef.once('value', function (snapshot) {
                     snapshot.forEach(function (moduleSnapshot) {
@@ -60,7 +60,7 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
                                 moduleCode.forEach(function (userRole) {
 
                                     userRole.forEach(function (userRole2) {
-                                            if (userRole2.key == $scope.userKey && moduleCode.val().status == "Published") {
+                                            if (userRole2.key == $localStorage.userid && moduleCode.val().status == "Published") {
 
                                                 $scope.moduleName = moduleCode.val().title;
                                                 //get the grade according to the marks given
