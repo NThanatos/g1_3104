@@ -103,7 +103,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                  });
                  */
                 //auto sign in as dhina to save time
-                userRef.orderByChild("email").equalTo("dhin@email.com").once("value", function (snap) {
+                userRef.orderByChild("email").equalTo($scope.email).once("value", function (snap) {
 
 
                     //loop into children incase there is more than 1 return
@@ -112,7 +112,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                         if(childSnap.val().accountStatus != "Deactivated") {
 
                             //check if email and password is the same
-                            if ((childSnap.val().password) == "testpass") {
+                            if ((childSnap.val().password) == $scope.password) {
 
 
                                 var successfullogin = true;

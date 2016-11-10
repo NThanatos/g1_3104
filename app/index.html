@@ -97,7 +97,8 @@
             <li class="xn-logo">
                 <a href="index.html">SMS</a>
             </li>
-            <li class="xn-title">Admin</li>
+
+            <!--<li class="xn-title">Admin</li>
             <li>
                 <a href="#AdminDashboard"><span class="fa fa-desktop"></span> <span
                         class="xn-text">Admin dashboard</span></a>
@@ -117,10 +118,10 @@
             <li class="xn-title">Student</li>
             <li>
                 <a href="#StudentDashboard"><span class="fa fa-male"></span> <span class="xn-text">Student Dashboard</span></a>
-            </li>
+            </li>-->
 
 
-            <!-- navigation by role
+            <!-- navigation by role -->
             <div ng-if="userData.role=='Admin'">
                 <li class="xn-title">Admin</li>
                 <li>
@@ -137,6 +138,12 @@
                 <li class="xn-title">Lecturer</li>
                 <li>
                     <a href="#Lecturer"><span class="fa fa-male"></span> <span class="xn-text">My Class Grades</span></a>
+                </li>
+            </div>
+            <div ng-if="userData.role=='student'">
+                <li class="xn-title">Student</li>
+                <li>
+                    <a href="#StudentDashboard"><span class="fa fa-male"></span> <span class="xn-text">Student Dashboard</span></a>
                 </li>
             </div>
             <!--<li>-->
