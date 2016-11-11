@@ -1,0 +1,83 @@
+<h2>{{CurrentTitle}}</h2>
+<button class="btn btn-default btn-md" ng-click="AddUser()" data-toggle="modal" data-target="#myModal">Add Students</button>
+<div class="widget-body">
+    <h4>Current Students</h4>
+<table class="table table-stripped">
+    <tr>
+        <th>Name</th>
+        <th>Remove</th>
+    </tr>
+    <tr ng-repeat="stu in Students">
+        <td>{{stu.name}}</td>
+        <td><button class="btn btn-danger btn-xs" ng-click="RemoveUser(stu.Ckey, stu.modkey, stu.IDkey, 'student')">X</button></td>
+    </tr>
+</table>
+</div>
+<button class="btn btn-default btn-md" ng-click="AddUser()" data-toggle="modal" data-target="#LecModal">Add Lecturer</button>
+<div class="widget-body">
+    <h4>Current Lecturers</h4>
+    <table class="table table-stripped">
+        <tr>
+            <th>Name</th>
+            <th>Remove</th>
+        </tr>
+        <tr ng-repeat="lec in Lecturer">
+            <td>{{lec.name}}</td>
+            <td><button class="btn btn-danger btn-xs" ng-click="RemoveUser(lec.Ckey, lec.modkey, lec.IDkey, 'lecturers')">X</button></td>
+        </tr>
+    </table>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Students</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Name</th>
+                        <th>Add</th>
+                    </tr>
+                    <tr ng-repeat="pep in StudentstoAdd">
+                        <td>{{pep.name}}</td>
+                        <td><button class="btn btn-info-xs" ng-click="AddStudenttoClass(pep.IDkey, CurrentProg, CurrentTitle, pep.name)">+</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="LecModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Lecturer</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Name</th>
+                        <th>Add</th>
+                    </tr>
+                    <tr ng-repeat="lecturer in LecturerstoAdd">
+                        <td>{{lecturer.name}}</td>
+                        <td><button class="btn btn-info-xs" ng-click="AddLecturertoClass(lecturer.IDkey, CurrentProg, CurrentTitle, lecturer.name)">+</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

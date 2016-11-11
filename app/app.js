@@ -16,6 +16,7 @@ angular.module('G1Project', [
     '720kb.datepicker',
     'G1.Dashboard',
     'G1.Create',
+    'G1.ModManagement',
     'G1.AdminDashboard',
     'G1.NewAccountCreation',
     'G1.Hod',
@@ -227,6 +228,11 @@ angular.module('G1Project', [
             .when('/BackUpData', {
                 templateUrl: 'views/Admin/BackUpData.html',
                 controller: 'BackUpDataCtrl'
+            })
+
+            .when('/ModManagement', {
+                templateUrl: 'views/Admin/ModManagement.html',
+                controller: 'ModManagementCtrl'
             })
             .otherwise({redirectTo: '/Login'});
 

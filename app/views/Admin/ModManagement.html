@@ -1,0 +1,22 @@
+<div class="widget-body">
+    <div>
+        <h1 class="text-center">Module Managment</h1>
+    </div>
+    <div class="widget-body" style="width: 200px;">
+        <ul class="nav nav-tabs nav-stacked">
+            <li class="active"><a>Module Codes</a></li>
+            <li>
+                <div ng-repeat="title in CoursesInfo">
+                    <a>{{title.title}}</a>
+                    <ul>
+                        <li ng-repeat="modCode in title.mod" ng-click="GetCurrentTab(modCode.title, title.title)"><a>{{modCode.title}}</a></li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div ng-include="currentTab"></div>
+</div>

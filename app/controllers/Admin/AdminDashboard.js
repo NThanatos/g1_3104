@@ -98,6 +98,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             console.log("Starting student archive")
             const rootRef = firebase.database().ref();
             const ref = rootRef.child('Users');
+            var count = 0;
             //todays year -3
             var year = new Date().getFullYear() - 3
             ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {
@@ -113,7 +114,9 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                     })
                     //remove here
                     firebase.database().ref('Users/'+ childSnap.key).remove()
+                    count ++;
                 })
+                alert("Student archive complete, " + count + " student records archived." );
             });
 
         };
