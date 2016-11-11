@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Admin/ModManagement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Admin/ModTemplate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" afterPath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/StudentEditProfile.html" afterPath="$PROJECT_DIR$/app/views/StudentEditProfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/ModManagement.html" afterPath="$PROJECT_DIR$/app/views/Admin/ModManagement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/ModTemplate.html" afterPath="$PROJECT_DIR$/app/views/Admin/ModTemplate.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +30,8 @@
       <file leaf-file-name="ModuleManagement.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1975">
-              <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="309">
+              <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -44,8 +40,18 @@
       <file leaf-file-name="ModTemplate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/Admin/ModTemplate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state relative-caret-position="187">
+              <caret line="11" column="84" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewAccountCreation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -54,8 +60,8 @@
       <file leaf-file-name="ModManagement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/Admin/ModManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+            <state relative-caret-position="68">
+              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -118,6 +124,7 @@
         <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js" />
         <option value="$PROJECT_DIR$/app/views/Admin/ModManagement.html" />
         <option value="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" />
         <option value="$PROJECT_DIR$/app/views/Admin/ModTemplate.html" />
@@ -566,7 +573,7 @@
       <workItem from="1478502885308" duration="594000" />
       <workItem from="1478609927703" duration="13781000" />
       <workItem from="1478653794965" duration="7448000" />
-      <workItem from="1478879053371" duration="1895000" />
+      <workItem from="1478879053371" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -652,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478326753217</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="completed adding/remove students and lecturers to class">
+      <created>1478881251181</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1478881251181</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114307000" />
+    <option name="totallyTimeSpent" value="116382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
@@ -705,7 +719,8 @@
     <MESSAGE value="completed archiving on users to archive table&#10;&#10;-move from modules to archive not done" />
     <MESSAGE value="update student profile completed" />
     <MESSAGE value="update student profile completed v2&#10;-getting current user's ID to update DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="update student profile completed v2&#10;-getting current user's ID to update DB" />
+    <MESSAGE value="completed adding/remove students and lecturers to class" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed adding/remove students and lecturers to class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -882,13 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="114" selection-start-line="7" selection-start-column="114" selection-end-line="7" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/StudentEditProfile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -910,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Admin/NewAccountCreation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="59" column="14" selection-start-line="36" selection-start-column="8" selection-end-line="59" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
@@ -935,6 +936,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1253">
           <caret line="28" column="49" selection-start-line="26" selection-start-column="10" selection-end-line="28" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -963,6 +965,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -970,6 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -977,6 +981,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,18 +999,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Admin/NewAccountCreation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1975">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Admin/ModManagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state relative-caret-position="68">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1014,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Admin/ModTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+        <state relative-caret-position="187">
+          <caret line="11" column="84" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
           <folding />
         </state>
       </provider>

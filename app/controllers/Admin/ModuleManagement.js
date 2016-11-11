@@ -7,10 +7,10 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
 
         (function initController() {
             getCourseCode()
+            $scope.currentTab = '';
+            $scope.loading = true;
         })();
 //Other Function-------------------------------------------------------------------------------------------------------
-            $scope.currentTab = '';
-
             function getCourseCode() {
                 const rootRef = firebase.database().ref();
                 const CourseRef = rootRef.child('Courses');
@@ -42,6 +42,8 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         CourseCount++;
                     })
                     console.log($scope.CoursesInfo)
+                    $scope.loading = false;
+                    $scope.$apply();
                 })
             }
 
@@ -97,8 +99,10 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                $scope.currentTab = 'views/Admin/ModTemplate.html'
            }
             
-            $scope.AddUser = function () {
+            $scope.AddStu = function () {
                 getAllStudents()
+            }
+            $scope.AddLec = function () {
                 getAllLecturers()
             }
 
@@ -151,13 +155,14 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         }
                         checkDup = false;
                     })
+                    $scope.$apply();
                 });
             }
 
             function getAllLecturers() {
                 $scope.LecturerstoAdd = [];
                 var checkDup = false;
-                console.log('Starting get Lectuerer')
+                console.log('Starting get Lecturer')
                 const rootRef = firebase.database().ref();
                 const ref = rootRef.child('Users');
                 ref.orderByChild("role").equalTo('lecturer').on("value", function (snap) {
@@ -176,6 +181,7 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         }
                         checkDup = false;
                     })
+                    $scope.$apply();
                 });
             }
     }]);    //End of Dashboard controller

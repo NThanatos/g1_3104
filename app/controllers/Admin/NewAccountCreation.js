@@ -1,18 +1,14 @@
-/**
- * Created by DHINA on 9/28/2016.
- */
 'use strict';
 
 angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker'])
 
     .controller('NewAccountCreationCtrl', ['$route', '$rootScope', '$scope', '$firebaseObject', '$firebaseArray', '$location', '$http', '$window', '$filter', '$crypto',
         function ($route, $rootScope, $scope, $firebaseObject, $firebaseArray, $location, $http, $window, $filter, $crypto) {
+
             (function initController() {
-
                 getInfo();
-
-
             })();
+            
             function getInfo() {
                 //get the entire database tree
                 const rootRef = firebase.database().ref();
