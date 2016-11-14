@@ -11,11 +11,12 @@
 
 <table class="table">
     <tr class="thead-inverse">
-        <th class="col-md-3">Student Name</th>
-        <th class="col-md-3">Grade</th>
-        <th class="col-md-2">Marks</th>
-        <th class="col-md-2">Status</th>
-        <th class="col-md-2">Actions</th>
+        <th>Student Name</th>
+        <th>Grade</th>
+        <th>Marks</th>
+        <th>Recommendation</th>
+        <th>Status</th>
+        <th>Actions</th>
     </tr>
 
     <!--split out the key and student so that i can pass back the student id-->
@@ -32,6 +33,7 @@
 
 
         </td>
+        <td>{{student.recommendation.message}}</td>
         <td>{{student.status}}</td>
         <td>
             <button class="btn btn-success" ng-show="(student.status == 'Entered')"  ng-click="addrecommend(student, key)">

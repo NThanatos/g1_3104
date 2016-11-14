@@ -37,7 +37,6 @@ angular.module('G1Project', [
         var service = {};
         var savedData = '';
         var recommendData = '';
-        var recommendRecord = '';
 
         var studrec = '';
 
@@ -70,15 +69,6 @@ angular.module('G1Project', [
         service.getStudRecommend = function () {
 
             return recommendData;
-        };
-
-        service.setViewRecommendation = function (rec) {
-
-            recommendRecord = rec;
-        };
-        service.getViewRecommendation = function () {
-
-            return recommendRecord;
         };
 
         return service;
@@ -194,11 +184,6 @@ angular.module('G1Project', [
 
             .when('/lect_enterGrade', {
                 templateUrl: 'views/lect_enterGrade.html',
-                controller: 'LecturerCtrl'
-            })
-
-            .when('/recommendation', {
-                templateUrl: 'views/recommendation.html',
                 controller: 'LecturerCtrl'
             })
 

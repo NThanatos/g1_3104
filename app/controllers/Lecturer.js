@@ -6,15 +6,11 @@
 
 angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase', 'ui.bootstrap'])
 
-    .controller('LecturerCtrl', ['$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', 'myFactory', '$mdDialog', '$crypto',
-        function ($route, $rootScope, $scope, $location, $http, $window, $filter, $firebaseObject, $firebaseArray, myFactory, $mdDialog, $crypto) {
+    .controller('LecturerCtrl', ['$route', '$rootScope', '$scope', '$location', '$http', '$window', '$filter', '$firebaseObject', '$firebaseArray', 'myFactory', '$mdDialog', '$crypto', '$localStorage',
+        function ($route, $rootScope, $scope, $location, $http, $window, $filter, $firebaseObject, $firebaseArray, myFactory, $mdDialog, $crypto, $localStorage) {
 
             (function initController() {
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //haven check if the modules and courses is only taught by that lecturer (because no role yet)
-                //haven check that students displayed in lecturer view are not archieve as archieve student should not appear (because no year yet)
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 getStudentGrades();
 
 
@@ -39,27 +35,33 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                 ref.on('value', function (crse) {
                     var indexid = 0;
                     crse.forEach(function (keymod) {
-
-                        $scope.cseArr.push(keymod.key);
-
                         keymod.forEach(function (modu) {
                             if ("modules" == (modu.key)) {
                                 modu.forEach(function (mod) {
+                                    mod.forEach(function(modchild){
+                                        if("lecturers" == (modchild.key)){
+                                            modchild.forEach(function(lect){
+                                                if($localStorage.userid === lect.key){
+                                                    $scope.cseArr.push(keymod.key);
+                                                    $scope.modArr.push(mod.key);
+                                                    indexid = indexid + 1;
+                                                    $scope.dataArr.push({
+                                                        id: indexid,
+                                                        CrseName: keymod.key,
+                                                        ModName: mod.key
+                                                    })
 
-                                    $scope.modArr.push(mod.key);
-
-                                    indexid = indexid + 1;
-                                    $scope.dataArr.push({
-                                        id: indexid,
-                                        CrseName: keymod.key,
-                                        ModName: mod.key
+                                                }
+                                            })
+                                        }
                                     })
+
+
                                 });
                             }
                         });
                     });
                 });
-
 
                 //this is to retrieve the all the students that was under the selected course and module and display it in the table next view
                 $scope.studentArr = [];  //store all the students that register for the course and module
@@ -159,56 +161,6 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                     });
                     $window.location.href = '#/viewIndivModule';
                 };
-
-                //retrive all the students records that have recommendation made by the lecturer
-                $scope.viewAllRecommendation = function () {
-                    $scope.allrecommendation = [];
-                    ref.on('value', function (crse) {
-                        var indivcourseobj = crse.val();
-                        crse.forEach(function (title) {
-                            var indivcrsename = title.key;
-                            title.forEach(function (titleChild) {
-                                var titlename = titleChild.key;
-                                if ("modules" == titlename) {
-                                    var modobj = titleChild.val();
-                                    titleChild.forEach(function (mod) {
-                                        var modname = mod.key;
-                                        mod.forEach(function (modChild) {
-                                            var modChildTitle = modChild.key;
-                                            if ("student" == modChildTitle) {
-                                                modChild.forEach(function (stud) {
-                                                    var studid = stud.key;
-                                                    var studobj = stud.val();
-                                                    var studobj = stud.val();
-                                                    if (studobj.recommendation != null) {
-                                                        //student with recommendation made
-                                                        $scope.allrecommendation.push({
-                                                            course: indivcrsename,
-                                                            module: modname,
-                                                            student_id: studid,
-                                                            student_name: studobj.name,
-                                                            student_recommended_mark: studobj.recommendation.RecommendedMark,
-                                                            student_recommended_text: studobj.recommendation.message
-
-                                                        })
-                                                    }
-                                                })
-                                            }
-                                        })
-                                    })
-                                }
-                            })
-
-                        })
-                    });
-                    console.log($scope.allrecommendation);
-                    myFactory.setViewRecommendation($scope.allrecommendation);
-                    $window.location.href = '#/recommendation';
-                };
-
-
-                //retrieve the recommendation from factory
-                $scope.allrecommendation = myFactory.getViewRecommendation();
 
                 //click link to respective view
                 $scope.changeView = function (view) {
