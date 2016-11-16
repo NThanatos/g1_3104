@@ -110,8 +110,21 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 console.log('Courses/' + course + '/modules/' + mod + '/student/' + IDkey)
                 firebase.database().ref('Courses/' + course + '/modules/' + mod + '/student/' + IDkey).set({
                     name: name,
-                    marks: 0
+                    marks: 0,
+                    status: 'New',
+                    recommendation: [{
+                        RecommendedMark: 0,
+                        message: '',
+                        value : 0
+                    }]
                 });
+                for(var i=0;i<$scope.StudentstoAdd.length;i++){
+                    if($scope.StudentstoAdd[i].name == name){
+                        console.log(i)
+                        $scope.StudentstoAdd.splice(i, 1);
+                        break;
+                    }
+                }
                 getCourseCode()
                 getLecturer(mod, course)
                 getStudent(mod, course)
@@ -123,8 +136,15 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 console.log('Courses/' + course + '/modules/' + mod + '/lecturers/' + IDkey)
                 firebase.database().ref('Courses/' + course + '/modules/' + mod + '/lecturers/' + IDkey).set({
                     name: name,
-                    marks: 0
+                    email: ''
                 });
+                for(var i=0;i<$scope.LecturerstoAdd.length;i++){
+                    if($scope.LecturerstoAdd[i].name == name){
+                        console.log(i)
+                        $scope.LecturerstoAdd.splice(i, 1);
+                        break;
+                    }
+                }
                 getCourseCode()
                 getLecturer(mod, course)
                 getStudent(mod, course)
