@@ -7,6 +7,7 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
 
         (function initController() {
             getCourseCode()
+            console.log('starting page')
             $scope.currentTab = '';
             $scope.loading = true;
         })();
@@ -17,7 +18,7 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 var CourseCount = 0;
                 $scope.CoursesInfo = [];
 
-                CourseRef.on("value", function (snap) {
+                CourseRef.once("value", function (snap) {
                     snap.forEach(function (childSnap) {
                         $scope.CoursesInfo.push({
                             title: childSnap.key,
@@ -41,7 +42,6 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         })
                         CourseCount++;
                     })
-                    console.log($scope.CoursesInfo)
                     $scope.loading = false;
                     $scope.$apply();
                 })
