@@ -40,17 +40,6 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
                 const rootRef = firebase.database().ref();
                 $scope.resultsArray = [];
 
-
-                //alert("root scope user data" + $rootScope.userData) //this is the child object from login.js
-
-                for (var testkey in $rootScope.studentData) {
-                    //alert("keyyyyy" + testkey);
-                    //$scope.userKey = testkey; //unique key of the user
-                    $scope.userKey = "KTxEMxrAYVSdtr0K1NH"
-
-                }
-
-                alert("keyyyyy" + $localStorage.userid);
                 var coursesRef = rootRef.child('Courses')
                 coursesRef.once('value', function (snapshot) {
                     snapshot.forEach(function (moduleSnapshot) {
@@ -75,7 +64,7 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
                                                 //calculate gpa
                                                 $scope.gpa = $scope.currenttotalGPApoints / $scope.totalcredithour;
                                                 //encrypt gpa and put to firebase
-                                                encryptGPAandSendtoFirebase($scope.userKey, $scope.gpa);
+                                                encryptGPAandSendtoFirebase($localStorage.userid, $scope.gpa);
 
                                                 $scope.moduleCode = moduleCode.key //module code
                                                 $scope.resultsArray.push({
@@ -84,8 +73,9 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
                                                     "Grades": $scope.grades,
                                                     "Credit_Units": 5
                                                     // "Recommendation": $scope.moduleRecommendation
-                                                })
-                                                console.log($scope.resultsArray, " array results")
+                                                });
+                                                $scope.$apply()
+                                                console.log($scope.resultsArray, " array results");
                                             }
 
                                         }
@@ -144,52 +134,52 @@ angular.module('G1.Student', ['ngRoute', 'angularUtils.directives.dirPagination'
             function encryptGPAandSendtoFirebase(userkey, gpa) {
 
                 var encryptedgpa = $crypto.encrypt(gpa.toString());
-                var decryptedgpa = $crypto.decrypt(encryptedgpa);
+
                 const rootRef = firebase.database().ref();
-                var hyphen = "-";
-                var fullUserKey =hyphen.concat(userkey);
+                // var hyphen = "-";
+                // var fullUserKey =hyphen.concat(userkey);
                 //zoom in to users table
                 const ref = rootRef.child('Users');
-                ref.child(fullUserKey).update({
+                ref.child(userkey).update({
                     gpa: encryptedgpa
                 });
             };
 
-        function getUserProfile(IDkey) {
-            console.log("Getting current user info...")
-            var rootRef = firebase.database().ref();
-            var ref = rootRef.child('Users');
+            function getUserProfile(IDkey) {
+                console.log("Getting current user info...")
+                var rootRef = firebase.database().ref();
+                var ref = rootRef.child('Users');
 
-            firebase.database().ref('Users/' + IDkey).on('value', function(snapshot) {
-                $scope.UserInfo = snapshot.val();
-                console.log(snapshot.val());
-            });
-        };
+                firebase.database().ref('Users/' + IDkey).on('value', function (snapshot) {
+                    $scope.UserInfo = snapshot.val();
+                    console.log(snapshot.val());
+                });
+            };
 
-        $scope.SaveProfile = function (item) {
-            console.log("save profile")
-            //change code to current user ID
-            // firebase.database().ref('Users/-KV5tpBJNHBSLDGlVQH7').update({
-            firebase.database().ref('Users/'+ $localStorage.userid).update({
-                profile: {
-                    address: item.profile.address,
-                    nok: item.profile.nok,
-                    nokPhone: item.profile.nokPhone,
-                    phone: item.profile.phone
-                }
-            })
-        };
+            $scope.SaveProfile = function (item) {
+                console.log("save profile")
+                //change code to current user ID
+                // firebase.database().ref('Users/-KV5tpBJNHBSLDGlVQH7').update({
+                firebase.database().ref('Users/' + $localStorage.userid).update({
+                    profile: {
+                        address: item.profile.address,
+                        nok: item.profile.nok,
+                        nokPhone: item.profile.nokPhone,
+                        phone: item.profile.phone
+                    }
+                })
+            };
 
-    }])
-    .directive("rotateFlip", function() {
+        }])
+    .directive("rotateFlip", function () {
         var first = true;
         return {
             restrict: "A",
             scope: {
                 flag: "=rotateFlip"
             },
-            link: function(scope, element) {
-                scope.$watch("flag", function() {
+            link: function (scope, element) {
+                scope.$watch("flag", function () {
                     _toggle(scope, element, !first);
                     first = false;
                 });

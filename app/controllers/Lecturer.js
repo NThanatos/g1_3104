@@ -229,6 +229,7 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
 
                                     })
                             }
+                            $scope.$apply();
                         })
                     })
                 }
@@ -258,7 +259,8 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                                 "email": $scope.email,
                                 "name": $scope.name,
                                 "gpa": $scope.gpa
-                            })
+                            });
+                            $scope.$apply();
                         }
                     })
                 })
