@@ -61,6 +61,7 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         }
                         );
                     })
+                    $scope.$apply();
                 });
             }
             function getLecturer(modkey, Ckey) {
@@ -76,7 +77,9 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                                 IDkey: childSnap.key
                         }
                         );
+
                     })
+                    $scope.$apply();
                 });
             }
 
