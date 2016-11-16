@@ -77,12 +77,13 @@ angular.module('G1Project', [
 
     .controller('MainCtrl', function ($rootScope, $scope, $http, $firebaseObject, $cookies, $cookieStore, $localStorage,$crypto) {
 
-        $cookies.put('user', 'Nicholas');
-        var testCookie = $cookies.get('user');
-
+        // $cookies.put('user', 'Nicholas');
+        // var testCookie = $cookies.get('user');
         //alert(testCookie);
+        $scope.menuSlider ='';
         if ($localStorage.credential != null) {
             $rootScope.userData = $localStorage.credential;
+            $scope.menuSlider='views/menuslider.html'
         }
 
 
@@ -98,6 +99,7 @@ angular.module('G1Project', [
 
             if (int == 1) {
                 $scope.hidemain = false;
+                $scope.menuSlider='views/menuslider.html'
 
             } else {
                 $scope.hidemain = true;
