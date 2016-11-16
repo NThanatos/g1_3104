@@ -1,0 +1,96 @@
+<div class="container wrapper">
+    <h1 class="text-center">Course Creation</h1>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <div class="alert alert-default navbar-brand search-box">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create employee <span
+                        class="glyphicon glyphicon-plus"
+                        aria-hidden="true"></span></button>
+            </div>
+            <div class="alert alert-default input-group search-box">
+<span class="input-group-btn">
+<input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">
+</span>
+
+            </div>
+
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Employee</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-include src="'templates/form.html'"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myeditModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Employee</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-include src="'templates/editForm.html'"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Table to show employee detalis -->
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email Address</th>
+                    <th>Role</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr ng-repeat="detail in details| filter:search_query">
+                    <td>{{detail.name}}</td>
+                    <td>{{detail.email}}</td>
+                    <td>{{detail.role}}</td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span
+                                class="glyphicon glyphicon-edit"></span></button>
+                    </td>
+
+                    <td >
+                        <button ng-if="detail.role != 'admin'" class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span
+                                class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </nav>
+    <div class="col-md-6 col-md-offset-3">
+
+        <!-- Include form template which is used to insert data into database -->
+        <div ng-hide="viewAddForm" ng-include src="'templates/form.html'"></div>
+
+        <!-- Include form template which is used to edit and update data into database -->
+        <div ng-hide="viewEditForm" ng-include src="'templates/editForm.html'"></div>
+
+    </div>
+    <div class="clearfix"></div>
+
+
+</div>
+

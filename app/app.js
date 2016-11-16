@@ -19,6 +19,7 @@ angular.module('G1Project', [
     'G1.ModManagement',
     'G1.AdminDashboard',
     'G1.NewAccountCreation',
+    'G1.NewCourseCreation',
     'G1.Hod',
     'G1.login',
     'G1.logout',
@@ -157,6 +158,10 @@ angular.module('G1Project', [
             .when('/NewAccountCreation', {
                 templateUrl: 'views/Admin/NewAccountCreation.html',
                 controller: 'NewAccountCreationCtrl'
+            })
+            .when('/NewCourseCreation', {
+                templateUrl: 'views/Admin/NewCourseCreation.html',
+                controller: 'NewCourseCreationCtrl'
             })
 
             //lecturer
