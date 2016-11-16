@@ -101,10 +101,13 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             var count = 0;
             //todays year -3
             var year = new Date().getFullYear() - 3
+            year = year.toString()
+            console.log(year);
             ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {
                 //for each student that is required to achieve
                 snap.forEach(function (childSnap) {
                     $scope.temp = childSnap.val();
+                    console.log($scope.temp);
                     //insert one obj into firebase
                     firebase.database().ref('archive/'+ childSnap.key).update({
                         name: $scope.temp.name,
@@ -116,9 +119,8 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                     firebase.database().ref('Users/'+ childSnap.key).remove()
                     count ++;
                 })
-                alert("Student archive complete, " + count + " student records archived." );
             });
-
+            alert("Student archive complete, " + count + " student records archived." );
         };
         //Archive student function - end
 
