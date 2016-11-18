@@ -7,7 +7,7 @@
             <li class="active"><a>Module Codes</a></li>
             <li>
                 <div ng-repeat="title in CoursesInfo">
-                    <a>{{title.title}}</a>
+                    <a ng-click="GetCurrentCrseTab(title.title)">{{title.title}}</a>
                     <ul>
                         <li ng-repeat="modCode in title.mod" ng-click="GetCurrentTab(modCode.title, title.title)"><a>{{modCode.title}}</a></li>
                     </ul>

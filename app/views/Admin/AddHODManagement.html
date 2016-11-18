@@ -1,0 +1,43 @@
+<h2>{{CurrentProg}}</h2>
+
+<button class="btn btn-default btn-md" ng-disabled="(HOD.length > 0)" ng-click="AddHOD() " data-toggle="modal" data-target="#HodModal">Add HOD</button>
+<div class="widget-body">
+    <h4>Current HOD</h4>
+    <table class="table table-stripped">
+        <tr>
+            <th>Name</th>
+            <th>Remove</th>
+        </tr>
+        <tr ng-repeat="hod in HOD">
+            <td>{{hod.name}}</td>
+            <td><button class="btn btn-danger btn-xs" ng-click="RemoveHOD(hod.Ckey, hod.IDkey, 'hod')">X</button></td>
+        </tr>
+    </table>
+</div>
+
+<div id="HodModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add HOD</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Name</th>
+                        <th>Add</th>
+                    </tr>
+                    <tr ng-repeat="hodlist in HODList">
+                        <td>{{hodlist.name}}</td>
+                        <td><button class="btn btn-info-xs" ng-click="AddHODtoCRSE(hodlist.IDkey, CurrentProg, hodlist.name, hodlist.email)">+</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

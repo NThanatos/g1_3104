@@ -83,6 +83,27 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 });
             }
 
+            function getHod(Ckey){
+                $scope.HOD = [];
+                firebase.database().ref('Courses/'+ Ckey).on('value', function(snapshot) {
+                    snapshot.forEach(function (childSnap) {
+                        if(childSnap.key == "hod"){
+                            childSnap.forEach(function (hod){
+                                console.log("hodkey", hod.key);   //this my hod obj key
+                                console.log("hodname", hod.val().name); //name of the hod
+                                $scope.HOD.push({
+                                        name: hod.val().name,
+                                        Ckey : Ckey,
+                                        IDkey: hod.key
+                                    }
+                                );
+                            });
+                        }
+                    })
+                });
+                console.log("hod ", $scope.HOD);
+            }
+
             $scope.GetCurrentTab = function (IDkey, Ckey) {
                 getLecturer(IDkey, Ckey)
                 getStudent(IDkey, Ckey)
@@ -91,6 +112,13 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 $scope.currentTab = 'views/Admin/ModTemplate.html'
             }
 
+            $scope.GetCurrentCrseTab = function (Ckey) {
+                getHod(Ckey);
+                console.log("get course current tab: ", Ckey);
+                $scope.CurrentProg = Ckey;
+                $scope.currentTab = 'views/Admin/AddHODManagement.html'
+
+            };
 
            $scope.RemoveUser = function (Ckey, modkey, IDkey, type) {
                firebase.database().ref('Courses/'+ Ckey +'/modules/' + modkey + '/' + type+ '/' + IDkey).remove()
@@ -101,6 +129,14 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                $scope.CurrentProg = Ckey
                $scope.currentTab = 'views/Admin/ModTemplate.html'
            }
+
+            $scope.RemoveHOD = function(Ckey, IDkey, type){
+                console.log("remove: ", Ckey);
+                firebase.database().ref('Courses/'+ Ckey + '/' + type+ '/' + IDkey).remove();
+                getCourseCode();
+                getHod(Ckey);
+                $scope.currentTab = 'views/Admin/AddHODManagement.html'
+            };
             
             $scope.AddStu = function () {
                 getAllStudents()
@@ -108,6 +144,10 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
             $scope.AddLec = function () {
                 getAllLecturers()
             }
+
+            $scope.AddHOD = function(){
+                getAllHod();
+            };
 
             $scope.AddStudenttoClass = function (IDkey, course, mod, name) {
                 console.log('Courses/' + course + '/modules/' + mod + '/student/' + IDkey)
@@ -155,6 +195,20 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 $scope.CurrentProg = course
                 $scope.currentTab = 'views/Admin/ModTemplate.html'
             }
+
+            $scope.AddHODtoCRSE = function(IDkey, course, name, email){
+                console.log("add hod to course: ", course);
+                firebase.database().ref('Courses/' + course +'/hod/' + IDkey).set({
+                    email: email,
+                    name: name
+
+                });
+
+                getCourseCode();
+                getHod(course);  //retrieve the just added hod
+                $scope.CurrentProg = course;
+                $scope.currentTab = 'views/Admin/AddHODManagement.html'
+            };
 
             function getAllStudents() {
                 $scope.StudentstoAdd = [];
@@ -206,5 +260,25 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                     })
                     $scope.$apply();
                 });
+            }
+
+            function getAllHod(){
+                $scope.HODList = [];
+                const rootRef = firebase.database().ref();
+                const ref = rootRef.child('Users');
+                ref.orderByChild("role").equalTo('hod').on("value", function (snap) {
+                    snap.forEach(function (childSnap) {
+                        console.log("what value", childSnap.val());  //hod obj
+                        console.log("length how many ", $scope.HOD);
+                        if($scope.HOD.length == 0){
+                            $scope.HODList.push({
+                                name: childSnap.val().name,
+                                email: childSnap.val().email,
+                                IDkey: childSnap.key
+                            })
+                        }
+                    });
+                });
+                $scope.$apply();
             }
     }]);    //End of Dashboard controller
