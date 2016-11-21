@@ -14,19 +14,32 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
                 const rootRef = firebase.database().ref();
 
                 //zoom in to users table
-                const ref = rootRef.child('Users');
+                const ref = rootRef.child('Courses');
                 //this allows us to use the array and the scope notation we are used to
                 $scope.details = $firebaseArray(ref);
+                $scope.moduledetail=$firebaseArray(ref.orderByChild("modules"));
+
+                $scope.ModuleList = [];
+
+                ref.orderByChild("modules").once("value", function(snap){
+                    snap.forEach(function (childSnap) {
+                        childSnap.forEach(function (modSnap){
+
+                            if(modSnap.key=="modules"){
+                                modSnap.forEach(function (modChild){
+                                    $scope.ModuleList.push({key:modChild.key,value: modChild.val()});
+                                })
+                            }
+
+                        });
+                        //$scope.ModuleList.push(childSnap.val());
+
+                    });
+                });
+                console.log($scope.ModuleList);
+
             }
 
-            $scope.viewEditForm = true;
-            $scope.viewAddForm = true;
-
-            $scope.editInfo = function (info) {
-                $scope.currentUser = info;
-
-                $scope.viewEditForm = $scope.viewEditForm === false ? true : false;
-            };
 
 
             $scope.UpdateInfo = function (info) {
