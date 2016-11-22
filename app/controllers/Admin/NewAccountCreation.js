@@ -25,7 +25,7 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
             $scope.editInfo = function (info) {
                 $scope.currentUser = info;
 
-                $scope.viewEditForm = $scope.viewEditForm === false ? true : false;
+                // $scope.viewEditForm = $scope.viewEditForm === false ? true : false;
             };
 
 
