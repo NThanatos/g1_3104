@@ -11,7 +11,7 @@
 
         <tr ng-repeat="student in ArrayStudent">
             <td><input type="hidden" ng-model="student.name">{{student.name}}</td>
-            <td><input type="number" name="studentmarks" id="studentmarks" ng-model="student.marks" required></td>
+            <td><input type="number" name="studentmarks" id="studentmarks" max="100" min="0" ng-model="student.marks" required></td>
             <td>
                 <select ng-model="student.recommend" ng-options="choices.choice for choices in recommendChoice" required>
                     <option value="" disabled>Select recommendation choice</option>
