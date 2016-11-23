@@ -139,8 +139,22 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                         //check if valid token
                                         if ($scope.fbotp == result) {
                                             successfullogin = true;
+                                            console.log('Login process')
                                             //route to dashboard
-                                            $location.path('Dashboard');
+                                            if (childSnap.val().role == 'admin'){
+                                                $location.path('AdminDashboard');
+                                            }
+                                            else if (childSnap.val().role == 'hod'){
+                                                $location.path('Hod');
+                                            }
+                                            else if (childSnap.val().role == 'lecturer'){
+                                                $location.path('Lecturer');
+                                            }
+                                            else if (childSnap.val().role == 'student'){
+                                                $location.path('StudentDashboard');
+                                            }
+
+                                            // $location.path('Dashboard');
                                         }
 
 
@@ -164,10 +178,20 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                 if (successfullogin) {
                                     //update hidden
                                     $scope.$parent.updateHidden(1);
-
-
                                     //route to dashboard
-                                    $location.path('Dashboard');
+                                    if (childSnap.val().role == 'admin'){
+                                        $location.path('AdminDashboard');
+                                    }
+                                    else if (childSnap.val().role == 'hod'){
+                                        $location.path('Hod');
+                                    }
+                                    else if (childSnap.val().role == 'lecturer'){
+                                        $location.path('Lecturer');
+                                    }
+                                    else if (childSnap.val().role == 'student'){
+                                        $location.path('StudentDashboard');
+                                    }
+
                                 }
 
 

@@ -7,7 +7,6 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
 
         (function initController() {
             getCourseCode()
-            console.log('starting page')
             $scope.currentTab = '';
             $scope.loading = true;
         })();
