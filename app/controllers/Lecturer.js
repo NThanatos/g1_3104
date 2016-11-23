@@ -277,6 +277,8 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                 const ref = rootRef.child('Users');
 
                 ref.child(item).remove();
+                alert("Delete Student Particulars Successful !")
+                $route.reload();
                 getStudentParticulars();
             }
             /*-------------------------End of Delete Student Particulars Function------------------*/
