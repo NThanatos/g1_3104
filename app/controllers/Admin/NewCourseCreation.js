@@ -106,7 +106,7 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
                 getInfo();
             };
 
-            $scope.AddInfo = function (info) {
+            $scope.AddCourse = function (info) {
                 var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy'); //for lastchangepassword field
 
                 //get the entire database tree

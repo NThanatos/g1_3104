@@ -64,44 +64,8 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
 
 
             $scope.login = function () {
-                /*
-                 //find child that has key email == to the email passed in
-                 userRef.orderByChild("email").equalTo($scope.email).on("value", function(snap){
                  //TODO: Do something when the password ain't the same
-                 }
-                 });
-                 }
-                 $scope.login = function () {
-                 /*
-                 //find child that has key email == to the email passed in
-                 userRef.orderByChild("email").equalTo($scope.email).on("value", function(snap){
-
-                 //loop into children incase there is more than 1 return
-                 snap.forEach(function (childSnap) {
-                 //check if the account was deactivated due to not changing password after 100 days
-                 if(childSnap.val().accountStatus != "Deactivated") {
-                 //check if email and password is the same
-                 if((childSnap.val().password)==$scope.password){
-                 console.log("Welcome "+$scope.email);
-
-                 //store entire user into userData shared across all controllers
-                 $rootScope.userData = childSnap.val();
-                 //success=true;
-
-                 //update hidden
-                 $scope.$parent.updateHidden(1);
-                 //route to dashboard
-                 $location.path('AdminDashboard')
-                 }
-                 }
-                 })
-
-                 //get the first child object
-                 //var myUser = snap.val();
-
-                 //console.log(JSON.stringify(myUser));
-                 });
-                 */
+                var successfullogin = true;
                 //auto sign in as dhina to save time
                 userRef.orderByChild("email").equalTo($scope.email).once("value", function (snap) {
 
@@ -115,7 +79,7 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                             if ((childSnap.val().password) == $scope.password) {
 
 
-                                var successfullogin = true;
+
                                 //Checks if user has 2fa authentication
 
                                 if (childSnap.val().secretkey) {
@@ -139,7 +103,22 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                         //check if valid token
                                         if ($scope.fbotp == result) {
                                             successfullogin = true;
-                                            console.log('Login process')
+                                            //alert("asd");
+                                            //alert(childSnap.key);
+                                            //alert(childSnap.val());
+                                            //alert(snap.val());
+                                            //for persistent
+                                            $localStorage.userid = childSnap.key;
+                                            $localStorage.credential = childSnap.val();
+                                            $localStorage.studentCredential = snap.val();
+
+
+                                            //for the view
+                                            $rootScope.userData = $localStorage.credential;
+                                            $rootScope.studentData = $localStorage.studentCredential;
+
+                                            //update hidden
+                                            $scope.$parent.updateHidden(1);
                                             //route to dashboard
                                             if (childSnap.val().role == 'admin'){
                                                 $location.path('AdminDashboard');
@@ -152,9 +131,10 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                             }
                                             else if (childSnap.val().role == 'student'){
                                                 $location.path('StudentDashboard');
+                                            }else{
+                                                $location.path('Dashboard');
                                             }
 
-                                            // $location.path('Dashboard');
                                         }
 
 
@@ -164,18 +144,21 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                 }
 
 
-                                //for persistent
-                                $localStorage.userid = childSnap.key;
-                                $localStorage.credential = childSnap.val();
-                                $localStorage.studentCredential = snap.val();
 
-
-                                //for the view
-                                $rootScope.userData = $localStorage.credential;
-                                $rootScope.studentData = $localStorage.studentCredential;
 
 
                                 if (successfullogin) {
+
+                                    //for persistent
+                                    $localStorage.userid = childSnap.key;
+                                    $localStorage.credential = childSnap.val();
+                                    $localStorage.studentCredential = snap.val();
+
+
+                                    //for the view
+                                    $rootScope.userData = $localStorage.credential;
+                                    $rootScope.studentData = $localStorage.studentCredential;
+
                                     //update hidden
                                     $scope.$parent.updateHidden(1);
                                     //route to dashboard
@@ -209,13 +192,8 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
             }
 
 
-            function dec2hex(s) {
-                return (s < 15.5 ? '0' : '') + Math.round(s).toString(16);
-            }
-
-            function hex2dec(s) {
-                return parseInt(s, 16);
-            }
+            function dec2hex(s) { return (s < 15.5 ? '0' : '') + Math.round(s).toString(16); }
+            function hex2dec(s) { return parseInt(s, 16); }
 
             function base32tohex(base32) {
                 var base32chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
@@ -227,9 +205,9 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                     bits += leftpad(val.toString(2), 5, '0');
                 }
 
-                for (var i = 0; i + 4 <= bits.length; i += 4) {
+                for (var i = 0; i+4 <= bits.length; i+=4) {
                     var chunk = bits.substr(i, 4);
-                    hex = hex + parseInt(chunk, 2).toString(16);
+                    hex = hex + parseInt(chunk, 2).toString(16) ;
                 }
                 return hex;
 
