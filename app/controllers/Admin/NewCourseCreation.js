@@ -19,6 +19,8 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
                 $scope.details = $firebaseArray(ref);
                 $scope.moduledetail=$firebaseArray(ref.orderByChild("modules"));
 
+
+
                 $scope.ModuleList = [];
 
                 ref.orderByChild("modules").once("value", function(snap){
@@ -36,7 +38,6 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
 
                     });
                 });
-                console.log($scope.ModuleList);
 
             }
 
@@ -54,10 +55,14 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
                     if(!exists){
                         //run some code
                         const ref = rootRef.child('Courses/'+coursename).set({
-                            hod: ''}
+                            hod: '',
+                           }
                         )
+
+                    }else{
                         alert("Course Already Exist");
                     }
+
                 });
 
 
@@ -65,5 +70,32 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
                 getInfo();
             };
 
+
+            $scope.AddModules = function (module) {
+
+                //get the entire database tree
+                const rootRef = firebase.database().ref();
+
+
+                rootRef.child('Courses/'+module.parent+'/modules/'+module.code).once('value', function(snapshot) {
+                    console.log(snapshot);
+                    var exists = (snapshot.val() !== null);
+                    if(!exists){
+                        //run some code
+                        const ref = rootRef.child('Courses/'+module.parent+'/modules/'+module.code).set({
+                            title: module.title,
+                            status: "Pending"}
+                        )
+
+                    }else{
+                        alert("Module Already Exist");
+                    }
+
+                });
+
+
+
+                getInfo();
+            };
 
         }]);
