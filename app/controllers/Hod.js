@@ -2,8 +2,8 @@
 
 angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '720kb.datepicker', 'firebase'])
 
-    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray','$cookies','$cookieStore',
-        function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray,$cookies,$cookieStore) {
+    .controller('HodCtrl',  ['$route','$rootScope', '$scope','$location','$http', '$window', '$filter', '$firebaseObject', '$firebaseArray','$localStorage',
+        function ($route,$rootScope, $scope,$location,$http,$window,$filter,$firebaseObject,$firebaseArray,$localStorage) {
 
         (function initController() {
             getCourses();
@@ -20,21 +20,64 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
 
 //Other Function------------------------------------------------------------------------------------------------------
         function getCourses() {
-            //get the entire database tree
+            // //get the entire database tree
+            // var take=false;
+            // console.log($localStorage.userid, " asd");
+            // $scope.Coursesarray = [];
             const rootRef = firebase.database().ref();
-
+            // var coursesRef = rootRef.child('Courses')
+            // coursesRef.once('value', function (snapshot) {
+            //     snapshot.forEach(function (hodSnapshot) {
+            //         hodSnapshot.forEach(function (hodNameSnapshot) {
+            //
+            //             if(hodNameSnapshot.key=="hod")
+            //             {
+            //                 console.log(hodNameSnapshot.val());
+            //
+            //                 hodNameSnapshot.forEach(function (hodKeySnapshot){
+            //
+            //                     if(hodKeySnapshot.key==$localStorage.userid)
+            //                     {
+            //                         console.log(hodNameSnapshot.key, " asd");
+            //                         console.log(hodSnapshot.key, " asd");
+            //                         $scope.Coursesarray.push(hodSnapshot.val());
+            //                         console.log($scope.Coursesarray, " array");
+            //                         take=true;
+            //
+            //                     }
+            //                     //$scope.resultsArray.push
+            //
+            //                 })
+            //             }
+            //
+            //             if(hodNameSnapshot.key=="modules" && (hodKeySnapshot.key==$localStorage.userid))
+            //             {
+            //                     hodNameSnapshot.forEach(function (modSnapshot) {
+            //                         console.log(modSnapshot.val(), " array");
+            //                     })
+            //
+            //
+            //             }
+            //
+            //         })
+            //
+            //
+            //     })
+            //
+            // });
             //zoom in to users table
-            const ref = rootRef.child('Courses/ICT/modules');
+            console.log($localStorage.credential.AssignedTo)
+            const ref = rootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules');
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
-            console.log($scope.Courses.length)
+            console.log($scope.Courses)
 
         }
 
         
         $scope.PublishGrades = function () {
             var PublishStatus = {status: 'Published'}
-            firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId).update(PublishStatus);
+            firebase.database().ref('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+ $scope.currentCourseId).update(PublishStatus);
             $scope.currentCourseStatus = 'Published';
             $scope.SelectedStatus = true;
         }
@@ -56,7 +99,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                 console.log(mark);
                 for (var i= 0; i < $scope.Grades.length ;i++){
                     $scope.Grades[i].marks = $scope.Grades[i].marks + newMark;
-                    firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+$scope.Grades[i].$id).update({marks: $scope.Grades[i].marks });
+                    firebase.database().ref('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+ $scope.currentCourseId + '/student/'+$scope.Grades[i].$id).update({marks: $scope.Grades[i].marks });
                 }
             };
             
@@ -79,7 +122,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             // set grades info
             // $scope.Grades = $scope.Courses[$scope.Courses.indexOf(tab)].student
             const srootRef = firebase.database().ref();
-            const Sref = srootRef.child('Courses/ICT/modules/'+$scope.currentCourseId+'/student');
+            const Sref = srootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+$scope.currentCourseId+'/student');
             //this allows us to use the array and the scope notation we are used to
             $scope.Grades = $firebaseArray(Sref);
         };
@@ -120,7 +163,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
 
             // need to change student id
            // firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId +'/recommendation').update(updateValue);
-            firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId ).update(newStatus);
+            firebase.database().ref('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId ).update(newStatus);
 
             // refesh grades info
             $scope.Grades = $scope.Courses[$scope.Courses.indexOf($scope.newTab)].student

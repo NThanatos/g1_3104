@@ -249,21 +249,33 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                 studentsRef.once('value', function (snapshot) {
                     snapshot.forEach(function (userSnapshot) {
 //checking if user is student before getting his details
-                        if (userSnapshot.val().role == "student") {
+
+                        if (userSnapshot.val().role == "student" && (userSnapshot.val().accountStatus == "Activated")) {
                             $scope.email = userSnapshot.val().email;
                             $scope.name = userSnapshot.val().name;
                             //decrypting gpa before showing to user
-                            $scope.gpa = $crypto.decrypt(userSnapshot.val().gpa);
+
+                            if(userSnapshot.val().gpa==0)
+                            {
+                                $scope.gpa=userSnapshot.val().gpa;
+
+                            }
+                            else {
+                                $scope.gpa = $crypto.decrypt(userSnapshot.val().gpa);
+                            }
+
                             //pushing details of each student to array for display
                             $scope.studentsgradesArrrootscope.push({
                                 "email": $scope.email,
                                 "name": $scope.name,
                                 "gpa": $scope.gpa
                             });
-                            $scope.$apply();
+
                         }
                     })
+                    $scope.$apply();
                 })
+                //
             }
 
 
