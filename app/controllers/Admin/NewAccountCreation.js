@@ -123,6 +123,27 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
 
                     });
                 }
+                else if(info.role == 'hod'){
+                    newRef.set({
+                        accountStatus: "Activated",
+                        AssignedTo: "",
+                        name: info.name,
+                        email: info.email,
+                        role: info.role,
+
+                        password: info.password,
+                        passwordChangedDate: currentDate,
+                        profile: {
+                            address: info.profile.address,
+                            citizenship: info.profile.citizenship,
+                            gender: info.profile.gender,
+                            nok: info.profile.nok,
+                            nokPhone: info.profile.nokPhone,
+                            phone: info.profile.phone
+                        }
+
+                    });
+                }
                 else {
                     newRef.set({
                         accountStatus: "Activated",

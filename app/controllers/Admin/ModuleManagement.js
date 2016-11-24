@@ -88,8 +88,6 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                     snapshot.forEach(function (childSnap) {
                         if(childSnap.key == "hod"){
                             childSnap.forEach(function (hod){
-                                console.log("hodkey", hod.key);   //this my hod obj key
-                                console.log("hodname", hod.val().name); //name of the hod
                                 $scope.HOD.push({
                                         name: hod.val().name,
                                         Ckey : Ckey,
@@ -131,8 +129,14 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
            }
 
             $scope.RemoveHOD = function(Ckey, IDkey, type){
-                console.log("remove: ", Ckey);
+
                 firebase.database().ref('Courses/'+ Ckey + '/' + type+ '/' + IDkey).remove();
+                const rootRef = firebase.database().ref();
+                const ref = rootRef.child('Users');
+
+                ref.child(IDkey).update({
+                    AssignedTo: ""
+                })
                 getCourseCode();
                 getHod(Ckey);
                 $scope.currentTab = 'views/Admin/AddHODManagement.html'
@@ -197,12 +201,20 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
             }
 
             $scope.AddHODtoCRSE = function(IDkey, course, name, email){
-                console.log("add hod to course: ", course);
+
                 firebase.database().ref('Courses/' + course +'/hod/' + IDkey).set({
                     email: email,
                     name: name
 
                 });
+
+                const rootRef = firebase.database().ref();
+                const ref = rootRef.child('Users');
+
+                ref.child(IDkey).update({
+                    AssignedTo: course
+                })
+
 
                 getCourseCode();
                 getHod(course);  //retrieve the just added hod
@@ -262,8 +274,29 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 });
             }
 
+            function selectedHOD (){
+                $scope.selectedHOD = [];
+
+                const rootRef = firebase.database().ref();
+                const ref = rootRef.child('Users');
+                ref.orderByChild("AssignedTo").equalTo('').on("value", function (snap){
+                    snap.forEach(function (childSnap){
+                        console.log("assign", childSnap.val()); //all the hod object that was not being assigned
+                        $scope.selectedHOD.push({
+                            name: childSnap.val().name,
+                            email: childSnap.val().email,
+                            IDkey: childSnap.key
+                        });
+
+                    })
+                })
+                console.log("selected ", $scope.selectedHOD);
+
+            }
+
             function getAllHod(){
                 $scope.HODList = [];
+                selectedHOD();
                 const rootRef = firebase.database().ref();
                 const ref = rootRef.child('Users');
                 ref.orderByChild("role").equalTo('hod').on("value", function (snap) {
@@ -271,11 +304,17 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                         console.log("what value", childSnap.val());  //hod obj
                         console.log("length how many ", $scope.HOD);
                         if($scope.HOD.length == 0){
-                            $scope.HODList.push({
-                                name: childSnap.val().name,
-                                email: childSnap.val().email,
-                                IDkey: childSnap.key
-                            })
+                            for(var i= 0; i<$scope.selectedHOD.length; i++) {
+                                if ($scope.selectedHOD[i].IDkey == childSnap.key) {
+                                    $scope.HODList.push({
+                                        name: childSnap.val().name,
+                                        email: childSnap.val().email,
+                                        IDkey: childSnap.key
+                                    })
+                                }
+                            }
+
+
                         }
                     });
                 });
