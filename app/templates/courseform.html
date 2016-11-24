@@ -1,12 +1,12 @@
 <!-- Form used for updation of data into database -->
-<form class="form-horizontal alert alert-warning" name="myForm" ng-submit="AddCourse(courseInfo)">
+<form class="form-horizontal alert alert-warning" name="myForm" ng-submit="AddCourse(coursename)">
 
     <div class="form-group">
         <label>Course Name:*</label>
-        <input type="email" class="form-control" ng-model="courseInfo.name" value="{{courseInfo.name}}" required>
+        <input type="text" class="form-control" ng-model="coursename" required>
     </div>
 
     <div class="form-group">
-        <button class="btn btn-success" ng-disabled="!myForm.$valid">Add</button>
+        <button class="btn btn-success">Add</button>
     </div>
 </form>

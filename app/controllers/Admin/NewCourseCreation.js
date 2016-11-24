@@ -41,121 +41,25 @@ angular.module('G1.NewCourseCreation', ['ngRoute', 'angularUtils.directives.dirP
             }
 
 
-
-            $scope.UpdateInfo = function (info) {
-                $scope.viewEditForm = false;
-                //get the entire database tree
-                const rootRef = firebase.database().ref();
-
-                //zoom in to users table
-                const ref = rootRef.child('Users');
-
-                if (info.role == 'student') {
-                    ref.child(info.$id).update({
-                        name: info.name,
-                        email: info.email,
-                        role: info.role,
-                        accountStatus: "Activated",
-                        yearJoined: info.yearJoined,
-                        password: info.password,
-                        passwordChangedDate: currentDate,
-                        gpa: 0.00,
-                        profile: {
-                            address: info.profile.address,
-                            citizenship: info.profile.citizenship,
-                            gender: info.profile.gender,
-                            nok: info.profile.nok,
-                            nokPhone: info.profile.nokPhone,
-                            phone: info.profile.phone
-                        }
-
-                    });
-                }
-                else {
-                    ref.child(info.$id).update({
-                        accountStatus: "Activated",
-                        name: info.name,
-                        email: info.email,
-                        role: info.role,
-
-                        password: info.password,
-                        passwordChangedDate: currentDate,
-                        profile: {
-                            address: info.profile.address,
-                            citizenship: info.profile.citizenship,
-                            gender: info.profile.gender,
-                            nok: info.profile.nok,
-                            nokPhone: info.profile.nokPhone,
-                            phone: info.profile.phone
-                        }
-
-                    });
-                }
-
-
-                getInfo();
-                $scope.editInfo(info);
-            };
-            $scope.deleteInfo = function (info) {
-                //get the entire database tree
-                const rootRef = firebase.database().ref();
-
-                //zoom in to users table
-                const ref = rootRef.child('Users');
-                ref.child(info.$id).remove();
-                getInfo();
-            };
-
-            $scope.AddCourse = function (info) {
-                var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy'); //for lastchangepassword field
+            $scope.AddCourse = function (coursename) {
 
                 //get the entire database tree
                 const rootRef = firebase.database().ref();
 
-                //zoom in to users table
-                const ref = rootRef.child('Users');
-                var newRef = ref.push();
-                if (info.role == 'student') {
-                    newRef.set({
-                        accountStatus: "Activated",
-                        name: info.name,
-                        email: info.email,
-                        role: info.role,
-                        yearJoined: info.yearJoined,
-                        password: info.password,
-                        passwordChangedDate: currentDate,
-                        gpa: 0.00,
-                        profile: {
-                            address: info.profile.address,
-                            citizenship: info.profile.citizenship,
-                            gender: info.profile.gender,
-                            nok: info.profile.nok,
-                            nokPhone: info.profile.nokPhone,
-                            phone: info.profile.phone
-                        }
 
-                    });
-                }
-                else {
-                    newRef.set({
-                        accountStatus: "Activated",
-                        name: info.name,
-                        email: info.email,
-                        role: info.role,
 
-                        password: info.password,
-                        passwordChangedDate: currentDate,
-                        profile: {
-                            address: info.profile.address,
-                            citizenship: info.profile.citizenship,
-                            gender: info.profile.gender,
-                            nok: info.profile.nok,
-                            nokPhone: info.profile.nokPhone,
-                            phone: info.profile.phone
-                        }
+                //make sure does not exist b4 create
+                rootRef.child('Courses/'+coursename).once('value', function(snapshot) {
+                    var exists = (snapshot.val() !== null);
+                    if(!exists){
+                        //run some code
+                        const ref = rootRef.child('Courses/'+coursename).set({
+                            hod: ''}
+                        )
+                        alert("Course Already Exist");
+                    }
+                });
 
-                    });
-                }
 
 
                 getInfo();
