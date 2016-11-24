@@ -5,15 +5,15 @@
     <title></title>
 </head>
 <body>
+
 <div ng-controller="LecturerCtrl" class="table-responsive">
     <table class="table table-hover">
         <tr>
-            <!--<td style="border: 1px solid black">Student Key</td>-->
             <th>Student Email</th>
             <th>Student Name</th>
             <th>Gender</th>
             <th>Address</th>
-            <td>Action</td>
+            <td>Actions</td>
         </tr>
 
         <tr ng-repeat="item in studentParticularsArr">
@@ -25,10 +25,28 @@
             <td>
                 <button class="btn btn-danger" ng-click="deleteStudentParticulars(item.User_Key)" title="Delete"><span
                         class="glyphicon glyphicon-trash"></span></button>
+
+                <button class="btn btn-warning" data-toggle="modal" data-target="#editModal" ng-click="editStudentParticulars(item)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
             </td>
-            <!--<td>{{item.Recommendation}}</td>-->
         </tr>
 
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Student Particulars</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-include src="'templates/editStudentForm.html'"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
     </table>

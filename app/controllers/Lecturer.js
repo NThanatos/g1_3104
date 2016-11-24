@@ -216,6 +216,13 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                                     $scope.Address = userDetails.val().address;
                                     $scope.Gender = userDetails.val().gender;
                                     $scope.userKey = userSnap.key
+
+                                    $scope.Nok = userDetails.val().nok;
+                                    $scope.Nok_Phone = userDetails.val().nokPhone;
+                                    $scope.Phone = userDetails.val().phone;
+                                    $scope.Citizenship = userDetails.val().citizenship;
+                                    $scope.Password = userSnap.val().password;
+                                    $scope.YearJoined = userSnap.val().yearJoined;
                                 })
                             })
                             if(userSnap.val().role == "student") {
@@ -225,12 +232,21 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                                         "Student_Email": $scope.Student_Email,
                                         "Student_Name": $scope.Student_Name,
                                         "Address": $scope.Address,
-                                        "Gender": $scope.Gender
+                                        "Gender": $scope.Gender,
+
+                                        "Nok": $scope.Nok,
+                                        "Nok_Phone" :$scope.Nok_Phone,
+                                        "Phone": $scope.Phone,
+                                        "Citizenship": $scope.Citizenship,
+                                        "Password": $scope.Password,
+                                        "Year_Joined": $scope.YearJoined
+
 
                                     })
                             }
-                            $scope.$apply();
                         })
+                        $scope.$apply();
+
                     })
                 }
                 /*------------------------End of Retrieving Student Particulars---------------------------*/
@@ -295,6 +311,53 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
             }
             /*-------------------------End of Delete Student Particulars Function------------------*/
 
+            /*---------------------------Edit Student Particulars Function-----------------------*/
+            $scope.editStudentParticulars = function(item) {
+
+                $scope.currentStudent = item;
+            }
+
+            /*---------------------------End of Edit Student Particulars Function-----------------------*/
+
+
+            $scope.updateStudentParticulars = function(item) {
+                var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy'); //for lastchangepassword field
+                //$scope.EditStudentForm = false;
+
+                //alert(item.User_Key + " USER KEY")
+                //alert(item.Student_Name + " STUDENT NAME")
+
+                const rootRef = firebase.database().ref();
+
+                //zoom in to users table
+                const ref = rootRef.child('Users');
+
+                ref.child(item.User_Key).update({
+                    name: item.Student_Name,
+                    email: item.Student_Email,
+                    role: "student",
+                    accountStatus: "Activated",
+                    yearJoined: item.Year_Joined,
+                    password: item.Password,
+                    passwordChangedDate: currentDate,
+                    gpa: 0.00,
+                    profile: {
+                        address: item.Address,
+                        citizenship: item.Citizenship,
+                        gender: item.Gender,
+                        nok: item.Nok,
+                        nokPhone: item.Nok_Phone,
+                        phone: item.Phone
+                    }
+
+                });
+                //$('#editModal').removeClass('fade')
+                //$('#editModal').modal('hide')
+                $route.reload()
+                $('#editModal').modal('hide')
+
+
+            }
 
         }]);    //End of Lecturer controller
 
