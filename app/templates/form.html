@@ -1,61 +1,61 @@
 <!-- Form used for updation of data into database -->
-<form class="form-horizontal alert alert-warning" name="myForm" ng-submit="AddInfo(currentUser)">
+<form class="form-horizontal alert alert-warning" name="myForm" ng-submit="AddInfo(newUser)">
 
     <div class="form-group">
         <label>Email Address:*</label>
-        <input type="email" class="form-control" ng-model="currentUser.email" value="{{currentUser.email}}" required>
+        <input type="email" class="form-control" ng-model="newUser.email" value="{{newUser.email}}" required>
     </div>
     <div class="form-group">
         <label>Password:*</label>
-        <input class="form-control" ng-model="currentUser.password" value="{{currentUser.password}}" type="password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,}/" ng-minlength="7" name="psw" required>
+        <input class="form-control" ng-model="newUser.password" value="{{newUser.password}}" type="password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,}/" ng-minlength="7" name="psw" required>
     </div>
     <div ng-message="minlength">Passwords must be at least 7 characters.</div>
     <div ng-message="pattern"> Must contain one number &amp; one uppercase letter, and one symbol from $, %, !, *, ? </div><br>
 
     <div class="form-group">
         <label for="sel2">Select User Role:*</label>
-        <select  ng-model="currentUser.role" value="{{currentUser.role}}"  id="sel2" required>
+        <select  ng-model="newUser.role" value="{{newUser.role}}"  id="sel2" required>
             <option value="admin">Admin</option>
             <option value="lecturer">Lecturer</option>
             <option value="hod">HOD</option>
             <option value="student">Student</option>
         </select>
     </div>
-    <div class="form-group" ng-if="currentUser.role=='student'">
+    <div class="form-group" ng-if="newUser.role=='student'">
         <label>Year joined:*</label>
-        <input type="text" class="form-control" ng-model="currentUser.yearJoined" value="{{currentUser.yearJoined}}" required>
+        <input type="text" class="form-control" ng-model="newUser.yearJoined" value="{{newUser.yearJoined}}" required>
     </div>
     <div class="form-group">
         <label>Name:*</label>
-        <input type="text" class="form-control" ng-model="currentUser.name" value="{{currentUser.name}}" required>
+        <input type="text" class="form-control" ng-model="newUser.name" value="{{newUser.name}}" required>
     </div>
     <div class="form-group">
         <label>Citizenship:*</label>
-        <input type="text" class="form-control" ng-model="currentUser.profile.citizenship" value="{{currentUser.profile.citizenship}}" required>
+        <input type="text" class="form-control" ng-model="newUser.profile.citizenship" value="{{newUser.profile.citizenship}}" required>
     </div>
     <div class="form-group">
         <label for="sel1">Select Gender:*</label>
-        <select ng-model="currentUser.profile.gender" value="{{currentUser.profile.gender}}"  id="sel1" required>
+        <select ng-model="newUser.profile.gender" value="{{newUser.profile.gender}}"  id="sel1" required>
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select>
     </div>
     <div class="form-group">
         <label>Address:*</label>
-        <input type="text" class="form-control" ng-model="currentUser.profile.address" value="{{currentUser.profile.address}}" required>
+        <input type="text" class="form-control" ng-model="newUser.profile.address" value="{{newUser.profile.address}}" required>
     </div>
     <div class="form-group">
         <label>Contact:*</label>
-        <input type="tel" class="form-control" ng-model="currentUser.profile.phone" value="{{currentUser.profile.phone}}" required>
+        <input type="tel" class="form-control" ng-model="newUser.profile.phone" value="{{newUser.profile.phone}}" required>
     </div>
     <div class="form-group">
         <label>NOK's name:*</label>
-        <input type="text" class="form-control" ng-model="currentUser.profile.nok" value="{{currentUser.profile.nok}}" required>
+        <input type="text" class="form-control" ng-model="newUser.profile.nok" value="{{newUser.profile.nok}}" required>
     </div>
 
     <div class="form-group">
         <label>NOK's Contact:*</label>
-        <input type="tel" class="form-control" ng-model="currentUser.profile.nokPhone" value="{{currentUser.profile.nokPhone}}" required>
+        <input type="tel" class="form-control" ng-model="newUser.profile.nokPhone" value="{{newUser.profile.nokPhone}}" required>
     </div>
     <div class="form-group">
         <button class="btn btn-success" data-toggle="modal" data-target="#myModal" ng-disabled="!myForm.$valid">Add</button>

@@ -21,6 +21,7 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
 
             $scope.viewEditForm = true;
             $scope.viewAddForm = true;
+            $scope.newUser = [];
 
             $scope.editInfo = function (info) {
                 $scope.currentUser = info;

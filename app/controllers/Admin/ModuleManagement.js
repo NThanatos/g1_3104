@@ -317,7 +317,7 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
 
                         }
                     });
+                    $scope.$apply();
                 });
-                $scope.$apply();
             }
     }]);    //End of Dashboard controller

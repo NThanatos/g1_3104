@@ -158,6 +158,10 @@ angular.module('G1.login', ['ngMaterial', 'ngRoute', 'ui.bootstrap'])
                                     //for the view
                                     $rootScope.userData = $localStorage.credential;
                                     $rootScope.studentData = $localStorage.studentCredential;
+                                //for the view
+                                $rootScope.userkey =  childSnap.key;
+                                $rootScope.userData = $localStorage.credential;
+                                $rootScope.studentData = $localStorage.studentCredential;
 
                                     //update hidden
                                     $scope.$parent.updateHidden(1);
