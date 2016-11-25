@@ -14,6 +14,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
         (function initController() {
             $scope.archArr = [];
             $scope.Users = [];
+            $scope.archiveNumber = 0;
 
             //$cookieStore.put("user", "dhina");
             //var value = $cookieStore.get("user");
@@ -120,7 +121,9 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                     count ++;
                 })
             });
-            alert("Student archive complete, " + count + " student records archived." );
+            $scope.archiveNumber = count;
+            $scope.$apply();
+            // alert("Student archive complete, " + count + " student records archived." );
         };
         //Archive student function - end
 

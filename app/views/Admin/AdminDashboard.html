@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <figure>
+                    <figure data-toggle="modal" data-target="#archiveModal">
                         <a data-toggle="tooltip" title="Back up data" class="btn btn-block" ng-click="archiveStudent()">
                             <img src='Images/archiveStudent.png'  width="200" height="200" />
                         </a>
@@ -68,11 +68,26 @@
                         <figcaption align="center"><h1>Manage Courses</h1></figcaption>
                     </figure>
                 </div>
-
-
-
             </div>
         </div>
     </div>
 </div>
 
+<div id="archiveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Archive Student</h4>
+            </div>
+            <div class="modal-body">
+                <p>Student archive complete <br>
+                   {{archiveNumber}} Student has been archive</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
