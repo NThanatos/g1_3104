@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/courseform.html" afterPath="$PROJECT_DIR$/app/templates/courseform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/moduleform.html" afterPath="$PROJECT_DIR$/app/templates/moduleform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" afterPath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +37,7 @@
       <file leaf-file-name="NewCourseCreation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/Admin/NewCourseCreation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="289">
               <caret line="17" column="24" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="24" />
               <folding />
             </state>
@@ -49,7 +47,7 @@
       <file leaf-file-name="NewCourseCreation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="1445">
               <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
               <folding />
             </state>
@@ -59,14 +57,14 @@
       <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="1020">
               <caret line="60" column="82" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="courseform.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="courseform.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/courseform.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -76,15 +74,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminDashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="18" column="352" selection-start-line="18" selection-start-column="352" selection-end-line="18" selection-end-column="352" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-867">
-              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            <state relative-caret-position="782">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
               <folding>
-                <marker date="1479870185257" expanded="true" signature="1302:1304" ph="{...}" />
-                <marker date="1479870185257" expanded="true" signature="11960:12030" ph="//..." />
-                <marker date="1479870185257" expanded="true" signature="12465:12736" ph="/*...*/" />
+                <marker date="1480226984477" expanded="true" signature="1302:1304" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -93,10 +99,15 @@
       <file leaf-file-name="ModuleManagement.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="31" column="29" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="55" />
+            <state relative-caret-position="493">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="55" />
               <folding>
-                <marker date="1479868408607" expanded="true" signature="12304:12320" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="3790:4122" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="3914:4122" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="3974:4122" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="4026:4122" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="4088:4122" ph="{...}" />
+                <marker date="1480226984438" expanded="true" signature="13554:13570" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -157,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
         <option value="$PROJECT_DIR$/app/controllers/profile.js" />
         <option value="$PROJECT_DIR$/app/views/changepassword.html" />
-        <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/js/sha1.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
@@ -166,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js" />
         <option value="$PROJECT_DIR$/app/templates/moduleform.html" />
         <option value="$PROJECT_DIR$/app/templates/courseform.html" />
+        <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
       </list>
     </option>
   </component>
@@ -174,9 +185,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -210,7 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,16 +225,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="g1_3104" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="g1_3104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="g1_3104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -398,6 +395,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -436,9 +434,13 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Lecturer.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/viewStudentParticulars.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Login.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/form.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Admin/AdminDashboard.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/login.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -446,7 +448,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/editStudentForm.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -454,6 +455,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/config/db.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/LICENSE.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/angular-animate.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/angular-animate.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/angular-animate.min.js.map</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/angular-animate/package.json</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -651,7 +661,9 @@
       <workItem from="1479259214756" duration="9246000" />
       <workItem from="1479632588969" duration="16155000" />
       <workItem from="1479804371608" duration="2512000" />
-      <workItem from="1479863271659" duration="22018000" />
+      <workItem from="1479863271659" duration="22076000" />
+      <workItem from="1480223080473" duration="317000" />
+      <workItem from="1480224010908" duration="3973000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -807,25 +819,32 @@
       <option name="project" value="LOCAL" />
       <updated>1479971493521</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="complete add module function">
+      <created>1479977673772</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1479977673772</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206610000" />
+    <option name="totallyTimeSpent" value="210958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20347004" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347004" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20347004" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2933754" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -872,7 +891,8 @@
     <MESSAGE value="view and controller for course creation" />
     <MESSAGE value="fixed login" />
     <MESSAGE value="add course function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add course function" />
+    <MESSAGE value="complete add module function" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete add module function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,24 +1045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="25" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="110" selection-start-line="64" selection-start-column="110" selection-end-line="64" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -1064,9 +1070,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="164" selection-start-line="14" selection-start-column="164" selection-end-line="14" selection-end-column="164" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,7 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,19 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-166">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding>
-            <marker date="1479870185257" expanded="true" signature="1302:1304" ph="{...}" />
-            <marker date="1479870185257" expanded="true" signature="11960:12030" ph="//..." />
-            <marker date="1479870185257" expanded="true" signature="12465:12736" ph="/*...*/" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,16 +1098,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="98" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="31" column="29" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="55" />
+        <state relative-caret-position="493">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="55" />
           <folding>
-            <marker date="1479868408607" expanded="true" signature="12304:12320" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="3790:4122" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="3914:4122" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="3974:4122" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="4026:4122" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="4088:4122" ph="{...}" />
+            <marker date="1480226984438" expanded="true" signature="13554:13570" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1128,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,16 +1127,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1585">
           <caret line="134" column="50" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="62" />
-          <folding>
-            <marker date="1479977564302" expanded="true" signature="12038:12160" ph="{...}" />
-            <marker date="1479977564302" expanded="true" signature="12101:12160" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="1020">
           <caret line="60" column="82" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="82" />
           <folding />
         </state>
@@ -1161,7 +1148,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="1445">
           <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
           <folding />
         </state>
@@ -1169,8 +1156,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Admin/NewCourseCreation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="289">
           <caret line="17" column="24" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1180,6 +1175,24 @@
         <state relative-caret-position="153">
           <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="18" column="352" selection-start-line="18" selection-start-column="352" selection-end-line="18" selection-end-column="352" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+          <folding>
+            <marker date="1480226984477" expanded="true" signature="1302:1304" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
