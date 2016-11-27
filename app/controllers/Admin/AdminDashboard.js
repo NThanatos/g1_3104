@@ -15,6 +15,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             $scope.archArr = [];
             $scope.Users = [];
             $scope.archiveNumber = 0;
+            getCode();
 
             //$cookieStore.put("user", "dhina");
             //var value = $cookieStore.get("user");
@@ -99,32 +100,122 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
             console.log("Starting student archive")
             const rootRef = firebase.database().ref();
             const ref = rootRef.child('Users');
+            const CouRef = rootRef.child('Courses');
+            $scope.G = [];
             var count = 0;
             //todays year -3
             var year = new Date().getFullYear() - 3
             year = year.toString()
             console.log(year);
-            ref.orderByChild("yearJoined").equalTo(year).on("value", function (snap) {
+            ref.orderByChild("yearJoined").equalTo(year).once("value").then (function (snap) {
                 //for each student that is required to achieve
                 snap.forEach(function (childSnap) {
                     $scope.temp = childSnap.val();
-                    console.log($scope.temp);
-                    //insert one obj into firebase
-                    firebase.database().ref('archive/'+ childSnap.key).update({
-                        name: $scope.temp.name,
-                        email:$scope.temp.email,
-                        yearJoined:$scope.temp.yearJoined,
-                        profile: $scope.temp.profile
-                    })
+                    // getGrades(childSnap.key)
+
+                    for (var i= 0 ; i < $scope.CoursesInf.length ; i++){
+                        for(var j = 0 ; j < $scope.CoursesInf[i].mod.length ; j++){
+                            var Cname = $scope.CoursesInf[i].title;
+                            var Mname = $scope.CoursesInf[i].mod[j].title;
+
+                            firebase.database().ref('Courses/'+ Cname +'/modules/' + Mname + '/student').once('value', function(snshot) {
+                                snshot.forEach(function (chSnap) {
+                                    if(childSnap.key == chSnap.key){
+                                        console.log('found match')
+                                        $scope.G.push({
+                                            Course: Cname,
+                                            Grade: chSnap.val().marks,
+                                            Module: Mname
+                                        })
+                                        //remove here
+                                        firebase.database().ref('Courses/'+ Cname +'/modules/' + Mname + '/student/'+ chSnap.key).remove()
+                                        console.log($scope.G)
+                                    }
+                                })
+                                console.log($scope.temp);
+                                console.log($scope.G);
+                                //insert one obj into firebase
+                                firebase.database().ref('archive/'+ childSnap.key).update({
+                                    name: $scope.temp.name,
+                                    email:$scope.temp.email,
+                                    yearJoined:$scope.temp.yearJoined,
+                                    profile: $scope.temp.profile,
+                                    Grade: []
+                                })
+                                for (var c = 0; c < $scope.G.length ; c++){
+                                    firebase.database().ref('archive/'+ childSnap.key + '/Grade/' + $scope.G[c].Course + '-' + $scope.G[c].Module ).update({
+                                        marks: $scope.G[c].Grade
+                                    })
+                                }
+                            });
+                        }
+                    }
+
+
                     //remove here
-                    firebase.database().ref('Users/'+ childSnap.key).remove()
+                     firebase.database().ref('Users/'+ childSnap.key).remove()
                     count ++;
                 })
+                $scope.archiveNumber = count;
+                $scope.$apply();
             });
-            $scope.archiveNumber = count;
-            $scope.$apply();
+
             // alert("Student archive complete, " + count + " student records archived." );
         };
+
+
+            function getCode() {
+                const rootRef = firebase.database().ref();
+                const CourseRef = rootRef.child('Courses');
+                var CourseCount = 0;
+                $scope.CoursesInf = [];
+
+                CourseRef.once("value").then ( function (snap) {
+                    snap.forEach(function (childSnap) {
+                        $scope.CoursesInf.push({
+                            title: childSnap.key,
+                            mod:[]
+                        });
+                        childSnap.forEach(function (ModSnap) {
+                            if (ModSnap.key == "modules"){
+                                ModSnap.forEach(function (CSnap) {
+                                    console.log(CSnap.key)
+                                    $scope.CoursesInf[CourseCount].mod.push({
+                                        title: CSnap.key
+                                    })
+                                })
+                            }
+                        })
+                        CourseCount++;
+                    })
+                })
+            }
+
+            // function getGrades(ID){
+            //     for (var i= 0 ; i < $scope.CoursesInf.length ; i++){
+            //       for(var j = 0 ; j < $scope.CoursesInf[i].mod.length ; j++){
+            //           var Cname = $scope.CoursesInf[i].title;
+            //           var Mname = $scope.CoursesInf[i].mod[j].title;
+            //
+            //           firebase.database().ref('Courses/'+ Cname +'/modules/' + Mname + '/student').once('value', function(snapshot) {
+            //               snapshot.forEach(function (childSnap) {
+            //                   if(ID == childSnap.key){
+            //                       console.log('found match')
+            //                       $scope.G.push({
+            //                               Course: Cname,
+            //                               Grade: childSnap.val().marks,
+            //                               Module: Mname
+            //                           })
+            //                       //remove here
+            //                       firebase.database().ref('Courses/'+ Cname +'/modules/' + Mname + '/student/'+ childSnap.key).remove()
+            //                       console.log($scope.G)
+            //                   }
+            //               })
+            //           });
+            //       }
+            //     }
+            // }
+
         //Archive student function - end
 
     }]);    //End of Dashboard controller
