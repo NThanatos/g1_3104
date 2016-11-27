@@ -31,6 +31,7 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
 
 
             $scope.UpdateInfo = function (info) {
+
                 $scope.viewEditForm = false;
                 //get the entire database tree
                 const rootRef = firebase.database().ref();
@@ -43,10 +44,10 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
                         name: info.name,
                         email: info.email,
                         role: info.role,
-                        accountStatus: "Activated",
+
                         yearJoined: info.yearJoined,
                         password: info.password,
-                        passwordChangedDate: currentDate,
+
                         gpa: 0.00,
                         profile: {
                             address: info.profile.address,
@@ -61,13 +62,13 @@ angular.module('G1.NewAccountCreation', ['ngRoute', 'angularUtils.directives.dir
                 }
                 else {
                     ref.child(info.$id).update({
-                        accountStatus: "Activated",
+
                         name: info.name,
                         email: info.email,
                         role: info.role,
 
                         password: info.password,
-                        passwordChangedDate: currentDate,
+
                         profile: {
                             address: info.profile.address,
                             citizenship: info.profile.citizenship,

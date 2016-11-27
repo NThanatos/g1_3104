@@ -7,10 +7,8 @@
     </div>
     <div class="form-group">
         <label>Password:*</label>
-        <input class="form-control" ng-model="currentUser.password" value="{{currentUser.password}}" type="password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,}/" ng-minlength="7" name="psw" required>
+        <input class="form-control" ng-model="currentUser.password" value="{{currentUser.password}}" type="password" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,}/" ng-minlength="7" name="psw" readonly>
     </div>
-    <div ng-message="minlength">Passwords must be at least 7 characters.</div>
-    <div ng-message="pattern"> Must contain one number &amp; one uppercase letter, and one symbol from $, %, !, *, ? </div><br>
 
     <div class="form-group">
         <label for="sel2">Select User Role:*</label>
@@ -58,6 +56,6 @@
         <input type="tel" class="form-control" ng-model="currentUser.profile.nokPhone" value="{{currentUser.profile.nokPhone}}" required>
     </div>
     <div class="form-group">
-        <button class="btn btn-success" ng-disabled="!myForm.$valid">Update</button>
+        <button class="btn btn-success" ng-disabled="!editForm.$valid">Update</button>
     </div>
 </form>
