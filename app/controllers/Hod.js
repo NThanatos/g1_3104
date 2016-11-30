@@ -15,6 +15,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             $scope.moderateForm = true;
             $scope.editGradeFormContent=[];
             $scope.ModerateMarksBy = 0;
+
         })();
 
 
@@ -31,6 +32,8 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             const ref = rootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules');
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
+            $scope.ProgramName = $localStorage.credential.AssignedTo;
+            $scope.$apply();
             console.log($scope.Courses)
 
         }
@@ -48,7 +51,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                     alert("Some student still have pending recommendation.");
                 }
                 else{
-                    PublishGrades;
+                    PublishGrades();
                 }
             })
 
