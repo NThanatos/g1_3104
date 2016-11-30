@@ -179,11 +179,11 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                 $scope.CurrentProg = course
                 $scope.currentTab = 'views/Admin/ModTemplate.html'
             }
-            $scope.AddLecturertoClass = function (IDkey, course, mod, name) {
+            $scope.AddLecturertoClass = function (IDkey, course, mod, name, email) {
                 console.log('Courses/' + course + '/modules/' + mod + '/lecturers/' + IDkey)
                 firebase.database().ref('Courses/' + course + '/modules/' + mod + '/lecturers/' + IDkey).set({
                     name: name,
-                    email: ''
+                    email: email
                 });
                 for(var i=0;i<$scope.LecturerstoAdd.length;i++){
                     if($scope.LecturerstoAdd[i].name == name){
@@ -263,8 +263,10 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                             }
                         }
                         if(!checkDup){
+                            console.log(childSnap.val().email)
                             $scope.LecturerstoAdd.push({
                                 name: childSnap.val().name,
+                                email: childSnap.val().email,
                                 IDkey: childSnap.key
                             })
                         }

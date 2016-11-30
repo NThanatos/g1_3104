@@ -71,7 +71,7 @@
                     </tr>
                     <tr ng-repeat="lecturer in LecturerstoAdd">
                         <td>{{lecturer.name}}</td>
-                        <td><button class="btn btn-info-xs" ng-click="AddLecturertoClass(lecturer.IDkey, CurrentProg, CurrentTitle, lecturer.name)">+</button> </td>
+                        <td><button class="btn btn-info-xs" ng-click="AddLecturertoClass(lecturer.IDkey, CurrentProg, CurrentTitle, lecturer.name, lecturer.email)">+</button> </td>
                     </tr>
                 </table>
             </div>

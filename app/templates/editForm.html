@@ -56,6 +56,6 @@
         <input type="tel" class="form-control" ng-model="currentUser.profile.nokPhone" value="{{currentUser.profile.nokPhone}}" required>
     </div>
     <div class="form-group">
-        <button class="btn btn-success" ng-disabled="!editForm.$valid">Update</button>
+        <button class="btn btn-success" ng-disabled="!editForm.$valid" data-toggle="modal" data-target="#myeditModal">Update</button>
     </div>
 </form>
