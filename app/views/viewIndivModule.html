@@ -27,7 +27,7 @@
             <!--<button class="btn btn-warning" ng-hide="(student.status == 'New')"  ng-click="open('warning')">-->
 
 
-            <button class="btn btn-warning" ng-hide="(student.status != 'Approved')"  ng-click="editPrompt($even, student.marks, key)">
+            <button class="btn btn-warning" ng-hide="(student.status != 'Approved')"  ng-click="editPrompt($even, student.marks, key, student.recommendation.RecommendedMark)">
                 <span class="glyphicon glyphicon-edit"> Edit</span>
             </button>
 

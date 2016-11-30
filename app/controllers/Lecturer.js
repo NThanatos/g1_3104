@@ -168,7 +168,7 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                 };
 
                 //edit prompt
-                $scope.editPrompt = function (ev, currentMark, studentid) {
+                $scope.editPrompt = function (ev, currentMark, studentid, recommendedmark) {
                     // Appending dialog to document.body to cover sidenav in docs app
                     console.log(currentMark);
 
@@ -176,7 +176,7 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                     var confirm = $mdDialog.prompt()
                         .title('Modify Mark')
                         .textContent('Current Mark: ' + currentMark)
-                        .placeholder('New Mark')
+                        .placeholder('Recommended Mark: '+ recommendedmark)
                         .ariaLabel('Enter New mark')
                         .targetEvent(ev)
                         .ok('Save')
@@ -186,11 +186,15 @@ angular.module('G1.Lecturer', ['ngMaterial', 'ngRoute', 'angularUtils.directives
                         //check if result is valid number
                         if (angular.isNumber(parseInt(result))) {
                             //update
+                            //validation within currentmark and recommendedmark
+                            if(parseInt(result)<=recommendedmark&&parseInt(result)>=currentMark){
+                                //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
+                                studentRef.child(studentid).update({marks: parseInt(result), status: "Completed"});
 
-                            //use update instead of set to update that row only all the other options like save or set will replace other row in the same set/key
-                            studentRef.child(studentid).update({marks: parseInt(result), status: "Completed"});
-                            //tempstudent.marks=result;
-                            //tempstudent.$save();
+                            }else{
+                                alert("invalid input, exceed range of recommendation or current marks")
+                            }
+
                         }
 
 
