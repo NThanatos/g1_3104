@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="updated link">
+    <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Lecturer.js" afterPath="$PROJECT_DIR$/app/controllers/Lecturer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/viewIndivModule.html" afterPath="$PROJECT_DIR$/app/views/viewIndivModule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/HOD.html" afterPath="$PROJECT_DIR$/app/views/HOD.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,37 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NewCourseCreation.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Admin/NewCourseCreation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewCourseCreation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courseform.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/courseform.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lecturer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Lecturer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Lecturer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
@@ -80,6 +50,38 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-297">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+              <folding>
+                <marker date="1480226984477" expanded="true" signature="1302:1304" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HOD.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/HOD.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminDashboard.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="88" column="54" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -160,7 +162,6 @@
         <option value="$PROJECT_DIR$/app/views/StudentGrades.html" />
         <option value="$PROJECT_DIR$/app/views/StudentDashboard.html" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
-        <option value="$PROJECT_DIR$/app/views/HOD.html" />
         <option value="$PROJECT_DIR$/app/views/courseGrades.html" />
         <option value="$PROJECT_DIR$/app/controllers/Hod.js" />
         <option value="$PROJECT_DIR$/app/views/Admin/logout.html" />
@@ -175,7 +176,6 @@
         <option value="$PROJECT_DIR$/app/views/profile.html" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/controllers/Logout.js" />
-        <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
         <option value="$PROJECT_DIR$/app/controllers/profile.js" />
         <option value="$PROJECT_DIR$/app/views/changepassword.html" />
         <option value="$PROJECT_DIR$/app/app.js" />
@@ -190,6 +190,8 @@
         <option value="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" />
         <option value="$PROJECT_DIR$/app/views/viewIndivModule.html" />
         <option value="$PROJECT_DIR$/app/controllers/Lecturer.js" />
+        <option value="$PROJECT_DIR$/app/views/HOD.html" />
+        <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
       </list>
     </option>
   </component>
@@ -352,7 +354,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Hod.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/editForm.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Admin/ModTemplate.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/Student/StudentDashboard.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -567,7 +573,7 @@
       <workItem from="1479863271659" duration="22076000" />
       <workItem from="1480223080473" duration="317000" />
       <workItem from="1480224010908" duration="4754000" />
-      <workItem from="1480477146116" duration="6640000" />
+      <workItem from="1480477146116" duration="8519000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -744,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480235132542</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="recommended marks validation">
+      <created>1480497819956</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1480497819956</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218379000" />
+    <option name="totallyTimeSpent" value="220258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -786,7 +799,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected" />
     <MESSAGE value="Login form to update hidden scope in controller&#10;-using parent scope&#10;&#10;-able to pass variable using rootScope replacing the need for cookie&#10; &#10; -upon login pass to dashboard" />
     <MESSAGE value="Logout function.&#10;&#10;-added dropdown menu to navigate to profile (incomplete)&#10;-signout option which links to logout controller&#10;&#10;-logoutCtrl will reset rootScope user data that is shared among controller before redirecting to / index" />
     <MESSAGE value="Ng storage component&#10;-persistent login (fixed bug)&#10;-view update for before login and after login (hidden views)" />
@@ -811,7 +823,8 @@
     <MESSAGE value="add course function" />
     <MESSAGE value="complete add module function" />
     <MESSAGE value="updated link" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated link" />
+    <MESSAGE value="recommended marks validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="recommended marks validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -840,13 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438379">
           <caret line="25787" column="0" selection-start-line="25787" selection-start-column="0" selection-end-line="25787" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/HOD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1034,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1054,16 +1053,6 @@
         <state relative-caret-position="1738">
           <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding>
-            <marker date="1480226984477" expanded="true" signature="1302:1304" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,6 +1124,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="194" column="101" selection-start-line="194" selection-start-column="101" selection-end-line="194" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+          <folding>
+            <marker date="1480226984477" expanded="true" signature="1302:1304" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/HOD.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="88" column="54" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="54" />
           <folding />
         </state>
       </provider>

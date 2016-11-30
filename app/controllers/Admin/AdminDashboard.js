@@ -28,10 +28,13 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                 users.once('value', function (user) {
                     user.forEach(function (child) {
                         var retrievelastChange = child.val().passwordChangedDate;  //retrieve the last change password date
-                        console.log("retrieve ", retrievelastChange);
+                        //convert date from ddmm to mmdd
+                        var dateArray = retrievelastChange.split("/");
+                        var finaldate = dateArray[1]+"/"+dateArray[0]+"/"+dateArray[2];
+                        console.log("retrieve ", finaldate);
                         var resetTimeFrame = 100;  //100 days timeframe
                         var startChange = 80; //80 days
-                        var datelastChange = new Date(retrievelastChange);
+                        var datelastChange = new Date(finaldate);
                         var addedTimeFrame = datelastChange.getTime() + resetTimeFrame*86400000 ;  //check when is 100 days timeframe from the date of last change password
                         var newDate = new Date(addedTimeFrame);
                         console.log("100 ", newDate);
