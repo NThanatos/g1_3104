@@ -48,7 +48,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
                     alert("Some student still have pending recommendation.");
                 }
                 else{
-                    PublishGrades();
+                    PublishGrades;
                 }
             })
 
@@ -62,9 +62,10 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
         }
 
         $scope.toggleeditGradeForm = function(item) {
+            console.log(item)
             $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
             $scope.editGradeFormContent = item;
-            $scope.selectStudentId = item.$id;
+            $scope.selectStudentId = item.id;
             // console.log(item.$id)
         };
 
@@ -97,14 +98,37 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             else {
                 $scope.SelectedStatus = true;
             }
-
             // set grades info
             // $scope.Grades = $scope.Courses[$scope.Courses.indexOf(tab)].student
-            const srootRef = firebase.database().ref();
-            const Sref = srootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+$scope.currentCourseId+'/student');
-            //this allows us to use the array and the scope notation we are used to
-            $scope.Grades = $firebaseArray(Sref);
+            renderGrades()
         };
+            function renderGrades() {
+                const srootRef = firebase.database().ref();
+                const getStuRef = srootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+$scope.currentCourseId+'/student');
+                $scope.Grades =[];
+                // const Sref = srootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+$scope.currentCourseId+'/student');
+                // //this allows us to use the array and the scope notation we are used to
+                // $scope.Grades = $firebaseArray(Sref);
+                console.log($scope.Grades)
+                getStuRef.once("value").then (function (snap) {
+                    snap.forEach(function (childSnap) {
+                        console.log(childSnap.key)
+                        console.log(childSnap.val().recommendation.RecommendedMark)
+                        $scope.Grades.push({
+                            id: childSnap.key,
+                            marks: childSnap.val().marks,
+                            name: childSnap.val().name,
+                            status: childSnap.val().status,
+                            recommendation: {
+                                RecommendedMark: childSnap.val().recommendation.RecommendedMark,
+                                message: childSnap.val().recommendation.message,
+                                value: childSnap.val().recommendation.value
+                            }
+                        })
+                        $scope.$apply();
+                    })
+                });
+            }
 
         $scope.isActiveTab = function(tabContent) {
             return tabContent == $scope.currentCourse;
@@ -140,12 +164,15 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
 
             var newStatus = {status: answer}
 
+            console.log($scope.selectStudentId);
+            console.log(newStatus);
             // need to change student id
            // firebase.database().ref('Courses/ICT/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId +'/recommendation').update(updateValue);
             firebase.database().ref('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+ $scope.currentCourseId + '/student/'+ $scope.selectStudentId ).update(newStatus);
 
             // refesh grades info
-            $scope.Grades = $scope.Courses[$scope.Courses.indexOf($scope.newTab)].student
+            // $scope.Grades = $scope.Courses[$scope.Courses.indexOf($scope.newTab)].student
+            renderGrades();
             $scope.editGradeForm = $scope.editGradeForm === false ? true: false;
         }
 

@@ -19,7 +19,7 @@
 <div id="courseGradeTable" ng-hide="showGradeTable" ng-include="currentTab" style="width: 80%; position: relative ; float: right"></div>
 
 <div class="ModalForms" ng-hide="editGradeForm" style="position: fixed; left:30%; top: 20%; width: 40%">
-    <button style="float: right" class="btn btn-xs" ng-click="toggleeditGradeForm()"><span class="glyphicon glyphicon-remove"></span></button>
+    <button style="float: right" class="btn btn-xs" ng-click="toggleeditGradeForm(editGradeFormContent)"><span class="glyphicon glyphicon-remove"></span></button>
     <hr>
             <p><strong>Name:</strong> {{editGradeFormContent.name}}</p>
             <p><strong>Current Marks:</strong> {{editGradeFormContent.marks}}</p>
