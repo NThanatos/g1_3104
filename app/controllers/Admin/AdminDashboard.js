@@ -86,10 +86,16 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                         }
 
                     });
+                    var emails="";
                     console.log($scope.userSendRequest);
+                    angular.forEach($scope.userSendRequest,function(value,index){
+
+                        emails= emails+value+";";
+                    })
+                    alert(emails);
 
                     //construct to predefined the field
-                    var link = "mailto: " + ($scope.userSendRequest) +
+                    var link = "mailto: " + (emails) +
                         "?subject=" + ("To Reset Password") +
                         "&body=" + ("Hello Please Reset Your password Thank You");
                     window.location.href= link;
