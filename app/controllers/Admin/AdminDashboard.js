@@ -25,7 +25,7 @@ angular.module('G1.AdminDashboard', ['ngRoute', 'angularUtils.directives.dirPagi
                 const rootUserRef = firebase.database().ref();
                 const users = rootUserRef.child('Users');
 
-                users.on('value', function (user) {
+                users.once('value', function (user) {
                     user.forEach(function (child) {
                         var retrievelastChange = child.val().passwordChangedDate;  //retrieve the last change password date
                         console.log("retrieve ", retrievelastChange);
