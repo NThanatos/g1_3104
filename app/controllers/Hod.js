@@ -25,46 +25,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             // console.log($localStorage.userid, " asd");
             // $scope.Coursesarray = [];
             const rootRef = firebase.database().ref();
-            // var coursesRef = rootRef.child('Courses')
-            // coursesRef.once('value', function (snapshot) {
-            //     snapshot.forEach(function (hodSnapshot) {
-            //         hodSnapshot.forEach(function (hodNameSnapshot) {
-            //
-            //             if(hodNameSnapshot.key=="hod")
-            //             {
-            //                 console.log(hodNameSnapshot.val());
-            //
-            //                 hodNameSnapshot.forEach(function (hodKeySnapshot){
-            //
-            //                     if(hodKeySnapshot.key==$localStorage.userid)
-            //                     {
-            //                         console.log(hodNameSnapshot.key, " asd");
-            //                         console.log(hodSnapshot.key, " asd");
-            //                         $scope.Coursesarray.push(hodSnapshot.val());
-            //                         console.log($scope.Coursesarray, " array");
-            //                         take=true;
-            //
-            //                     }
-            //                     //$scope.resultsArray.push
-            //
-            //                 })
-            //             }
-            //
-            //             if(hodNameSnapshot.key=="modules" && (hodKeySnapshot.key==$localStorage.userid))
-            //             {
-            //                     hodNameSnapshot.forEach(function (modSnapshot) {
-            //                         console.log(modSnapshot.val(), " array");
-            //                     })
-            //
-            //
-            //             }
-            //
-            //         })
-            //
-            //
-            //     })
-            //
-            // });
+
             //zoom in to users table
             console.log($localStorage.credential.AssignedTo)
             const ref = rootRef.child('Courses/'+$localStorage.credential.AssignedTo+'/modules');
@@ -73,9 +34,27 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             console.log($scope.Courses)
 
         }
+            
+        $scope.checkRecommemdationExist = function () {
+            var check = false;
+            const rootRef = firebase.database().ref();
+            const Checkref = rootRef.child('Courses/' + $localStorage.credential.AssignedTo + '/modules/' + $scope.currentCourseId + '/student');
+            Checkref.orderByChild("status").equalTo("Pending").once("value").then (function (snap) {
+                snap.forEach(function (childSnap) {
+                  console.log(childSnap.val())
+                      check = true;
+                })
+                if (check){
+                    alert("Some student still have pending recommendation.");
+                }
+                else{
+                    PublishGrades();
+                }
+            })
 
-        
-        $scope.PublishGrades = function () {
+
+        }
+            function PublishGrades () {
             var PublishStatus = {status: 'Published'}
             firebase.database().ref('Courses/'+$localStorage.credential.AssignedTo+'/modules/'+ $scope.currentCourseId).update(PublishStatus);
             $scope.currentCourseStatus = 'Published';

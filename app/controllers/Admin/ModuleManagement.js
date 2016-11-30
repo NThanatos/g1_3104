@@ -159,11 +159,11 @@ angular.module('G1.ModManagement', ['ngRoute', 'angularUtils.directives.dirPagin
                     name: name,
                     marks: 0,
                     status: 'New',
-                    recommendation: [{
+                    recommendation: {
                         RecommendedMark: 0,
                         message: '',
                         value : 0
-                    }]
+                    }
                 });
                 for(var i=0;i<$scope.StudentstoAdd.length;i++){
                     if($scope.StudentstoAdd[i].name == name){
