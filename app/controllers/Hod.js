@@ -33,7 +33,7 @@ angular.module('G1.Hod', ['ngRoute', 'angularUtils.directives.dirPagination', '7
             //this allows us to use the array and the scope notation we are used to
             $scope.Courses = $firebaseArray(ref);
             $scope.ProgramName = $localStorage.credential.AssignedTo;
-            $scope.$apply();
+            
             console.log($scope.Courses)
 
         }
