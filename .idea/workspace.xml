@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3da7376-6730-4da8-9749-a4c8c9b1b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" afterPath="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" afterPath="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
     </list>
     <ignored path="group1_3104.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewStudentParticulars.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/viewStudentParticulars.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="lect_displayModAndCrse.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/lect_displayModAndCrse.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,41 +64,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminDashboard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminDashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="93" selection-end-column="22" />
+            <state relative-caret-position="102">
+              <caret line="8" column="118" selection-start-line="8" selection-start-column="110" selection-end-line="8" selection-end-column="118" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lect_enterGrade.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/lect_enterGrade.html">
+      <file leaf-file-name="AdminDashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
+            <state relative-caret-position="80">
+              <caret line="18" column="193" selection-start-line="18" selection-start-column="193" selection-end-line="18" selection-end-column="193" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackUpData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/BackUpData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-13">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lecturer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Lecturer.html">
+      <file leaf-file-name="ModuleManagement.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+            <state relative-caret-position="242">
+              <caret line="165" column="21" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewIndivModule.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/viewIndivModule.html">
+      <file leaf-file-name="NewAccountCreation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="29" column="76" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
+            <state relative-caret-position="221">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -173,12 +183,12 @@
         <option value="$PROJECT_DIR$/app/controllers/Admin/NewCourseCreation.js" />
         <option value="$PROJECT_DIR$/app/templates/moduleform.html" />
         <option value="$PROJECT_DIR$/app/templates/courseform.html" />
-        <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
         <option value="$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js" />
         <option value="$PROJECT_DIR$/app/views/viewIndivModule.html" />
         <option value="$PROJECT_DIR$/app/controllers/Lecturer.js" />
         <option value="$PROJECT_DIR$/app/views/HOD.html" />
         <option value="$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js" />
+        <option value="$PROJECT_DIR$/app/views/Admin/AdminDashboard.html" />
       </list>
     </option>
   </component>
@@ -259,6 +269,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="g1_3104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -560,7 +592,7 @@
       <workItem from="1479863271659" duration="22076000" />
       <workItem from="1480223080473" duration="317000" />
       <workItem from="1480224010908" duration="4754000" />
-      <workItem from="1480477146116" duration="10933000" />
+      <workItem from="1480477146116" duration="11890000" />
     </task>
     <task id="LOCAL-00001" summary="Completed&#10;- Improved recommendation reply form&#10;- Reply to recommendation (update DB)  &#10;                    -value change back to 0 &#10;                    -update status to: Approved / Rejected">
       <created>1475897837971</created>
@@ -751,11 +783,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480500202534</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="string email">
+      <created>1480511378172</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1480511378172</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222672000" />
+    <option name="totallyTimeSpent" value="223629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -793,7 +832,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Logout function.&#10;&#10;-added dropdown menu to navigate to profile (incomplete)&#10;-signout option which links to logout controller&#10;&#10;-logoutCtrl will reset rootScope user data that is shared among controller before redirecting to / index" />
     <MESSAGE value="Ng storage component&#10;-persistent login (fixed bug)&#10;-view update for before login and after login (hidden views)" />
     <MESSAGE value="updated path for database from test&#10;refresh rootscope in app.js instead of admindashboard" />
     <MESSAGE value="Implemented ng-ifs to only show relavent navigation side bar for appropriate user roles commmented to ease development" />
@@ -818,20 +856,14 @@
     <MESSAGE value="updated link" />
     <MESSAGE value="recommended marks validation" />
     <MESSAGE value="for dhina" />
-    <option name="LAST_COMMIT_MESSAGE" value="for dhina" />
+    <MESSAGE value="string email" />
+    <option name="LAST_COMMIT_MESSAGE" value="string email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/StudentGrades.html" />
     <entry file="file://$PROJECT_DIR$/app/controllers/StudentGrades.js" />
     <entry file="file://$PROJECT_DIR$/app/views/courseGrades.html">
@@ -861,13 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="0" column="64552" selection-start-line="0" selection-start-column="64552" selection-end-line="0" selection-end-column="64552" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -988,13 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -1027,26 +1045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="165" column="21" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Hod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1738">
           <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="18" column="352" selection-start-line="18" selection-start-column="352" selection-end-line="18" selection-end-column="352" />
           <folding />
         </state>
       </provider>
@@ -1141,10 +1143,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/BackUpData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/NewAccountCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Admin/ModuleManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="165" column="21" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Admin/AdminDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="93" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="8" column="118" selection-start-line="8" selection-start-column="110" selection-end-line="8" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Admin/AdminDashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="18" column="193" selection-start-line="18" selection-start-column="193" selection-end-line="18" selection-end-column="193" />
           <folding />
         </state>
       </provider>
